@@ -1,0 +1,1437 @@
+,period,respondent,respondent-name,fueltype,type-name,timezone,timezone-description,Generation (MWh),value-units,timestamp
+0,2024-02-11,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1612,megawatthours,2024-02-11
+1,2024-02-11,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22690,megawatthours,2024-02-11
+2,2024-02-11,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,366,megawatthours,2024-02-11
+3,2024-02-11,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19728,megawatthours,2024-02-11
+4,2024-02-10,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18663,megawatthours,2024-02-10
+5,2024-02-10,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,366,megawatthours,2024-02-10
+6,2024-02-10,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21963,megawatthours,2024-02-10
+7,2024-02-10,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1702,megawatthours,2024-02-10
+8,2024-02-09,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,364,megawatthours,2024-02-09
+9,2024-02-09,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1365,megawatthours,2024-02-09
+10,2024-02-09,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22211,megawatthours,2024-02-09
+11,2024-02-09,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19171,megawatthours,2024-02-09
+12,2024-02-08,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,363,megawatthours,2024-02-08
+13,2024-02-08,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21357,megawatthours,2024-02-08
+14,2024-02-08,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20949,megawatthours,2024-02-08
+15,2024-02-08,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,450,megawatthours,2024-02-08
+16,2024-02-07,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22587,megawatthours,2024-02-07
+17,2024-02-07,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,367,megawatthours,2024-02-07
+18,2024-02-07,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,230,megawatthours,2024-02-07
+19,2024-02-07,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20872,megawatthours,2024-02-07
+20,2024-02-06,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19565,megawatthours,2024-02-06
+21,2024-02-06,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22988,megawatthours,2024-02-06
+22,2024-02-06,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,802,megawatthours,2024-02-06
+23,2024-02-06,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,348,megawatthours,2024-02-06
+24,2024-02-05,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22917,megawatthours,2024-02-05
+25,2024-02-05,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19060,megawatthours,2024-02-05
+26,2024-02-05,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,156,megawatthours,2024-02-05
+27,2024-02-05,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,688,megawatthours,2024-02-05
+28,2024-02-04,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,154,megawatthours,2024-02-04
+29,2024-02-04,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17543,megawatthours,2024-02-04
+30,2024-02-04,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,651,megawatthours,2024-02-04
+31,2024-02-04,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21841,megawatthours,2024-02-04
+32,2024-02-03,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21024,megawatthours,2024-02-03
+33,2024-02-03,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,700,megawatthours,2024-02-03
+34,2024-02-03,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17550,megawatthours,2024-02-03
+35,2024-02-03,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,210,megawatthours,2024-02-03
+36,2024-02-02,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,318,megawatthours,2024-02-02
+37,2024-02-02,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17927,megawatthours,2024-02-02
+38,2024-02-02,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,28396,megawatthours,2024-02-02
+39,2024-02-02,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,922,megawatthours,2024-02-02
+40,2024-02-01,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16180,megawatthours,2024-02-01
+41,2024-02-01,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,30356,megawatthours,2024-02-01
+42,2024-02-01,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,312,megawatthours,2024-02-01
+43,2024-02-01,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,969,megawatthours,2024-02-01
+44,2024-01-31,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,336,megawatthours,2024-01-31
+45,2024-01-31,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,108,megawatthours,2024-01-31
+46,2024-01-31,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16485,megawatthours,2024-01-31
+47,2024-01-31,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24194,megawatthours,2024-01-31
+48,2024-01-30,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1084,megawatthours,2024-01-30
+49,2024-01-30,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24217,megawatthours,2024-01-30
+50,2024-01-30,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,362,megawatthours,2024-01-30
+51,2024-01-30,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10451,megawatthours,2024-01-30
+52,2024-01-29,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1227,megawatthours,2024-01-29
+53,2024-01-29,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,8194,megawatthours,2024-01-29
+54,2024-01-29,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,360,megawatthours,2024-01-29
+55,2024-01-29,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,28073,megawatthours,2024-01-29
+56,2024-01-28,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,939,megawatthours,2024-01-28
+57,2024-01-28,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24850,megawatthours,2024-01-28
+58,2024-01-28,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,358,megawatthours,2024-01-28
+59,2024-01-28,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7422,megawatthours,2024-01-28
+60,2024-01-27,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7001,megawatthours,2024-01-27
+61,2024-01-27,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25548,megawatthours,2024-01-27
+62,2024-01-27,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,373,megawatthours,2024-01-27
+63,2024-01-27,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,617,megawatthours,2024-01-27
+64,2024-01-26,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,517,megawatthours,2024-01-26
+65,2024-01-26,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,32998,megawatthours,2024-01-26
+66,2024-01-26,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,369,megawatthours,2024-01-26
+67,2024-01-26,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6682,megawatthours,2024-01-26
+68,2024-01-25,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7468,megawatthours,2024-01-25
+69,2024-01-25,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27926,megawatthours,2024-01-25
+70,2024-01-25,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1168,megawatthours,2024-01-25
+71,2024-01-25,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,371,megawatthours,2024-01-25
+72,2024-01-24,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,37632,megawatthours,2024-01-24
+73,2024-01-24,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,372,megawatthours,2024-01-24
+74,2024-01-24,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,259,megawatthours,2024-01-24
+75,2024-01-24,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7009,megawatthours,2024-01-24
+76,2024-01-23,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,8757,megawatthours,2024-01-23
+77,2024-01-23,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,34684,megawatthours,2024-01-23
+78,2024-01-23,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,680,megawatthours,2024-01-23
+79,2024-01-23,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,365,megawatthours,2024-01-23
+80,2024-01-22,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,371,megawatthours,2024-01-22
+81,2024-01-22,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7276,megawatthours,2024-01-22
+82,2024-01-22,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,37070,megawatthours,2024-01-22
+83,2024-01-22,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,269,megawatthours,2024-01-22
+84,2024-01-21,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,368,megawatthours,2024-01-21
+85,2024-01-21,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6557,megawatthours,2024-01-21
+86,2024-01-21,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29859,megawatthours,2024-01-21
+87,2024-01-21,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,510,megawatthours,2024-01-21
+88,2024-01-20,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,38002,megawatthours,2024-01-20
+89,2024-01-20,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,456,megawatthours,2024-01-20
+90,2024-01-20,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,368,megawatthours,2024-01-20
+91,2024-01-20,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7102,megawatthours,2024-01-20
+92,2024-01-19,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6854,megawatthours,2024-01-19
+93,2024-01-19,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,368,megawatthours,2024-01-19
+94,2024-01-19,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,534,megawatthours,2024-01-19
+95,2024-01-19,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,39084,megawatthours,2024-01-19
+96,2024-01-18,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,36911,megawatthours,2024-01-18
+97,2024-01-18,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,370,megawatthours,2024-01-18
+98,2024-01-18,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,588,megawatthours,2024-01-18
+99,2024-01-18,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6811,megawatthours,2024-01-18
+100,2024-01-17,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,336,megawatthours,2024-01-17
+101,2024-01-17,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,36070,megawatthours,2024-01-17
+102,2024-01-17,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,816,megawatthours,2024-01-17
+103,2024-01-17,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7711,megawatthours,2024-01-17
+104,2024-01-16,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,242,megawatthours,2024-01-16
+105,2024-01-16,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,40986,megawatthours,2024-01-16
+106,2024-01-16,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,313,megawatthours,2024-01-16
+107,2024-01-16,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7762,megawatthours,2024-01-16
+108,2024-01-15,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,39361,megawatthours,2024-01-15
+109,2024-01-15,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,495,megawatthours,2024-01-15
+110,2024-01-15,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,309,megawatthours,2024-01-15
+111,2024-01-15,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7980,megawatthours,2024-01-15
+112,2024-01-14,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6611,megawatthours,2024-01-14
+113,2024-01-14,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,37984,megawatthours,2024-01-14
+114,2024-01-14,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,305,megawatthours,2024-01-14
+115,2024-01-14,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,657,megawatthours,2024-01-14
+116,2024-01-13,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,305,megawatthours,2024-01-13
+117,2024-01-13,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,138,megawatthours,2024-01-13
+118,2024-01-13,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,40371,megawatthours,2024-01-13
+119,2024-01-13,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7518,megawatthours,2024-01-13
+120,2024-01-10,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,247,megawatthours,2024-01-10
+121,2024-01-10,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6622,megawatthours,2024-01-10
+122,2024-01-10,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,34587,megawatthours,2024-01-10
+123,2024-01-10,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,313,megawatthours,2024-01-10
+124,2024-01-09,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,307,megawatthours,2024-01-09
+125,2024-01-09,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6468,megawatthours,2024-01-09
+126,2024-01-09,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,33468,megawatthours,2024-01-09
+127,2024-01-09,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,350,megawatthours,2024-01-09
+128,2024-01-08,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,940,megawatthours,2024-01-08
+129,2024-01-08,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6757,megawatthours,2024-01-08
+130,2024-01-08,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,322,megawatthours,2024-01-08
+131,2024-01-08,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,41985,megawatthours,2024-01-08
+132,2024-01-07,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6958,megawatthours,2024-01-07
+133,2024-01-07,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1072,megawatthours,2024-01-07
+134,2024-01-07,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,368,megawatthours,2024-01-07
+135,2024-01-07,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,31532,megawatthours,2024-01-07
+136,2024-01-06,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,79,megawatthours,2024-01-06
+137,2024-01-06,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7191,megawatthours,2024-01-06
+138,2024-01-06,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,32279,megawatthours,2024-01-06
+139,2024-01-06,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,376,megawatthours,2024-01-06
+140,2024-01-05,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,32596,megawatthours,2024-01-05
+141,2024-01-05,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,376,megawatthours,2024-01-05
+142,2024-01-05,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1053,megawatthours,2024-01-05
+143,2024-01-05,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6294,megawatthours,2024-01-05
+144,2024-01-04,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,950,megawatthours,2024-01-04
+145,2024-01-04,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,358,megawatthours,2024-01-04
+146,2024-01-04,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,32746,megawatthours,2024-01-04
+147,2024-01-04,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6345,megawatthours,2024-01-04
+148,2024-01-03,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6871,megawatthours,2024-01-03
+149,2024-01-03,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,28946,megawatthours,2024-01-03
+150,2024-01-03,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,431,megawatthours,2024-01-03
+151,2024-01-03,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,368,megawatthours,2024-01-03
+152,2024-01-02,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27801,megawatthours,2024-01-02
+153,2024-01-02,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,314,megawatthours,2024-01-02
+154,2024-01-02,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,348,megawatthours,2024-01-02
+155,2024-01-02,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6726,megawatthours,2024-01-02
+156,2024-01-01,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,354,megawatthours,2024-01-01
+157,2024-01-01,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10223,megawatthours,2024-01-01
+158,2024-01-01,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,718,megawatthours,2024-01-01
+159,2024-01-01,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,23746,megawatthours,2024-01-01
+160,2023-12-31,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21850,megawatthours,2023-12-31
+161,2023-12-31,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10284,megawatthours,2023-12-31
+162,2023-12-31,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,321,megawatthours,2023-12-31
+163,2023-12-31,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,354,megawatthours,2023-12-31
+164,2023-12-30,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11325,megawatthours,2023-12-30
+165,2023-12-30,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22595,megawatthours,2023-12-30
+166,2023-12-30,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,545,megawatthours,2023-12-30
+167,2023-12-30,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,363,megawatthours,2023-12-30
+168,2023-12-29,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,494,megawatthours,2023-12-29
+169,2023-12-29,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,360,megawatthours,2023-12-29
+170,2023-12-29,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29726,megawatthours,2023-12-29
+171,2023-12-29,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11583,megawatthours,2023-12-29
+172,2023-12-28,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,367,megawatthours,2023-12-28
+173,2023-12-28,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10847,megawatthours,2023-12-28
+174,2023-12-28,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,709,megawatthours,2023-12-28
+175,2023-12-28,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,26111,megawatthours,2023-12-28
+176,2023-12-27,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,317,megawatthours,2023-12-27
+177,2023-12-27,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,337,megawatthours,2023-12-27
+178,2023-12-27,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11523,megawatthours,2023-12-27
+179,2023-12-27,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25767,megawatthours,2023-12-27
+180,2023-12-26,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10534,megawatthours,2023-12-26
+181,2023-12-26,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,340,megawatthours,2023-12-26
+182,2023-12-26,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,460,megawatthours,2023-12-26
+183,2023-12-26,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,23578,megawatthours,2023-12-26
+184,2023-12-25,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,374,megawatthours,2023-12-25
+185,2023-12-25,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,12128,megawatthours,2023-12-25
+186,2023-12-25,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29518,megawatthours,2023-12-25
+187,2023-12-25,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,672,megawatthours,2023-12-25
+188,2023-12-24,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,12285,megawatthours,2023-12-24
+189,2023-12-24,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,372,megawatthours,2023-12-24
+190,2023-12-24,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,729,megawatthours,2023-12-24
+191,2023-12-24,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,28203,megawatthours,2023-12-24
+192,2023-12-23,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,376,megawatthours,2023-12-23
+193,2023-12-23,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22116,megawatthours,2023-12-23
+194,2023-12-23,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10426,megawatthours,2023-12-23
+195,2023-12-23,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,582,megawatthours,2023-12-23
+196,2023-12-22,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,844,megawatthours,2023-12-22
+197,2023-12-22,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25391,megawatthours,2023-12-22
+198,2023-12-22,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,381,megawatthours,2023-12-22
+199,2023-12-22,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11786,megawatthours,2023-12-22
+200,2023-12-21,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,378,megawatthours,2023-12-21
+201,2023-12-21,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10356,megawatthours,2023-12-21
+202,2023-12-21,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,580,megawatthours,2023-12-21
+203,2023-12-21,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,31186,megawatthours,2023-12-21
+204,2023-12-20,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,185,megawatthours,2023-12-20
+205,2023-12-20,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,376,megawatthours,2023-12-20
+206,2023-12-20,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,32811,megawatthours,2023-12-20
+207,2023-12-20,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10291,megawatthours,2023-12-20
+208,2023-12-19,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,498,megawatthours,2023-12-19
+209,2023-12-19,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,369,megawatthours,2023-12-19
+210,2023-12-19,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10469,megawatthours,2023-12-19
+211,2023-12-19,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,33419,megawatthours,2023-12-19
+212,2023-12-18,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,9544,megawatthours,2023-12-18
+213,2023-12-18,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,382,megawatthours,2023-12-18
+214,2023-12-18,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,32923,megawatthours,2023-12-18
+215,2023-12-18,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,379,megawatthours,2023-12-18
+216,2023-12-17,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,291,megawatthours,2023-12-17
+217,2023-12-17,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,375,megawatthours,2023-12-17
+218,2023-12-17,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10329,megawatthours,2023-12-17
+219,2023-12-17,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,34123,megawatthours,2023-12-17
+220,2023-12-16,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10340,megawatthours,2023-12-16
+221,2023-12-16,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,379,megawatthours,2023-12-16
+222,2023-12-16,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1002,megawatthours,2023-12-16
+223,2023-12-16,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,32879,megawatthours,2023-12-16
+224,2023-12-15,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,9122,megawatthours,2023-12-15
+225,2023-12-15,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,861,megawatthours,2023-12-15
+226,2023-12-15,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,33487,megawatthours,2023-12-15
+227,2023-12-15,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,379,megawatthours,2023-12-15
+228,2023-12-14,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,33187,megawatthours,2023-12-14
+229,2023-12-14,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,333,megawatthours,2023-12-14
+230,2023-12-14,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7997,megawatthours,2023-12-14
+231,2023-12-14,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,687,megawatthours,2023-12-14
+232,2023-12-13,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,363,megawatthours,2023-12-13
+233,2023-12-13,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,31950,megawatthours,2023-12-13
+234,2023-12-13,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,975,megawatthours,2023-12-13
+235,2023-12-13,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7827,megawatthours,2023-12-13
+236,2023-12-12,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,30224,megawatthours,2023-12-12
+237,2023-12-12,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6238,megawatthours,2023-12-12
+238,2023-12-12,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1019,megawatthours,2023-12-12
+239,2023-12-12,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,376,megawatthours,2023-12-12
+240,2023-12-11,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6089,megawatthours,2023-12-11
+241,2023-12-11,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,31779,megawatthours,2023-12-11
+242,2023-12-11,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,985,megawatthours,2023-12-11
+243,2023-12-11,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,371,megawatthours,2023-12-11
+244,2023-12-10,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,5811,megawatthours,2023-12-10
+245,2023-12-10,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,769,megawatthours,2023-12-10
+246,2023-12-10,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,374,megawatthours,2023-12-10
+247,2023-12-10,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,31304,megawatthours,2023-12-10
+248,2023-12-09,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1052,megawatthours,2023-12-09
+249,2023-12-09,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29893,megawatthours,2023-12-09
+250,2023-12-09,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,378,megawatthours,2023-12-09
+251,2023-12-09,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6435,megawatthours,2023-12-09
+252,2023-12-08,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,30603,megawatthours,2023-12-08
+253,2023-12-08,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,376,megawatthours,2023-12-08
+254,2023-12-08,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,5738,megawatthours,2023-12-08
+255,2023-12-08,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,986,megawatthours,2023-12-08
+256,2023-12-07,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,377,megawatthours,2023-12-07
+257,2023-12-07,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,459,megawatthours,2023-12-07
+258,2023-12-07,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,30574,megawatthours,2023-12-07
+259,2023-12-07,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,5694,megawatthours,2023-12-07
+260,2023-12-06,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,5863,megawatthours,2023-12-06
+261,2023-12-06,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,34551,megawatthours,2023-12-06
+262,2023-12-06,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,338,megawatthours,2023-12-06
+263,2023-12-06,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,343,megawatthours,2023-12-06
+264,2023-12-05,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,892,megawatthours,2023-12-05
+265,2023-12-05,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,347,megawatthours,2023-12-05
+266,2023-12-05,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,34370,megawatthours,2023-12-05
+267,2023-12-05,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,5847,megawatthours,2023-12-05
+268,2023-12-04,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,375,megawatthours,2023-12-04
+269,2023-12-04,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,866,megawatthours,2023-12-04
+270,2023-12-04,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,35714,megawatthours,2023-12-04
+271,2023-12-04,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,5695,megawatthours,2023-12-04
+272,2023-12-03,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,5758,megawatthours,2023-12-03
+273,2023-12-03,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,31550,megawatthours,2023-12-03
+274,2023-12-03,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,617,megawatthours,2023-12-03
+275,2023-12-03,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,373,megawatthours,2023-12-03
+276,2023-12-02,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,377,megawatthours,2023-12-02
+277,2023-12-02,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,402,megawatthours,2023-12-02
+278,2023-12-02,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29581,megawatthours,2023-12-02
+279,2023-12-02,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6072,megawatthours,2023-12-02
+280,2023-12-01,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,866,megawatthours,2023-12-01
+281,2023-12-01,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6199,megawatthours,2023-12-01
+282,2023-12-01,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,371,megawatthours,2023-12-01
+283,2023-12-01,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,34980,megawatthours,2023-12-01
+284,2023-11-30,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,373,megawatthours,2023-11-30
+285,2023-11-30,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,35146,megawatthours,2023-11-30
+286,2023-11-30,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,5838,megawatthours,2023-11-30
+287,2023-11-30,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,889,megawatthours,2023-11-30
+288,2023-11-29,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,359,megawatthours,2023-11-29
+289,2023-11-29,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,816,megawatthours,2023-11-29
+290,2023-11-29,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,5691,megawatthours,2023-11-29
+291,2023-11-29,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,35623,megawatthours,2023-11-29
+292,2023-11-28,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,376,megawatthours,2023-11-28
+293,2023-11-28,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1151,megawatthours,2023-11-28
+294,2023-11-28,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,34666,megawatthours,2023-11-28
+295,2023-11-28,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,5552,megawatthours,2023-11-28
+296,2023-11-27,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,5720,megawatthours,2023-11-27
+297,2023-11-27,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,31921,megawatthours,2023-11-27
+298,2023-11-27,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,341,megawatthours,2023-11-27
+299,2023-11-27,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1056,megawatthours,2023-11-27
+300,2023-11-26,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,342,megawatthours,2023-11-26
+301,2023-11-26,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1043,megawatthours,2023-11-26
+302,2023-11-26,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6432,megawatthours,2023-11-26
+303,2023-11-26,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29339,megawatthours,2023-11-26
+304,2023-11-25,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24655,megawatthours,2023-11-25
+305,2023-11-25,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,355,megawatthours,2023-11-25
+306,2023-11-25,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6708,megawatthours,2023-11-25
+307,2023-11-25,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1088,megawatthours,2023-11-25
+308,2023-11-24,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,349,megawatthours,2023-11-24
+309,2023-11-24,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22691,megawatthours,2023-11-24
+310,2023-11-24,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6139,megawatthours,2023-11-24
+311,2023-11-24,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1145,megawatthours,2023-11-24
+312,2023-11-23,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1084,megawatthours,2023-11-23
+313,2023-11-23,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6259,megawatthours,2023-11-23
+314,2023-11-23,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,335,megawatthours,2023-11-23
+315,2023-11-23,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,23042,megawatthours,2023-11-23
+316,2023-11-22,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6230,megawatthours,2023-11-22
+317,2023-11-22,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,290,megawatthours,2023-11-22
+318,2023-11-22,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,32613,megawatthours,2023-11-22
+319,2023-11-22,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,915,megawatthours,2023-11-22
+320,2023-11-21,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,294,megawatthours,2023-11-21
+321,2023-11-21,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21479,megawatthours,2023-11-21
+322,2023-11-21,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,739,megawatthours,2023-11-21
+323,2023-11-21,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6670,megawatthours,2023-11-21
+324,2023-11-20,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6304,megawatthours,2023-11-20
+325,2023-11-20,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1191,megawatthours,2023-11-20
+326,2023-11-20,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,292,megawatthours,2023-11-20
+327,2023-11-20,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,19766,megawatthours,2023-11-20
+328,2023-11-19,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,286,megawatthours,2023-11-19
+329,2023-11-19,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6606,megawatthours,2023-11-19
+330,2023-11-19,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1145,megawatthours,2023-11-19
+331,2023-11-19,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,13347,megawatthours,2023-11-19
+332,2023-11-18,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,331,megawatthours,2023-11-18
+333,2023-11-18,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6167,megawatthours,2023-11-18
+334,2023-11-18,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,14090,megawatthours,2023-11-18
+335,2023-11-18,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,293,megawatthours,2023-11-18
+336,2023-11-17,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,18360,megawatthours,2023-11-17
+337,2023-11-17,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,620,megawatthours,2023-11-17
+338,2023-11-17,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6201,megawatthours,2023-11-17
+339,2023-11-17,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,230,megawatthours,2023-11-17
+340,2023-11-16,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6842,megawatthours,2023-11-16
+341,2023-11-16,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21250,megawatthours,2023-11-16
+342,2023-11-16,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,103,megawatthours,2023-11-16
+343,2023-11-16,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,799,megawatthours,2023-11-16
+344,2023-11-15,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,20,megawatthours,2023-11-15
+345,2023-11-15,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,320,megawatthours,2023-11-15
+346,2023-11-15,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6521,megawatthours,2023-11-15
+347,2023-11-15,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,18149,megawatthours,2023-11-15
+348,2023-11-14,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,14153,megawatthours,2023-11-14
+349,2023-11-14,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1053,megawatthours,2023-11-14
+350,2023-11-14,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6684,megawatthours,2023-11-14
+351,2023-11-14,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,115,megawatthours,2023-11-14
+352,2023-11-13,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,344,megawatthours,2023-11-13
+353,2023-11-13,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,12395,megawatthours,2023-11-13
+354,2023-11-13,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1098,megawatthours,2023-11-13
+355,2023-11-13,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6799,megawatthours,2023-11-13
+356,2023-11-12,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22643,megawatthours,2023-11-12
+357,2023-11-12,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,367,megawatthours,2023-11-12
+358,2023-11-12,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1154,megawatthours,2023-11-12
+359,2023-11-12,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6867,megawatthours,2023-11-12
+360,2023-11-11,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22101,megawatthours,2023-11-11
+361,2023-11-11,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,369,megawatthours,2023-11-11
+362,2023-11-11,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1155,megawatthours,2023-11-11
+363,2023-11-11,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7215,megawatthours,2023-11-11
+364,2023-11-10,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,370,megawatthours,2023-11-10
+365,2023-11-10,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1080,megawatthours,2023-11-10
+366,2023-11-10,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22193,megawatthours,2023-11-10
+367,2023-11-10,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6762,megawatthours,2023-11-10
+368,2023-11-09,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,369,megawatthours,2023-11-09
+369,2023-11-09,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,982,megawatthours,2023-11-09
+370,2023-11-09,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,23980,megawatthours,2023-11-09
+371,2023-11-09,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7057,megawatthours,2023-11-09
+372,2023-11-08,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,6861,megawatthours,2023-11-08
+373,2023-11-08,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,359,megawatthours,2023-11-08
+374,2023-11-08,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20439,megawatthours,2023-11-08
+375,2023-11-08,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1264,megawatthours,2023-11-08
+376,2023-11-06,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,716,megawatthours,2023-11-06
+377,2023-11-06,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22913,megawatthours,2023-11-06
+378,2023-11-06,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,298,megawatthours,2023-11-06
+379,2023-11-06,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7068,megawatthours,2023-11-06
+380,2023-11-05,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,303,megawatthours,2023-11-05
+381,2023-11-05,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,693,megawatthours,2023-11-05
+382,2023-11-05,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7382,megawatthours,2023-11-05
+383,2023-11-05,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21217,megawatthours,2023-11-05
+384,2023-11-04,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,365,megawatthours,2023-11-04
+385,2023-11-04,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,7993,megawatthours,2023-11-04
+386,2023-11-04,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1120,megawatthours,2023-11-04
+387,2023-11-04,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20122,megawatthours,2023-11-04
+388,2023-11-01,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1174,megawatthours,2023-11-01
+389,2023-11-01,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,8246,megawatthours,2023-11-01
+390,2023-11-01,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24512,megawatthours,2023-11-01
+391,2023-11-01,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,382,megawatthours,2023-11-01
+392,2023-10-31,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27739,megawatthours,2023-10-31
+393,2023-10-31,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,8735,megawatthours,2023-10-31
+394,2023-10-31,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,380,megawatthours,2023-10-31
+395,2023-10-31,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1156,megawatthours,2023-10-31
+396,2023-10-30,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27386,megawatthours,2023-10-30
+397,2023-10-30,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,379,megawatthours,2023-10-30
+398,2023-10-30,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1340,megawatthours,2023-10-30
+399,2023-10-30,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10775,megawatthours,2023-10-30
+400,2023-10-29,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,372,megawatthours,2023-10-29
+401,2023-10-29,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11744,megawatthours,2023-10-29
+402,2023-10-29,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1395,megawatthours,2023-10-29
+403,2023-10-29,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,23775,megawatthours,2023-10-29
+404,2023-10-28,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1400,megawatthours,2023-10-28
+405,2023-10-28,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21835,megawatthours,2023-10-28
+406,2023-10-28,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,12255,megawatthours,2023-10-28
+407,2023-10-28,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,381,megawatthours,2023-10-28
+408,2023-10-27,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11293,megawatthours,2023-10-27
+409,2023-10-27,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1411,megawatthours,2023-10-27
+410,2023-10-27,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,386,megawatthours,2023-10-27
+411,2023-10-27,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21336,megawatthours,2023-10-27
+412,2023-10-26,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,9643,megawatthours,2023-10-26
+413,2023-10-26,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,378,megawatthours,2023-10-26
+414,2023-10-26,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20975,megawatthours,2023-10-26
+415,2023-10-26,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1362,megawatthours,2023-10-26
+416,2023-10-25,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10054,megawatthours,2023-10-25
+417,2023-10-25,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,555,megawatthours,2023-10-25
+418,2023-10-25,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20289,megawatthours,2023-10-25
+419,2023-10-25,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,384,megawatthours,2023-10-25
+420,2023-10-24,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,19562,megawatthours,2023-10-24
+421,2023-10-24,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,9881,megawatthours,2023-10-24
+422,2023-10-24,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,369,megawatthours,2023-10-24
+423,2023-10-24,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1398,megawatthours,2023-10-24
+424,2023-10-23,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1219,megawatthours,2023-10-23
+425,2023-10-23,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,353,megawatthours,2023-10-23
+426,2023-10-23,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,17357,megawatthours,2023-10-23
+427,2023-10-23,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11315,megawatthours,2023-10-23
+428,2023-10-22,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,702,megawatthours,2023-10-22
+429,2023-10-22,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,370,megawatthours,2023-10-22
+430,2023-10-22,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11971,megawatthours,2023-10-22
+431,2023-10-22,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,18586,megawatthours,2023-10-22
+432,2023-10-21,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,367,megawatthours,2023-10-21
+433,2023-10-21,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11461,megawatthours,2023-10-21
+434,2023-10-21,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1198,megawatthours,2023-10-21
+435,2023-10-21,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,19902,megawatthours,2023-10-21
+436,2023-10-20,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1229,megawatthours,2023-10-20
+437,2023-10-20,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11328,megawatthours,2023-10-20
+438,2023-10-20,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,373,megawatthours,2023-10-20
+439,2023-10-20,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,28063,megawatthours,2023-10-20
+440,2023-10-19,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,384,megawatthours,2023-10-19
+441,2023-10-19,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,9635,megawatthours,2023-10-19
+442,2023-10-19,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,28027,megawatthours,2023-10-19
+443,2023-10-19,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1345,megawatthours,2023-10-19
+444,2023-10-18,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25585,megawatthours,2023-10-18
+445,2023-10-18,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1421,megawatthours,2023-10-18
+446,2023-10-18,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,9846,megawatthours,2023-10-18
+447,2023-10-18,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,384,megawatthours,2023-10-18
+448,2023-10-17,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,385,megawatthours,2023-10-17
+449,2023-10-17,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1496,megawatthours,2023-10-17
+450,2023-10-17,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,9409,megawatthours,2023-10-17
+451,2023-10-17,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22113,megawatthours,2023-10-17
+452,2023-10-16,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,9320,megawatthours,2023-10-16
+453,2023-10-16,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25212,megawatthours,2023-10-16
+454,2023-10-16,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1173,megawatthours,2023-10-16
+455,2023-10-16,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,300,megawatthours,2023-10-16
+456,2023-10-15,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,296,megawatthours,2023-10-15
+457,2023-10-15,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,9710,megawatthours,2023-10-15
+458,2023-10-15,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,26793,megawatthours,2023-10-15
+459,2023-10-15,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1448,megawatthours,2023-10-15
+460,2023-10-14,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1212,megawatthours,2023-10-14
+461,2023-10-14,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25533,megawatthours,2023-10-14
+462,2023-10-14,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,345,megawatthours,2023-10-14
+463,2023-10-14,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,9528,megawatthours,2023-10-14
+464,2023-10-13,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1277,megawatthours,2023-10-13
+465,2023-10-13,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,381,megawatthours,2023-10-13
+466,2023-10-13,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27295,megawatthours,2023-10-13
+467,2023-10-13,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10132,megawatthours,2023-10-13
+468,2023-10-12,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,375,megawatthours,2023-10-12
+469,2023-10-12,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24273,megawatthours,2023-10-12
+470,2023-10-12,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,9191,megawatthours,2023-10-12
+471,2023-10-12,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1570,megawatthours,2023-10-12
+472,2023-10-11,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,9004,megawatthours,2023-10-11
+473,2023-10-11,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,350,megawatthours,2023-10-11
+474,2023-10-11,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1478,megawatthours,2023-10-11
+475,2023-10-11,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21365,megawatthours,2023-10-11
+476,2023-10-10,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,381,megawatthours,2023-10-10
+477,2023-10-10,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1034,megawatthours,2023-10-10
+478,2023-10-10,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,8959,megawatthours,2023-10-10
+479,2023-10-10,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21690,megawatthours,2023-10-10
+480,2023-10-09,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,844,megawatthours,2023-10-09
+481,2023-10-09,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24253,megawatthours,2023-10-09
+482,2023-10-09,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,377,megawatthours,2023-10-09
+483,2023-10-09,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10049,megawatthours,2023-10-09
+484,2023-10-08,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1537,megawatthours,2023-10-08
+485,2023-10-08,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11669,megawatthours,2023-10-08
+486,2023-10-08,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25572,megawatthours,2023-10-08
+487,2023-10-08,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,376,megawatthours,2023-10-08
+488,2023-10-07,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11379,megawatthours,2023-10-07
+489,2023-10-07,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1549,megawatthours,2023-10-07
+490,2023-10-07,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29254,megawatthours,2023-10-07
+491,2023-10-07,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,380,megawatthours,2023-10-07
+492,2023-10-06,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,353,megawatthours,2023-10-06
+493,2023-10-06,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,13075,megawatthours,2023-10-06
+494,2023-10-06,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,31426,megawatthours,2023-10-06
+495,2023-10-06,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1587,megawatthours,2023-10-06
+496,2023-10-05,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11165,megawatthours,2023-10-05
+497,2023-10-05,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,371,megawatthours,2023-10-05
+498,2023-10-05,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,30819,megawatthours,2023-10-05
+499,2023-10-05,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1663,megawatthours,2023-10-05
+500,2023-10-04,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1635,megawatthours,2023-10-04
+501,2023-10-04,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10725,megawatthours,2023-10-04
+502,2023-10-04,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,372,megawatthours,2023-10-04
+503,2023-10-04,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24132,megawatthours,2023-10-04
+504,2023-10-03,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1700,megawatthours,2023-10-03
+505,2023-10-03,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24472,megawatthours,2023-10-03
+506,2023-10-03,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,382,megawatthours,2023-10-03
+507,2023-10-03,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10945,megawatthours,2023-10-03
+508,2023-10-02,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,380,megawatthours,2023-10-02
+509,2023-10-02,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10132,megawatthours,2023-10-02
+510,2023-10-02,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,19927,megawatthours,2023-10-02
+511,2023-10-02,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1730,megawatthours,2023-10-02
+512,2023-10-01,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1462,megawatthours,2023-10-01
+513,2023-10-01,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,376,megawatthours,2023-10-01
+514,2023-10-01,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21630,megawatthours,2023-10-01
+515,2023-10-01,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,12176,megawatthours,2023-10-01
+516,2023-09-30,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20889,megawatthours,2023-09-30
+517,2023-09-30,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14606,megawatthours,2023-09-30
+518,2023-09-30,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,383,megawatthours,2023-09-30
+519,2023-09-30,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,871,megawatthours,2023-09-30
+520,2023-09-29,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14389,megawatthours,2023-09-29
+521,2023-09-29,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1381,megawatthours,2023-09-29
+522,2023-09-29,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20762,megawatthours,2023-09-29
+523,2023-09-29,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,377,megawatthours,2023-09-29
+524,2023-09-28,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,381,megawatthours,2023-09-28
+525,2023-09-28,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14488,megawatthours,2023-09-28
+526,2023-09-28,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1733,megawatthours,2023-09-28
+527,2023-09-28,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,18858,megawatthours,2023-09-28
+528,2023-09-27,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,349,megawatthours,2023-09-27
+529,2023-09-27,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20213,megawatthours,2023-09-27
+530,2023-09-27,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1774,megawatthours,2023-09-27
+531,2023-09-27,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14376,megawatthours,2023-09-27
+532,2023-09-26,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,383,megawatthours,2023-09-26
+533,2023-09-26,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,15537,megawatthours,2023-09-26
+534,2023-09-26,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,15382,megawatthours,2023-09-26
+535,2023-09-26,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1615,megawatthours,2023-09-26
+536,2023-09-25,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,384,megawatthours,2023-09-25
+537,2023-09-25,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1767,megawatthours,2023-09-25
+538,2023-09-25,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,19250,megawatthours,2023-09-25
+539,2023-09-25,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,15979,megawatthours,2023-09-25
+540,2023-09-24,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20283,megawatthours,2023-09-24
+541,2023-09-24,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16790,megawatthours,2023-09-24
+542,2023-09-24,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,384,megawatthours,2023-09-24
+543,2023-09-24,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1801,megawatthours,2023-09-24
+544,2023-09-23,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20159,megawatthours,2023-09-23
+545,2023-09-23,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1795,megawatthours,2023-09-23
+546,2023-09-23,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,387,megawatthours,2023-09-23
+547,2023-09-23,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,15876,megawatthours,2023-09-23
+548,2023-09-22,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21975,megawatthours,2023-09-22
+549,2023-09-22,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1738,megawatthours,2023-09-22
+550,2023-09-22,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,386,megawatthours,2023-09-22
+551,2023-09-22,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17171,megawatthours,2023-09-22
+552,2023-09-21,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17753,megawatthours,2023-09-21
+553,2023-09-21,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,384,megawatthours,2023-09-21
+554,2023-09-21,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24127,megawatthours,2023-09-21
+555,2023-09-21,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1754,megawatthours,2023-09-21
+556,2023-09-20,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1698,megawatthours,2023-09-20
+557,2023-09-20,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17868,megawatthours,2023-09-20
+558,2023-09-20,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,376,megawatthours,2023-09-20
+559,2023-09-20,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,23557,megawatthours,2023-09-20
+560,2023-09-19,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,387,megawatthours,2023-09-19
+561,2023-09-19,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1692,megawatthours,2023-09-19
+562,2023-09-19,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22823,megawatthours,2023-09-19
+563,2023-09-19,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18828,megawatthours,2023-09-19
+564,2023-09-18,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17394,megawatthours,2023-09-18
+565,2023-09-18,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20420,megawatthours,2023-09-18
+566,2023-09-18,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,384,megawatthours,2023-09-18
+567,2023-09-18,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1735,megawatthours,2023-09-18
+568,2023-09-17,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16591,megawatthours,2023-09-17
+569,2023-09-17,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20736,megawatthours,2023-09-17
+570,2023-09-17,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,378,megawatthours,2023-09-17
+571,2023-09-17,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1915,megawatthours,2023-09-17
+572,2023-09-16,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,26572,megawatthours,2023-09-16
+573,2023-09-16,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16977,megawatthours,2023-09-16
+574,2023-09-16,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1819,megawatthours,2023-09-16
+575,2023-09-16,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,387,megawatthours,2023-09-16
+576,2023-09-15,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17122,megawatthours,2023-09-15
+577,2023-09-15,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,384,megawatthours,2023-09-15
+578,2023-09-15,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1701,megawatthours,2023-09-15
+579,2023-09-15,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,32911,megawatthours,2023-09-15
+580,2023-09-14,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,387,megawatthours,2023-09-14
+581,2023-09-14,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17582,megawatthours,2023-09-14
+582,2023-09-14,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,32761,megawatthours,2023-09-14
+583,2023-09-14,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1649,megawatthours,2023-09-14
+584,2023-09-13,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17034,megawatthours,2023-09-13
+585,2023-09-13,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27123,megawatthours,2023-09-13
+586,2023-09-13,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1899,megawatthours,2023-09-13
+587,2023-09-13,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,387,megawatthours,2023-09-13
+588,2023-09-12,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,15716,megawatthours,2023-09-12
+589,2023-09-12,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1954,megawatthours,2023-09-12
+590,2023-09-12,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,370,megawatthours,2023-09-12
+591,2023-09-12,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25903,megawatthours,2023-09-12
+592,2023-09-11,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,361,megawatthours,2023-09-11
+593,2023-09-11,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2102,megawatthours,2023-09-11
+594,2023-09-11,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16021,megawatthours,2023-09-11
+595,2023-09-11,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29778,megawatthours,2023-09-11
+596,2023-09-10,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16048,megawatthours,2023-09-10
+597,2023-09-10,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2141,megawatthours,2023-09-10
+598,2023-09-10,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,376,megawatthours,2023-09-10
+599,2023-09-10,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,30736,megawatthours,2023-09-10
+600,2023-09-09,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,30845,megawatthours,2023-09-09
+601,2023-09-09,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17487,megawatthours,2023-09-09
+602,2023-09-09,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1858,megawatthours,2023-09-09
+603,2023-09-09,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,380,megawatthours,2023-09-09
+604,2023-09-08,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,377,megawatthours,2023-09-08
+605,2023-09-08,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16416,megawatthours,2023-09-08
+606,2023-09-08,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,31830,megawatthours,2023-09-08
+607,2023-09-08,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2032,megawatthours,2023-09-08
+608,2023-09-07,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,376,megawatthours,2023-09-07
+609,2023-09-07,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,28539,megawatthours,2023-09-07
+610,2023-09-07,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2132,megawatthours,2023-09-07
+611,2023-09-07,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,15913,megawatthours,2023-09-07
+612,2023-09-06,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25660,megawatthours,2023-09-06
+613,2023-09-06,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,373,megawatthours,2023-09-06
+614,2023-09-06,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,15932,megawatthours,2023-09-06
+615,2023-09-06,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2044,megawatthours,2023-09-06
+616,2023-09-05,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,28780,megawatthours,2023-09-05
+617,2023-09-05,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18124,megawatthours,2023-09-05
+618,2023-09-05,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,352,megawatthours,2023-09-05
+619,2023-09-05,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2060,megawatthours,2023-09-05
+620,2023-09-04,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20547,megawatthours,2023-09-04
+621,2023-09-04,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2091,megawatthours,2023-09-04
+622,2023-09-04,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17282,megawatthours,2023-09-04
+623,2023-09-04,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,355,megawatthours,2023-09-04
+624,2023-09-03,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,354,megawatthours,2023-09-03
+625,2023-09-03,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1520,megawatthours,2023-09-03
+626,2023-09-03,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18039,megawatthours,2023-09-03
+627,2023-09-03,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20626,megawatthours,2023-09-03
+628,2023-09-02,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18331,megawatthours,2023-09-02
+629,2023-09-02,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,361,megawatthours,2023-09-02
+630,2023-09-02,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,23902,megawatthours,2023-09-02
+631,2023-09-02,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,715,megawatthours,2023-09-02
+632,2023-09-01,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,23793,megawatthours,2023-09-01
+633,2023-09-01,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1170,megawatthours,2023-09-01
+634,2023-09-01,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18041,megawatthours,2023-09-01
+635,2023-09-01,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,346,megawatthours,2023-09-01
+636,2023-08-31,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16658,megawatthours,2023-08-31
+637,2023-08-31,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,365,megawatthours,2023-08-31
+638,2023-08-31,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,28957,megawatthours,2023-08-31
+639,2023-08-31,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1714,megawatthours,2023-08-31
+640,2023-08-30,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2093,megawatthours,2023-08-30
+641,2023-08-30,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16815,megawatthours,2023-08-30
+642,2023-08-30,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,370,megawatthours,2023-08-30
+643,2023-08-30,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27688,megawatthours,2023-08-30
+644,2023-08-29,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27408,megawatthours,2023-08-29
+645,2023-08-29,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2180,megawatthours,2023-08-29
+646,2023-08-29,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17259,megawatthours,2023-08-29
+647,2023-08-29,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,360,megawatthours,2023-08-29
+648,2023-08-28,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29966,megawatthours,2023-08-28
+649,2023-08-28,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,366,megawatthours,2023-08-28
+650,2023-08-28,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2174,megawatthours,2023-08-28
+651,2023-08-28,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17997,megawatthours,2023-08-28
+652,2023-08-27,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,364,megawatthours,2023-08-27
+653,2023-08-27,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18014,megawatthours,2023-08-27
+654,2023-08-27,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29319,megawatthours,2023-08-27
+655,2023-08-27,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2157,megawatthours,2023-08-27
+656,2023-08-26,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18759,megawatthours,2023-08-26
+657,2023-08-26,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,337,megawatthours,2023-08-26
+658,2023-08-26,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,28723,megawatthours,2023-08-26
+659,2023-08-26,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2279,megawatthours,2023-08-26
+660,2023-08-25,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2206,megawatthours,2023-08-25
+661,2023-08-25,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,381,megawatthours,2023-08-25
+662,2023-08-25,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27983,megawatthours,2023-08-25
+663,2023-08-25,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17529,megawatthours,2023-08-25
+664,2023-08-24,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,378,megawatthours,2023-08-24
+665,2023-08-24,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19249,megawatthours,2023-08-24
+666,2023-08-24,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,31011,megawatthours,2023-08-24
+667,2023-08-24,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2158,megawatthours,2023-08-24
+668,2023-08-23,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,28372,megawatthours,2023-08-23
+669,2023-08-23,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20592,megawatthours,2023-08-23
+670,2023-08-23,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,367,megawatthours,2023-08-23
+671,2023-08-23,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2200,megawatthours,2023-08-23
+672,2023-08-22,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2062,megawatthours,2023-08-22
+673,2023-08-22,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22980,megawatthours,2023-08-22
+674,2023-08-22,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,368,megawatthours,2023-08-22
+675,2023-08-22,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19565,megawatthours,2023-08-22
+676,2023-08-21,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22984,megawatthours,2023-08-21
+677,2023-08-21,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1448,megawatthours,2023-08-21
+678,2023-08-21,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,365,megawatthours,2023-08-21
+679,2023-08-21,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19614,megawatthours,2023-08-21
+680,2023-08-20,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20232,megawatthours,2023-08-20
+681,2023-08-20,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,930,megawatthours,2023-08-20
+682,2023-08-20,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29995,megawatthours,2023-08-20
+683,2023-08-20,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,361,megawatthours,2023-08-20
+684,2023-08-19,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27495,megawatthours,2023-08-19
+685,2023-08-19,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2110,megawatthours,2023-08-19
+686,2023-08-19,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,367,megawatthours,2023-08-19
+687,2023-08-19,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19058,megawatthours,2023-08-19
+688,2023-08-18,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2123,megawatthours,2023-08-18
+689,2023-08-18,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,26954,megawatthours,2023-08-18
+690,2023-08-18,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19412,megawatthours,2023-08-18
+691,2023-08-18,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,376,megawatthours,2023-08-18
+692,2023-08-17,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,37586,megawatthours,2023-08-17
+693,2023-08-17,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2074,megawatthours,2023-08-17
+694,2023-08-17,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,349,megawatthours,2023-08-17
+695,2023-08-17,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19693,megawatthours,2023-08-17
+696,2023-08-16,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1895,megawatthours,2023-08-16
+697,2023-08-16,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,42549,megawatthours,2023-08-16
+698,2023-08-16,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21092,megawatthours,2023-08-16
+699,2023-08-16,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,358,megawatthours,2023-08-16
+700,2023-08-15,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21372,megawatthours,2023-08-15
+701,2023-08-15,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1935,megawatthours,2023-08-15
+702,2023-08-15,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,42151,megawatthours,2023-08-15
+703,2023-08-15,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,358,megawatthours,2023-08-15
+704,2023-08-14,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20767,megawatthours,2023-08-14
+705,2023-08-14,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1702,megawatthours,2023-08-14
+706,2023-08-14,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,369,megawatthours,2023-08-14
+707,2023-08-14,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,39962,megawatthours,2023-08-14
+708,2023-08-13,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,359,megawatthours,2023-08-13
+709,2023-08-13,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19751,megawatthours,2023-08-13
+710,2023-08-13,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1833,megawatthours,2023-08-13
+711,2023-08-13,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,30790,megawatthours,2023-08-13
+712,2023-08-12,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24280,megawatthours,2023-08-12
+713,2023-08-12,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2079,megawatthours,2023-08-12
+714,2023-08-12,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19631,megawatthours,2023-08-12
+715,2023-08-12,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,368,megawatthours,2023-08-12
+716,2023-08-11,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1939,megawatthours,2023-08-11
+717,2023-08-11,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,361,megawatthours,2023-08-11
+718,2023-08-11,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24247,megawatthours,2023-08-11
+719,2023-08-11,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20417,megawatthours,2023-08-11
+720,2023-08-10,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24801,megawatthours,2023-08-10
+721,2023-08-10,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20486,megawatthours,2023-08-10
+722,2023-08-10,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,366,megawatthours,2023-08-10
+723,2023-08-10,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2164,megawatthours,2023-08-10
+724,2023-08-09,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24796,megawatthours,2023-08-09
+725,2023-08-09,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2226,megawatthours,2023-08-09
+726,2023-08-09,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20161,megawatthours,2023-08-09
+727,2023-08-09,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,370,megawatthours,2023-08-09
+728,2023-08-08,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,28607,megawatthours,2023-08-08
+729,2023-08-08,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,371,megawatthours,2023-08-08
+730,2023-08-08,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20823,megawatthours,2023-08-08
+731,2023-08-08,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2333,megawatthours,2023-08-08
+732,2023-08-07,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,373,megawatthours,2023-08-07
+733,2023-08-07,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29661,megawatthours,2023-08-07
+734,2023-08-07,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20997,megawatthours,2023-08-07
+735,2023-08-07,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2221,megawatthours,2023-08-07
+736,2023-08-06,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,26501,megawatthours,2023-08-06
+737,2023-08-06,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20172,megawatthours,2023-08-06
+738,2023-08-06,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2192,megawatthours,2023-08-06
+739,2023-08-06,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,368,megawatthours,2023-08-06
+740,2023-08-05,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,375,megawatthours,2023-08-05
+741,2023-08-05,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,31140,megawatthours,2023-08-05
+742,2023-08-05,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20611,megawatthours,2023-08-05
+743,2023-08-05,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2229,megawatthours,2023-08-05
+744,2023-08-04,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2246,megawatthours,2023-08-04
+745,2023-08-04,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,26804,megawatthours,2023-08-04
+746,2023-08-04,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,377,megawatthours,2023-08-04
+747,2023-08-04,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19883,megawatthours,2023-08-04
+748,2023-08-03,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2362,megawatthours,2023-08-03
+749,2023-08-03,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19843,megawatthours,2023-08-03
+750,2023-08-03,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,30013,megawatthours,2023-08-03
+751,2023-08-03,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,378,megawatthours,2023-08-03
+752,2023-08-02,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,35578,megawatthours,2023-08-02
+753,2023-08-02,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20042,megawatthours,2023-08-02
+754,2023-08-02,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,378,megawatthours,2023-08-02
+755,2023-08-02,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2338,megawatthours,2023-08-02
+756,2023-08-01,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,35282,megawatthours,2023-08-01
+757,2023-08-01,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20660,megawatthours,2023-08-01
+758,2023-08-01,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,373,megawatthours,2023-08-01
+759,2023-08-01,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2025,megawatthours,2023-08-01
+760,2023-07-31,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21444,megawatthours,2023-07-31
+761,2023-07-31,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2347,megawatthours,2023-07-31
+762,2023-07-31,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,351,megawatthours,2023-07-31
+763,2023-07-31,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,37147,megawatthours,2023-07-31
+764,2023-07-30,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,358,megawatthours,2023-07-30
+765,2023-07-30,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2470,megawatthours,2023-07-30
+766,2023-07-30,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27000,megawatthours,2023-07-30
+767,2023-07-30,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20751,megawatthours,2023-07-30
+768,2023-07-29,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,372,megawatthours,2023-07-29
+769,2023-07-29,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20777,megawatthours,2023-07-29
+770,2023-07-29,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2413,megawatthours,2023-07-29
+771,2023-07-29,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27595,megawatthours,2023-07-29
+772,2023-07-28,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,378,megawatthours,2023-07-28
+773,2023-07-28,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,34809,megawatthours,2023-07-28
+774,2023-07-28,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21758,megawatthours,2023-07-28
+775,2023-07-28,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2514,megawatthours,2023-07-28
+776,2023-07-27,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2445,megawatthours,2023-07-27
+777,2023-07-27,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,375,megawatthours,2023-07-27
+778,2023-07-27,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19664,megawatthours,2023-07-27
+779,2023-07-27,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,34947,megawatthours,2023-07-27
+780,2023-07-26,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,367,megawatthours,2023-07-26
+781,2023-07-26,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21905,megawatthours,2023-07-26
+782,2023-07-26,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2499,megawatthours,2023-07-26
+783,2023-07-26,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,36688,megawatthours,2023-07-26
+784,2023-07-25,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,370,megawatthours,2023-07-25
+785,2023-07-25,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2452,megawatthours,2023-07-25
+786,2023-07-25,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,36659,megawatthours,2023-07-25
+787,2023-07-25,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20567,megawatthours,2023-07-25
+788,2023-07-24,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,32418,megawatthours,2023-07-24
+789,2023-07-24,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,366,megawatthours,2023-07-24
+790,2023-07-24,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21153,megawatthours,2023-07-24
+791,2023-07-24,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2460,megawatthours,2023-07-24
+792,2023-07-23,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21050,megawatthours,2023-07-23
+793,2023-07-23,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1992,megawatthours,2023-07-23
+794,2023-07-23,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,39157,megawatthours,2023-07-23
+795,2023-07-23,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,362,megawatthours,2023-07-23
+796,2023-07-22,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21926,megawatthours,2023-07-22
+797,2023-07-22,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2399,megawatthours,2023-07-22
+798,2023-07-22,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,371,megawatthours,2023-07-22
+799,2023-07-22,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,36792,megawatthours,2023-07-22
+800,2023-07-21,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,36858,megawatthours,2023-07-21
+801,2023-07-21,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21429,megawatthours,2023-07-21
+802,2023-07-21,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,364,megawatthours,2023-07-21
+803,2023-07-21,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2431,megawatthours,2023-07-21
+804,2023-07-20,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,39022,megawatthours,2023-07-20
+805,2023-07-20,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,361,megawatthours,2023-07-20
+806,2023-07-20,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2430,megawatthours,2023-07-20
+807,2023-07-20,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21950,megawatthours,2023-07-20
+808,2023-07-19,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,358,megawatthours,2023-07-19
+809,2023-07-19,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,39375,megawatthours,2023-07-19
+810,2023-07-19,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2555,megawatthours,2023-07-19
+811,2023-07-19,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20929,megawatthours,2023-07-19
+812,2023-07-18,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20913,megawatthours,2023-07-18
+813,2023-07-18,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,326,megawatthours,2023-07-18
+814,2023-07-18,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,38803,megawatthours,2023-07-18
+815,2023-07-18,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2441,megawatthours,2023-07-18
+816,2023-07-17,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21531,megawatthours,2023-07-17
+817,2023-07-17,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,36346,megawatthours,2023-07-17
+818,2023-07-17,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2232,megawatthours,2023-07-17
+819,2023-07-17,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,310,megawatthours,2023-07-17
+820,2023-07-16,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,335,megawatthours,2023-07-16
+821,2023-07-16,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,23350,megawatthours,2023-07-16
+822,2023-07-16,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2154,megawatthours,2023-07-16
+823,2023-07-16,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,38634,megawatthours,2023-07-16
+824,2023-07-15,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,293,megawatthours,2023-07-15
+825,2023-07-15,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2427,megawatthours,2023-07-15
+826,2023-07-15,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,23067,megawatthours,2023-07-15
+827,2023-07-15,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,37277,megawatthours,2023-07-15
+828,2023-07-14,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,31636,megawatthours,2023-07-14
+829,2023-07-14,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,329,megawatthours,2023-07-14
+830,2023-07-14,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,23754,megawatthours,2023-07-14
+831,2023-07-14,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2501,megawatthours,2023-07-14
+832,2023-07-13,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,373,megawatthours,2023-07-13
+833,2023-07-13,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,26919,megawatthours,2023-07-13
+834,2023-07-13,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2528,megawatthours,2023-07-13
+835,2023-07-13,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,23142,megawatthours,2023-07-13
+836,2023-07-12,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,22175,megawatthours,2023-07-12
+837,2023-07-12,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2619,megawatthours,2023-07-12
+838,2023-07-12,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,376,megawatthours,2023-07-12
+839,2023-07-12,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,23414,megawatthours,2023-07-12
+840,2023-07-11,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22340,megawatthours,2023-07-11
+841,2023-07-11,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,374,megawatthours,2023-07-11
+842,2023-07-11,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2518,megawatthours,2023-07-11
+843,2023-07-11,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21866,megawatthours,2023-07-11
+844,2023-07-10,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2549,megawatthours,2023-07-10
+845,2023-07-10,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,367,megawatthours,2023-07-10
+846,2023-07-10,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21201,megawatthours,2023-07-10
+847,2023-07-10,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,19743,megawatthours,2023-07-10
+848,2023-07-09,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21416,megawatthours,2023-07-09
+849,2023-07-09,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2688,megawatthours,2023-07-09
+850,2023-07-09,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,368,megawatthours,2023-07-09
+851,2023-07-09,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20619,megawatthours,2023-07-09
+852,2023-07-08,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21730,megawatthours,2023-07-08
+853,2023-07-08,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,378,megawatthours,2023-07-08
+854,2023-07-08,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2601,megawatthours,2023-07-08
+855,2023-07-08,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21929,megawatthours,2023-07-08
+856,2023-07-07,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2550,megawatthours,2023-07-07
+857,2023-07-07,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,23826,megawatthours,2023-07-07
+858,2023-07-07,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24139,megawatthours,2023-07-07
+859,2023-07-07,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,378,megawatthours,2023-07-07
+860,2023-07-06,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,23043,megawatthours,2023-07-06
+861,2023-07-06,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2586,megawatthours,2023-07-06
+862,2023-07-06,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,358,megawatthours,2023-07-06
+863,2023-07-06,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25252,megawatthours,2023-07-06
+864,2023-07-05,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,22234,megawatthours,2023-07-05
+865,2023-07-05,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2480,megawatthours,2023-07-05
+866,2023-07-05,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,359,megawatthours,2023-07-05
+867,2023-07-05,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25252,megawatthours,2023-07-05
+868,2023-07-04,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2563,megawatthours,2023-07-04
+869,2023-07-04,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,22916,megawatthours,2023-07-04
+870,2023-07-04,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,23555,megawatthours,2023-07-04
+871,2023-07-04,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,360,megawatthours,2023-07-04
+872,2023-07-03,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2598,megawatthours,2023-07-03
+873,2023-07-03,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,24589,megawatthours,2023-07-03
+874,2023-07-03,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,367,megawatthours,2023-07-03
+875,2023-07-03,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,28374,megawatthours,2023-07-03
+876,2023-07-02,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,351,megawatthours,2023-07-02
+877,2023-07-02,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,24992,megawatthours,2023-07-02
+878,2023-07-02,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29538,megawatthours,2023-07-02
+879,2023-07-02,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2446,megawatthours,2023-07-02
+880,2023-07-01,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27228,megawatthours,2023-07-01
+881,2023-07-01,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,24659,megawatthours,2023-07-01
+882,2023-07-01,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,366,megawatthours,2023-07-01
+883,2023-07-01,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2497,megawatthours,2023-07-01
+884,2023-06-30,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,360,megawatthours,2023-06-30
+885,2023-06-30,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2494,megawatthours,2023-06-30
+886,2023-06-30,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,24630,megawatthours,2023-06-30
+887,2023-06-30,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29625,megawatthours,2023-06-30
+888,2023-06-29,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2454,megawatthours,2023-06-29
+889,2023-06-29,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,301,megawatthours,2023-06-29
+890,2023-06-29,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,26325,megawatthours,2023-06-29
+891,2023-06-29,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,24281,megawatthours,2023-06-29
+892,2023-06-28,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,24071,megawatthours,2023-06-28
+893,2023-06-28,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,283,megawatthours,2023-06-28
+894,2023-06-28,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25117,megawatthours,2023-06-28
+895,2023-06-28,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2988,megawatthours,2023-06-28
+896,2023-06-27,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,24153,megawatthours,2023-06-27
+897,2023-06-27,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,274,megawatthours,2023-06-27
+898,2023-06-27,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2415,megawatthours,2023-06-27
+899,2023-06-27,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,19801,megawatthours,2023-06-27
+900,2023-06-26,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2524,megawatthours,2023-06-26
+901,2023-06-26,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,326,megawatthours,2023-06-26
+902,2023-06-26,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,24137,megawatthours,2023-06-26
+903,2023-06-26,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,14421,megawatthours,2023-06-26
+904,2023-06-25,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2601,megawatthours,2023-06-25
+905,2023-06-25,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,14152,megawatthours,2023-06-25
+906,2023-06-25,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,23763,megawatthours,2023-06-25
+907,2023-06-25,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,341,megawatthours,2023-06-25
+908,2023-06-24,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2550,megawatthours,2023-06-24
+909,2023-06-24,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,339,megawatthours,2023-06-24
+910,2023-06-24,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,24354,megawatthours,2023-06-24
+911,2023-06-24,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,13346,megawatthours,2023-06-24
+912,2023-06-23,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,14247,megawatthours,2023-06-23
+913,2023-06-23,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,334,megawatthours,2023-06-23
+914,2023-06-23,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,23472,megawatthours,2023-06-23
+915,2023-06-23,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2663,megawatthours,2023-06-23
+916,2023-06-22,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,13898,megawatthours,2023-06-22
+917,2023-06-22,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2399,megawatthours,2023-06-22
+918,2023-06-22,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,25153,megawatthours,2023-06-22
+919,2023-06-22,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,332,megawatthours,2023-06-22
+920,2023-06-21,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2649,megawatthours,2023-06-21
+921,2023-06-21,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,10123,megawatthours,2023-06-21
+922,2023-06-21,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,25688,megawatthours,2023-06-21
+923,2023-06-21,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,334,megawatthours,2023-06-21
+924,2023-06-20,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,24814,megawatthours,2023-06-20
+925,2023-06-20,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,8016,megawatthours,2023-06-20
+926,2023-06-20,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2643,megawatthours,2023-06-20
+927,2023-06-20,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,332,megawatthours,2023-06-20
+928,2023-06-19,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,7268,megawatthours,2023-06-19
+929,2023-06-19,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,335,megawatthours,2023-06-19
+930,2023-06-19,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2659,megawatthours,2023-06-19
+931,2023-06-19,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,21947,megawatthours,2023-06-19
+932,2023-06-18,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,320,megawatthours,2023-06-18
+933,2023-06-18,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19018,megawatthours,2023-06-18
+934,2023-06-18,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,7326,megawatthours,2023-06-18
+935,2023-06-18,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2662,megawatthours,2023-06-18
+936,2023-06-17,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,324,megawatthours,2023-06-17
+937,2023-06-17,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,23957,megawatthours,2023-06-17
+938,2023-06-17,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,12032,megawatthours,2023-06-17
+939,2023-06-17,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2498,megawatthours,2023-06-17
+940,2023-06-16,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,26798,megawatthours,2023-06-16
+941,2023-06-16,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,12959,megawatthours,2023-06-16
+942,2023-06-16,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,320,megawatthours,2023-06-16
+943,2023-06-16,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2377,megawatthours,2023-06-16
+944,2023-06-15,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,7720,megawatthours,2023-06-15
+945,2023-06-15,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,26128,megawatthours,2023-06-15
+946,2023-06-15,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,319,megawatthours,2023-06-15
+947,2023-06-15,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2583,megawatthours,2023-06-15
+948,2023-06-14,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,25155,megawatthours,2023-06-14
+949,2023-06-14,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,9912,megawatthours,2023-06-14
+950,2023-06-14,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2331,megawatthours,2023-06-14
+951,2023-06-14,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,305,megawatthours,2023-06-14
+952,2023-06-13,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,26306,megawatthours,2023-06-13
+953,2023-06-13,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,7991,megawatthours,2023-06-13
+954,2023-06-13,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2569,megawatthours,2023-06-13
+955,2023-06-13,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,313,megawatthours,2023-06-13
+956,2023-06-12,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1933,megawatthours,2023-06-12
+957,2023-06-12,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,27506,megawatthours,2023-06-12
+958,2023-06-12,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,8176,megawatthours,2023-06-12
+959,2023-06-12,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,303,megawatthours,2023-06-12
+960,2023-06-11,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,7081,megawatthours,2023-06-11
+961,2023-06-11,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1980,megawatthours,2023-06-11
+962,2023-06-11,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,307,megawatthours,2023-06-11
+963,2023-06-11,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,27334,megawatthours,2023-06-11
+964,2023-06-10,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1820,megawatthours,2023-06-10
+965,2023-06-10,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,310,megawatthours,2023-06-10
+966,2023-06-10,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,27661,megawatthours,2023-06-10
+967,2023-06-10,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,7168,megawatthours,2023-06-10
+968,2023-06-09,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,235,megawatthours,2023-06-09
+969,2023-06-09,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,7563,megawatthours,2023-06-09
+970,2023-06-09,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,27849,megawatthours,2023-06-09
+971,2023-06-09,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2579,megawatthours,2023-06-09
+972,2023-06-08,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,28130,megawatthours,2023-06-08
+973,2023-06-08,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,246,megawatthours,2023-06-08
+974,2023-06-08,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2439,megawatthours,2023-06-08
+975,2023-06-08,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,8233,megawatthours,2023-06-08
+976,2023-06-07,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,28173,megawatthours,2023-06-07
+977,2023-06-07,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2038,megawatthours,2023-06-07
+978,2023-06-07,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,7851,megawatthours,2023-06-07
+979,2023-06-07,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,246,megawatthours,2023-06-07
+980,2023-06-06,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1476,megawatthours,2023-06-06
+981,2023-06-06,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,243,megawatthours,2023-06-06
+982,2023-06-06,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,8418,megawatthours,2023-06-06
+983,2023-06-06,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,28076,megawatthours,2023-06-06
+984,2023-06-05,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,28948,megawatthours,2023-06-05
+985,2023-06-05,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,9981,megawatthours,2023-06-05
+986,2023-06-05,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2104,megawatthours,2023-06-05
+987,2023-06-05,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,272,megawatthours,2023-06-05
+988,2023-06-04,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,29521,megawatthours,2023-06-04
+989,2023-06-04,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,319,megawatthours,2023-06-04
+990,2023-06-04,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,8255,megawatthours,2023-06-04
+991,2023-06-04,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2433,megawatthours,2023-06-04
+992,2023-06-03,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2470,megawatthours,2023-06-03
+993,2023-06-03,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,7231,megawatthours,2023-06-03
+994,2023-06-03,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,312,megawatthours,2023-06-03
+995,2023-06-03,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,30457,megawatthours,2023-06-03
+996,2023-06-02,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,29451,megawatthours,2023-06-02
+997,2023-06-02,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,325,megawatthours,2023-06-02
+998,2023-06-02,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,7412,megawatthours,2023-06-02
+999,2023-06-02,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2518,megawatthours,2023-06-02
+1000,2023-06-01,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,6649,megawatthours,2023-06-01
+1001,2023-06-01,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,324,megawatthours,2023-06-01
+1002,2023-06-01,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2563,megawatthours,2023-06-01
+1003,2023-06-01,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,29187,megawatthours,2023-06-01
+1004,2023-05-31,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,26289,megawatthours,2023-05-31
+1005,2023-05-31,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2419,megawatthours,2023-05-31
+1006,2023-05-31,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,313,megawatthours,2023-05-31
+1007,2023-05-31,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,6501,megawatthours,2023-05-31
+1008,2023-05-30,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2495,megawatthours,2023-05-30
+1009,2023-05-30,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,27342,megawatthours,2023-05-30
+1010,2023-05-30,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,6449,megawatthours,2023-05-30
+1011,2023-05-30,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,296,megawatthours,2023-05-30
+1012,2023-05-29,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,295,megawatthours,2023-05-29
+1013,2023-05-29,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,28258,megawatthours,2023-05-29
+1014,2023-05-29,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2460,megawatthours,2023-05-29
+1015,2023-05-29,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,6269,megawatthours,2023-05-29
+1016,2023-05-28,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1682,megawatthours,2023-05-28
+1017,2023-05-28,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,5961,megawatthours,2023-05-28
+1018,2023-05-28,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,25911,megawatthours,2023-05-28
+1019,2023-05-28,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,295,megawatthours,2023-05-28
+1020,2023-05-27,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,5881,megawatthours,2023-05-27
+1021,2023-05-27,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,313,megawatthours,2023-05-27
+1022,2023-05-27,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,23307,megawatthours,2023-05-27
+1023,2023-05-27,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2425,megawatthours,2023-05-27
+1024,2023-05-26,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,7840,megawatthours,2023-05-26
+1025,2023-05-26,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,27435,megawatthours,2023-05-26
+1026,2023-05-26,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2370,megawatthours,2023-05-26
+1027,2023-05-26,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,312,megawatthours,2023-05-26
+1028,2023-05-25,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,27734,megawatthours,2023-05-25
+1029,2023-05-25,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,12082,megawatthours,2023-05-25
+1030,2023-05-25,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2535,megawatthours,2023-05-25
+1031,2023-05-25,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,269,megawatthours,2023-05-25
+1032,2023-05-24,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,25208,megawatthours,2023-05-24
+1033,2023-05-24,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2670,megawatthours,2023-05-24
+1034,2023-05-24,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,247,megawatthours,2023-05-24
+1035,2023-05-24,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,10864,megawatthours,2023-05-24
+1036,2023-05-23,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,247,megawatthours,2023-05-23
+1037,2023-05-23,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,29791,megawatthours,2023-05-23
+1038,2023-05-23,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2476,megawatthours,2023-05-23
+1039,2023-05-23,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,12488,megawatthours,2023-05-23
+1040,2023-05-22,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2547,megawatthours,2023-05-22
+1041,2023-05-22,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,32065,megawatthours,2023-05-22
+1042,2023-05-22,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,237,megawatthours,2023-05-22
+1043,2023-05-22,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,13402,megawatthours,2023-05-22
+1044,2023-05-21,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,27328,megawatthours,2023-05-21
+1045,2023-05-21,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,216,megawatthours,2023-05-21
+1046,2023-05-21,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,10863,megawatthours,2023-05-21
+1047,2023-05-21,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2548,megawatthours,2023-05-21
+1048,2023-05-20,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,32307,megawatthours,2023-05-20
+1049,2023-05-20,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,10277,megawatthours,2023-05-20
+1050,2023-05-20,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,222,megawatthours,2023-05-20
+1051,2023-05-20,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2501,megawatthours,2023-05-20
+1052,2023-05-19,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2657,megawatthours,2023-05-19
+1053,2023-05-19,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,215,megawatthours,2023-05-19
+1054,2023-05-19,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,10158,megawatthours,2023-05-19
+1055,2023-05-19,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,32997,megawatthours,2023-05-19
+1056,2023-05-18,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,10840,megawatthours,2023-05-18
+1057,2023-05-18,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,225,megawatthours,2023-05-18
+1058,2023-05-18,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2662,megawatthours,2023-05-18
+1059,2023-05-18,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,29503,megawatthours,2023-05-18
+1060,2023-05-17,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,227,megawatthours,2023-05-17
+1061,2023-05-17,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2492,megawatthours,2023-05-17
+1062,2023-05-17,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,16276,megawatthours,2023-05-17
+1063,2023-05-17,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,32654,megawatthours,2023-05-17
+1064,2023-05-16,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,13033,megawatthours,2023-05-16
+1065,2023-05-16,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,235,megawatthours,2023-05-16
+1066,2023-05-16,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2470,megawatthours,2023-05-16
+1067,2023-05-16,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,32847,megawatthours,2023-05-16
+1068,2023-05-15,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,8185,megawatthours,2023-05-15
+1069,2023-05-15,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,33041,megawatthours,2023-05-15
+1070,2023-05-15,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2541,megawatthours,2023-05-15
+1071,2023-05-15,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,241,megawatthours,2023-05-15
+1072,2023-05-14,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,7050,megawatthours,2023-05-14
+1073,2023-05-14,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,283,megawatthours,2023-05-14
+1074,2023-05-14,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2406,megawatthours,2023-05-14
+1075,2023-05-14,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,27604,megawatthours,2023-05-14
+1076,2023-05-13,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,7226,megawatthours,2023-05-13
+1077,2023-05-13,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,300,megawatthours,2023-05-13
+1078,2023-05-13,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,26086,megawatthours,2023-05-13
+1079,2023-05-13,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2435,megawatthours,2023-05-13
+1080,2023-05-12,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,301,megawatthours,2023-05-12
+1081,2023-05-12,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,8371,megawatthours,2023-05-12
+1082,2023-05-12,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2478,megawatthours,2023-05-12
+1083,2023-05-12,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,31946,megawatthours,2023-05-12
+1084,2023-05-11,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2523,megawatthours,2023-05-11
+1085,2023-05-11,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,9549,megawatthours,2023-05-11
+1086,2023-05-11,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,26307,megawatthours,2023-05-11
+1087,2023-05-11,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,311,megawatthours,2023-05-11
+1088,2023-05-10,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,6503,megawatthours,2023-05-10
+1089,2023-05-10,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,23106,megawatthours,2023-05-10
+1090,2023-05-10,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,312,megawatthours,2023-05-10
+1091,2023-05-10,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2601,megawatthours,2023-05-10
+1092,2023-05-09,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,27499,megawatthours,2023-05-09
+1093,2023-05-09,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,316,megawatthours,2023-05-09
+1094,2023-05-09,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,6224,megawatthours,2023-05-09
+1095,2023-05-09,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2365,megawatthours,2023-05-09
+1096,2023-05-08,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1927,megawatthours,2023-05-08
+1097,2023-05-08,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,6419,megawatthours,2023-05-08
+1098,2023-05-08,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,31102,megawatthours,2023-05-08
+1099,2023-05-08,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,289,megawatthours,2023-05-08
+1100,2023-05-07,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,297,megawatthours,2023-05-07
+1101,2023-05-07,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2102,megawatthours,2023-05-07
+1102,2023-05-07,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,6187,megawatthours,2023-05-07
+1103,2023-05-07,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,24248,megawatthours,2023-05-07
+1104,2023-05-06,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,25675,megawatthours,2023-05-06
+1105,2023-05-06,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,305,megawatthours,2023-05-06
+1106,2023-05-06,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1404,megawatthours,2023-05-06
+1107,2023-05-06,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,6099,megawatthours,2023-05-06
+1108,2023-05-05,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,29215,megawatthours,2023-05-05
+1109,2023-05-05,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,6281,megawatthours,2023-05-05
+1110,2023-05-05,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,315,megawatthours,2023-05-05
+1111,2023-05-05,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1336,megawatthours,2023-05-05
+1112,2023-05-04,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,30894,megawatthours,2023-05-04
+1113,2023-05-04,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,310,megawatthours,2023-05-04
+1114,2023-05-04,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,6417,megawatthours,2023-05-04
+1115,2023-05-04,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,775,megawatthours,2023-05-04
+1116,2023-05-03,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,307,megawatthours,2023-05-03
+1117,2023-05-03,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,12222,megawatthours,2023-05-03
+1118,2023-05-03,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1294,megawatthours,2023-05-03
+1119,2023-05-03,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,28775,megawatthours,2023-05-03
+1120,2023-05-02,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1457,megawatthours,2023-05-02
+1121,2023-05-02,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,305,megawatthours,2023-05-02
+1122,2023-05-02,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,11758,megawatthours,2023-05-02
+1123,2023-05-02,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,30326,megawatthours,2023-05-02
+1124,2023-05-01,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,29384,megawatthours,2023-05-01
+1125,2023-05-01,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1191,megawatthours,2023-05-01
+1126,2023-05-01,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,310,megawatthours,2023-05-01
+1127,2023-05-01,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,11065,megawatthours,2023-05-01
+1128,2023-04-30,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,290,megawatthours,2023-04-30
+1129,2023-04-30,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,24397,megawatthours,2023-04-30
+1130,2023-04-30,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2671,megawatthours,2023-04-30
+1131,2023-04-30,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,8654,megawatthours,2023-04-30
+1132,2023-04-29,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2391,megawatthours,2023-04-29
+1133,2023-04-29,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,28082,megawatthours,2023-04-29
+1134,2023-04-29,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,13891,megawatthours,2023-04-29
+1135,2023-04-29,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,295,megawatthours,2023-04-29
+1136,2023-04-28,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2487,megawatthours,2023-04-28
+1137,2023-04-28,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,13928,megawatthours,2023-04-28
+1138,2023-04-28,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,296,megawatthours,2023-04-28
+1139,2023-04-28,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,27474,megawatthours,2023-04-28
+1140,2023-04-27,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,25236,megawatthours,2023-04-27
+1141,2023-04-27,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2486,megawatthours,2023-04-27
+1142,2023-04-27,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,12568,megawatthours,2023-04-27
+1143,2023-04-27,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,276,megawatthours,2023-04-27
+1144,2023-04-26,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,13338,megawatthours,2023-04-26
+1145,2023-04-26,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2456,megawatthours,2023-04-26
+1146,2023-04-26,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,26494,megawatthours,2023-04-26
+1147,2023-04-26,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,304,megawatthours,2023-04-26
+1148,2023-04-25,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2567,megawatthours,2023-04-25
+1149,2023-04-25,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,13484,megawatthours,2023-04-25
+1150,2023-04-25,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,307,megawatthours,2023-04-25
+1151,2023-04-25,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,25011,megawatthours,2023-04-25
+1152,2023-04-24,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,310,megawatthours,2023-04-24
+1153,2023-04-24,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,11285,megawatthours,2023-04-24
+1154,2023-04-24,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2455,megawatthours,2023-04-24
+1155,2023-04-24,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,23395,megawatthours,2023-04-24
+1156,2023-04-23,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,293,megawatthours,2023-04-23
+1157,2023-04-23,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17637,megawatthours,2023-04-23
+1158,2023-04-23,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,10303,megawatthours,2023-04-23
+1159,2023-04-23,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2449,megawatthours,2023-04-23
+1160,2023-04-22,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17046,megawatthours,2023-04-22
+1161,2023-04-22,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,308,megawatthours,2023-04-22
+1162,2023-04-22,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2314,megawatthours,2023-04-22
+1163,2023-04-22,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,8144,megawatthours,2023-04-22
+1164,2023-04-21,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2317,megawatthours,2023-04-21
+1165,2023-04-21,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16659,megawatthours,2023-04-21
+1166,2023-04-21,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,305,megawatthours,2023-04-21
+1167,2023-04-21,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,8006,megawatthours,2023-04-21
+1168,2023-04-20,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,15752,megawatthours,2023-04-20
+1169,2023-04-20,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,6898,megawatthours,2023-04-20
+1170,2023-04-20,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2544,megawatthours,2023-04-20
+1171,2023-04-20,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,306,megawatthours,2023-04-20
+1172,2023-04-19,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,4761,megawatthours,2023-04-19
+1173,2023-04-19,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2597,megawatthours,2023-04-19
+1174,2023-04-19,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,13032,megawatthours,2023-04-19
+1175,2023-04-19,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,307,megawatthours,2023-04-19
+1176,2023-04-18,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,274,megawatthours,2023-04-18
+1177,2023-04-18,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2418,megawatthours,2023-04-18
+1178,2023-04-18,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,4602,megawatthours,2023-04-18
+1179,2023-04-18,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14865,megawatthours,2023-04-18
+1180,2023-04-17,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,311,megawatthours,2023-04-17
+1181,2023-04-17,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1700,megawatthours,2023-04-17
+1182,2023-04-17,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,5353,megawatthours,2023-04-17
+1183,2023-04-17,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16056,megawatthours,2023-04-17
+1184,2023-04-16,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17729,megawatthours,2023-04-16
+1185,2023-04-16,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,4435,megawatthours,2023-04-16
+1186,2023-04-16,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2600,megawatthours,2023-04-16
+1187,2023-04-16,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,308,megawatthours,2023-04-16
+1188,2023-04-15,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2501,megawatthours,2023-04-15
+1189,2023-04-15,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,4912,megawatthours,2023-04-15
+1190,2023-04-15,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,304,megawatthours,2023-04-15
+1191,2023-04-15,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18149,megawatthours,2023-04-15
+1192,2023-04-14,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,4679,megawatthours,2023-04-14
+1193,2023-04-14,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,309,megawatthours,2023-04-14
+1194,2023-04-14,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19365,megawatthours,2023-04-14
+1195,2023-04-14,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2483,megawatthours,2023-04-14
+1196,2023-04-13,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,3604,megawatthours,2023-04-13
+1197,2023-04-13,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19921,megawatthours,2023-04-13
+1198,2023-04-13,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,306,megawatthours,2023-04-13
+1199,2023-04-13,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2606,megawatthours,2023-04-13
+1200,2023-04-12,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18805,megawatthours,2023-04-12
+1201,2023-04-12,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2211,megawatthours,2023-04-12
+1202,2023-04-12,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,313,megawatthours,2023-04-12
+1203,2023-04-12,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,3450,megawatthours,2023-04-12
+1204,2023-04-11,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2000,megawatthours,2023-04-11
+1205,2023-04-11,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18796,megawatthours,2023-04-11
+1206,2023-04-11,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,3297,megawatthours,2023-04-11
+1207,2023-04-11,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,310,megawatthours,2023-04-11
+1208,2023-04-10,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,6544,megawatthours,2023-04-10
+1209,2023-04-10,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2392,megawatthours,2023-04-10
+1210,2023-04-10,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,20896,megawatthours,2023-04-10
+1211,2023-04-10,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,310,megawatthours,2023-04-10
+1212,2023-04-09,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2430,megawatthours,2023-04-09
+1213,2023-04-09,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,6317,megawatthours,2023-04-09
+1214,2023-04-09,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,300,megawatthours,2023-04-09
+1215,2023-04-09,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19614,megawatthours,2023-04-09
+1216,2023-04-08,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19061,megawatthours,2023-04-08
+1217,2023-04-08,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,5897,megawatthours,2023-04-08
+1218,2023-04-08,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,309,megawatthours,2023-04-08
+1219,2023-04-08,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2286,megawatthours,2023-04-08
+1220,2023-04-07,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,311,megawatthours,2023-04-07
+1221,2023-04-07,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18791,megawatthours,2023-04-07
+1222,2023-04-07,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,7698,megawatthours,2023-04-07
+1223,2023-04-07,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,990,megawatthours,2023-04-07
+1224,2023-04-06,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19022,megawatthours,2023-04-06
+1225,2023-04-06,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,312,megawatthours,2023-04-06
+1226,2023-04-06,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1973,megawatthours,2023-04-06
+1227,2023-04-06,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20489,megawatthours,2023-04-06
+1228,2023-04-05,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19351,megawatthours,2023-04-05
+1229,2023-04-05,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2378,megawatthours,2023-04-05
+1230,2023-04-05,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,19465,megawatthours,2023-04-05
+1231,2023-04-05,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,301,megawatthours,2023-04-05
+1232,2023-04-04,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18671,megawatthours,2023-04-04
+1233,2023-04-04,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,18206,megawatthours,2023-04-04
+1234,2023-04-04,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,268,megawatthours,2023-04-04
+1235,2023-04-04,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2499,megawatthours,2023-04-04
+1236,2023-04-03,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18315,megawatthours,2023-04-03
+1237,2023-04-03,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,291,megawatthours,2023-04-03
+1238,2023-04-03,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2500,megawatthours,2023-04-03
+1239,2023-04-03,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,16535,megawatthours,2023-04-03
+1240,2023-04-02,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,13996,megawatthours,2023-04-02
+1241,2023-04-02,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16585,megawatthours,2023-04-02
+1242,2023-04-02,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2082,megawatthours,2023-04-02
+1243,2023-04-02,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,287,megawatthours,2023-04-02
+1244,2023-04-01,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,291,megawatthours,2023-04-01
+1245,2023-04-01,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,14437,megawatthours,2023-04-01
+1246,2023-04-01,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2336,megawatthours,2023-04-01
+1247,2023-04-01,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,13518,megawatthours,2023-04-01
+1248,2023-03-31,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14829,megawatthours,2023-03-31
+1249,2023-03-31,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2106,megawatthours,2023-03-31
+1250,2023-03-31,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,307,megawatthours,2023-03-31
+1251,2023-03-31,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,17553,megawatthours,2023-03-31
+1252,2023-03-30,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1785,megawatthours,2023-03-30
+1253,2023-03-30,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,311,megawatthours,2023-03-30
+1254,2023-03-30,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,18430,megawatthours,2023-03-30
+1255,2023-03-30,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,15980,megawatthours,2023-03-30
+1256,2023-03-29,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16451,megawatthours,2023-03-29
+1257,2023-03-29,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,305,megawatthours,2023-03-29
+1258,2023-03-29,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20817,megawatthours,2023-03-29
+1259,2023-03-29,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,688,megawatthours,2023-03-29
+1260,2023-03-28,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,306,megawatthours,2023-03-28
+1261,2023-03-28,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20710,megawatthours,2023-03-28
+1262,2023-03-28,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17081,megawatthours,2023-03-28
+1263,2023-03-28,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,194,megawatthours,2023-03-28
+1264,2023-03-27,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,16847,megawatthours,2023-03-27
+1265,2023-03-27,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,304,megawatthours,2023-03-27
+1266,2023-03-27,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14324,megawatthours,2023-03-27
+1267,2023-03-27,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2300,megawatthours,2023-03-27
+1268,2023-03-26,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,299,megawatthours,2023-03-26
+1269,2023-03-26,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14482,megawatthours,2023-03-26
+1270,2023-03-26,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2353,megawatthours,2023-03-26
+1271,2023-03-26,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,15778,megawatthours,2023-03-26
+1272,2023-03-25,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,309,megawatthours,2023-03-25
+1273,2023-03-25,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2395,megawatthours,2023-03-25
+1274,2023-03-25,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,13376,megawatthours,2023-03-25
+1275,2023-03-25,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,14754,megawatthours,2023-03-25
+1276,2023-03-24,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,304,megawatthours,2023-03-24
+1277,2023-03-24,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,16542,megawatthours,2023-03-24
+1278,2023-03-24,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2272,megawatthours,2023-03-24
+1279,2023-03-24,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14570,megawatthours,2023-03-24
+1280,2023-03-23,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1502,megawatthours,2023-03-23
+1281,2023-03-23,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16811,megawatthours,2023-03-23
+1282,2023-03-23,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,310,megawatthours,2023-03-23
+1283,2023-03-23,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,19656,megawatthours,2023-03-23
+1284,2023-03-22,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22495,megawatthours,2023-03-22
+1285,2023-03-22,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,992,megawatthours,2023-03-22
+1286,2023-03-22,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16573,megawatthours,2023-03-22
+1287,2023-03-22,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,311,megawatthours,2023-03-22
+1288,2023-03-21,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,318,megawatthours,2023-03-21
+1289,2023-03-21,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21432,megawatthours,2023-03-21
+1290,2023-03-21,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,503,megawatthours,2023-03-21
+1291,2023-03-21,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17655,megawatthours,2023-03-21
+1292,2023-03-20,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1731,megawatthours,2023-03-20
+1293,2023-03-20,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,365,megawatthours,2023-03-20
+1294,2023-03-20,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20875,megawatthours,2023-03-20
+1295,2023-03-20,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16898,megawatthours,2023-03-20
+1296,2023-03-19,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19643,megawatthours,2023-03-19
+1297,2023-03-19,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,367,megawatthours,2023-03-19
+1298,2023-03-19,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21009,megawatthours,2023-03-19
+1299,2023-03-19,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,411,megawatthours,2023-03-19
+1300,2023-03-18,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21337,megawatthours,2023-03-18
+1301,2023-03-18,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1324,megawatthours,2023-03-18
+1302,2023-03-18,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,373,megawatthours,2023-03-18
+1303,2023-03-18,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18136,megawatthours,2023-03-18
+1304,2023-03-17,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,19316,megawatthours,2023-03-17
+1305,2023-03-17,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22321,megawatthours,2023-03-17
+1306,2023-03-17,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1957,megawatthours,2023-03-17
+1307,2023-03-17,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,373,megawatthours,2023-03-17
+1308,2023-03-16,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,367,megawatthours,2023-03-16
+1309,2023-03-16,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,2051,megawatthours,2023-03-16
+1310,2023-03-16,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20630,megawatthours,2023-03-16
+1311,2023-03-16,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18089,megawatthours,2023-03-16
+1312,2023-03-15,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1587,megawatthours,2023-03-15
+1313,2023-03-15,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,370,megawatthours,2023-03-15
+1314,2023-03-15,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16590,megawatthours,2023-03-15
+1315,2023-03-15,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21032,megawatthours,2023-03-15
+1316,2023-03-14,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,622,megawatthours,2023-03-14
+1317,2023-03-14,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25760,megawatthours,2023-03-14
+1318,2023-03-14,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17051,megawatthours,2023-03-14
+1319,2023-03-14,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,373,megawatthours,2023-03-14
+1320,2023-03-13,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,22305,megawatthours,2023-03-13
+1321,2023-03-13,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1247,megawatthours,2023-03-13
+1322,2023-03-13,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17664,megawatthours,2023-03-13
+1323,2023-03-13,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,331,megawatthours,2023-03-13
+1324,2023-03-12,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,24536,megawatthours,2023-03-12
+1325,2023-03-12,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,288,megawatthours,2023-03-12
+1326,2023-03-12,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,589,megawatthours,2023-03-12
+1327,2023-03-12,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16759,megawatthours,2023-03-12
+1328,2023-03-11,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,642,megawatthours,2023-03-11
+1329,2023-03-11,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21685,megawatthours,2023-03-11
+1330,2023-03-11,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,18844,megawatthours,2023-03-11
+1331,2023-03-11,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,303,megawatthours,2023-03-11
+1332,2023-03-10,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,937,megawatthours,2023-03-10
+1333,2023-03-10,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,297,megawatthours,2023-03-10
+1334,2023-03-10,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,23191,megawatthours,2023-03-10
+1335,2023-03-10,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,17582,megawatthours,2023-03-10
+1336,2023-03-09,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,30661,megawatthours,2023-03-09
+1337,2023-03-09,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,16200,megawatthours,2023-03-09
+1338,2023-03-09,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,305,megawatthours,2023-03-09
+1339,2023-03-09,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,363,megawatthours,2023-03-09
+1340,2023-03-08,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27652,megawatthours,2023-03-08
+1341,2023-03-08,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1506,megawatthours,2023-03-08
+1342,2023-03-08,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14931,megawatthours,2023-03-08
+1343,2023-03-08,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,308,megawatthours,2023-03-08
+1344,2023-03-07,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,30180,megawatthours,2023-03-07
+1345,2023-03-07,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14099,megawatthours,2023-03-07
+1346,2023-03-07,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1652,megawatthours,2023-03-07
+1347,2023-03-07,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,302,megawatthours,2023-03-07
+1348,2023-03-06,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14606,megawatthours,2023-03-06
+1349,2023-03-06,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,30194,megawatthours,2023-03-06
+1350,2023-03-06,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1284,megawatthours,2023-03-06
+1351,2023-03-06,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,307,megawatthours,2023-03-06
+1352,2023-03-05,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,29294,megawatthours,2023-03-05
+1353,2023-03-05,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,304,megawatthours,2023-03-05
+1354,2023-03-05,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,12978,megawatthours,2023-03-05
+1355,2023-03-05,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1530,megawatthours,2023-03-05
+1356,2023-03-04,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,309,megawatthours,2023-03-04
+1357,2023-03-04,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,26202,megawatthours,2023-03-04
+1358,2023-03-04,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1008,megawatthours,2023-03-04
+1359,2023-03-04,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,13103,megawatthours,2023-03-04
+1360,2023-03-03,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1662,megawatthours,2023-03-03
+1361,2023-03-03,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,26627,megawatthours,2023-03-03
+1362,2023-03-03,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,308,megawatthours,2023-03-03
+1363,2023-03-03,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,13406,megawatthours,2023-03-03
+1364,2023-03-02,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,13464,megawatthours,2023-03-02
+1365,2023-03-02,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1838,megawatthours,2023-03-02
+1366,2023-03-02,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,309,megawatthours,2023-03-02
+1367,2023-03-02,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,27013,megawatthours,2023-03-02
+1368,2023-03-01,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1987,megawatthours,2023-03-01
+1369,2023-03-01,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,9716,megawatthours,2023-03-01
+1370,2023-03-01,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,32678,megawatthours,2023-03-01
+1371,2023-03-01,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,304,megawatthours,2023-03-01
+1372,2023-02-28,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14442,megawatthours,2023-02-28
+1373,2023-02-28,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,335,megawatthours,2023-02-28
+1374,2023-02-28,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,310,megawatthours,2023-02-28
+1375,2023-02-28,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25902,megawatthours,2023-02-28
+1376,2023-02-27,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,400,megawatthours,2023-02-27
+1377,2023-02-27,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20537,megawatthours,2023-02-27
+1378,2023-02-27,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,313,megawatthours,2023-02-27
+1379,2023-02-27,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14218,megawatthours,2023-02-27
+1380,2023-02-26,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,17763,megawatthours,2023-02-26
+1381,2023-02-26,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,401,megawatthours,2023-02-26
+1382,2023-02-26,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,307,megawatthours,2023-02-26
+1383,2023-02-26,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,13607,megawatthours,2023-02-26
+1384,2023-02-25,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,20326,megawatthours,2023-02-25
+1385,2023-02-25,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,495,megawatthours,2023-02-25
+1386,2023-02-25,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14979,megawatthours,2023-02-25
+1387,2023-02-25,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,312,megawatthours,2023-02-25
+1388,2023-02-24,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25267,megawatthours,2023-02-24
+1389,2023-02-24,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,15898,megawatthours,2023-02-24
+1390,2023-02-24,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,326,megawatthours,2023-02-24
+1391,2023-02-24,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,307,megawatthours,2023-02-24
+1392,2023-02-23,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,308,megawatthours,2023-02-23
+1393,2023-02-23,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,25525,megawatthours,2023-02-23
+1394,2023-02-23,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,905,megawatthours,2023-02-23
+1395,2023-02-23,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14504,megawatthours,2023-02-23
+1396,2023-02-22,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1578,megawatthours,2023-02-22
+1397,2023-02-22,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,302,megawatthours,2023-02-22
+1398,2023-02-22,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14879,megawatthours,2023-02-22
+1399,2023-02-22,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,18470,megawatthours,2023-02-22
+1400,2023-02-21,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1231,megawatthours,2023-02-21
+1401,2023-02-21,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,12935,megawatthours,2023-02-21
+1402,2023-02-21,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,13356,megawatthours,2023-02-21
+1403,2023-02-21,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,305,megawatthours,2023-02-21
+1404,2023-02-20,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,301,megawatthours,2023-02-20
+1405,2023-02-20,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,14024,megawatthours,2023-02-20
+1406,2023-02-20,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1571,megawatthours,2023-02-20
+1407,2023-02-20,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,15120,megawatthours,2023-02-20
+1408,2023-02-19,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1617,megawatthours,2023-02-19
+1409,2023-02-19,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,300,megawatthours,2023-02-19
+1410,2023-02-19,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,13009,megawatthours,2023-02-19
+1411,2023-02-19,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,12381,megawatthours,2023-02-19
+1412,2023-02-18,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1419,megawatthours,2023-02-18
+1413,2023-02-18,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,297,megawatthours,2023-02-18
+1414,2023-02-18,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,14114,megawatthours,2023-02-18
+1415,2023-02-18,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,12865,megawatthours,2023-02-18
+1416,2023-02-17,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1670,megawatthours,2023-02-17
+1417,2023-02-17,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,18867,megawatthours,2023-02-17
+1418,2023-02-17,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11028,megawatthours,2023-02-17
+1419,2023-02-17,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,301,megawatthours,2023-02-17
+1420,2023-02-16,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,21500,megawatthours,2023-02-16
+1421,2023-02-16,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1212,megawatthours,2023-02-16
+1422,2023-02-16,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,300,megawatthours,2023-02-16
+1423,2023-02-16,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11323,megawatthours,2023-02-16
+1424,2023-02-15,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,299,megawatthours,2023-02-15
+1425,2023-02-15,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,10858,megawatthours,2023-02-15
+1426,2023-02-15,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1713,megawatthours,2023-02-15
+1427,2023-02-15,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,18778,megawatthours,2023-02-15
+1428,2023-02-14,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,12151,megawatthours,2023-02-14
+1429,2023-02-14,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1465,megawatthours,2023-02-14
+1430,2023-02-14,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,19515,megawatthours,2023-02-14
+1431,2023-02-14,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,303,megawatthours,2023-02-14
+1432,2023-02-13,BANC,Balancing Authority of Northern California,NG,Natural gas,Pacific,Pacific,15742,megawatthours,2023-02-13
+1433,2023-02-13,BANC,Balancing Authority of Northern California,OTH,Other,Pacific,Pacific,332,megawatthours,2023-02-13
+1434,2023-02-13,BANC,Balancing Authority of Northern California,WAT,Hydro,Pacific,Pacific,11425,megawatthours,2023-02-13
+1435,2023-02-13,BANC,Balancing Authority of Northern California,SUN,Solar,Pacific,Pacific,1585,megawatthours,2023-02-13

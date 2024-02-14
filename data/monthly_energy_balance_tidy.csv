@@ -1,0 +1,49 @@
+,month,variable,value
+0,01 - January,Conductive energy (J),-814.4923415042196
+1,02 - February,Conductive energy (J),-698.477955216824
+2,03 - March,Conductive energy (J),-625.9787726791043
+3,04 - April,Conductive energy (J),-567.9072156443572
+4,05 - May,Conductive energy (J),-413.6658427518879
+5,06 - June,Conductive energy (J),-154.1769177259038
+6,07 - July,Conductive energy (J),0.361489491712814
+7,08 - August,Conductive energy (J),-111.22640639813098
+8,09 - September,Conductive energy (J),-221.36803907047718
+9,10 - October,Conductive energy (J),-358.3623752523583
+10,11 - November,Conductive energy (J),-764.1834717433898
+11,12 - December,Conductive energy (J),-900.674994877708
+12,01 - January,Air change energy (J),-550.4937272849078
+13,02 - February,Air change energy (J),-472.08268684704177
+14,03 - March,Air change energy (J),-423.08241614272686
+15,04 - April,Air change energy (J),-383.83339408039905
+16,05 - May,Air change energy (J),-279.5857493348323
+17,06 - June,Air change energy (J),-104.2040812114765
+18,07 - July,Air change energy (J),0.24432114033116725
+19,08 - August,Air change energy (J),-75.17497207835422
+20,09 - September,Air change energy (J),-149.61677442491552
+21,10 - October,Air change energy (J),-242.20760542328745
+22,11 - November,Air change energy (J),-516.4912992461333
+23,12 - December,Air change energy (J),-608.7422922686575
+24,01 - January,Radiant energy (J),404.2978070538973
+25,02 - February,Radiant energy (J),416.4363505679923
+26,03 - March,Radiant energy (J),319.00480497132514
+27,04 - April,Radiant energy (J),208.97364774581342
+28,05 - May,Radiant energy (J),148.61788463519161
+29,06 - June,Radiant energy (J),101.16069281672335
+30,07 - July,Radiant energy (J),132.45829293272087
+31,08 - August,Radiant energy (J),206.69943574080264
+32,09 - September,Radiant energy (J),260.5190422120903
+33,10 - October,Radiant energy (J),443.4904152854
+34,11 - November,Radiant energy (J),372.60271442052766
+35,12 - December,Radiant energy (J),324.5513995864821
+36,01 - January,HVAC energy (J),960.0
+37,02 - February,HVAC energy (J),756.0
+38,03 - March,HVAC energy (J),732.0
+39,04 - April,HVAC energy (J),744.0
+40,05 - May,HVAC energy (J),540.0
+41,06 - June,HVAC energy (J),198.0
+42,07 - July,HVAC energy (J),0.0
+43,08 - August,HVAC energy (J),0.0
+44,09 - September,HVAC energy (J),-36.0
+45,10 - October,HVAC energy (J),114.0
+46,11 - November,HVAC energy (J),906.0
+47,12 - December,HVAC energy (J),1182.0

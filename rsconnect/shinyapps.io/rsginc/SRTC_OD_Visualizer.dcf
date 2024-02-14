@@ -1,0 +1,12 @@
+name: SRTC_OD_Visualizer
+title: SRTC_OD_Visualizer
+username: rsginc
+account: rsginc
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10822247
+bundleId: 8204722
+url: https://rsginc.shinyapps.io/SRTC_OD_Visualizer/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

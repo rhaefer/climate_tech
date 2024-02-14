@@ -1,0 +1,1762 @@
+library(shiny)
+library(shinydashboard)
+library(tmap)
+library(leaflet)
+library(mapview)
+library(sf)
+library(tidyverse)
+library(DT)
+library(shinycssloaders)
+library(httr)
+library(pointdensityP)
+library(ggmap)
+library(maps)
+library(rmapshaper)
+library(RColorBrewer)
+library(tidycensus)
+library(cwi)
+library(totalcensus)
+library(zip)
+library(broom)
+library(shinyWidgets)
+library(scales)
+library(leaflet.extras)
+library(readr)
+library(readxl)
+library(plotly)
+library(mapboxapi)
+library(DataEditR)
+library(googleway)
+
+#########
+
+ mapboxapi::mb_access_token("pk.eyJ1IjoicmVpZGhhZWZlciIsImEiOiJja3p5ZnAxZHkwYXplMm9xZnl6NnZvNWc4In0.YOIBWcY-7y7nlgM3WiceFQ", install = TRUE, overwrite = T)
+ readRenviron("~/.Renviron")
+
+census_api_key("680398dff0a2f4c566f10c95888da7f25e55147b")
+
+dictionary<- read_excel("pathMet Data Dictionary Burlington.xlsx", sheet="Sidewalks (pathMet)")
+
+
+bur_streets<-st_read("gis/City_of_Burlington_Streets.gdb","DPW_Streets") %>% st_transform(crs=5646) %>%
+  rename(street_id=SEGMENTID)
+
+## missing sidewalks 
+
+missing<-st_read("Missing sidewalks final layer","MissingSidewalksFinalLayer") %>%
+  st_transform(crs=4326) 
+
+add_to_existing_dataset <- missing %>% filter(Notes %in% c("Sidewalk Route not shown (asphault path)","Sidewalk Route not shown")) %>%
+  st_transform(crs=5646) %>%
+  mutate(flag="Data Not Collected from PathVu") %>%
+  select(flag)
+
+delete_from_dataset <- missing %>% filter(Notes %in% c("DELETE")) %>%
+  select(Notes) %>%
+  rename(Delete=Notes)
+
+missing<- rowid_to_column(missing,"unique_id") %>%
+  filter(!Notes %in% c("DELETE","Sidewalk Route not shown (asphault path)","Sidewalk Route not shown")) %>%
+  st_transform(crs=5646) %>%
+  mutate(Notes = case_when(Notes=="Partial Sidewalk" ~ "Partial Sidewalk",
+                           TRUE ~ as.character("No Sidewalk")))
+
+## read in 'final_shapefile'
+# final<-st_read(".","Final")
+# street_length<- final %>% group_by(stret_d) %>% summarise()
+# street_length<-bind_cols(st_length(street_length), street_length) %>% data.frame() %>% select(-geometry)
+# 
+# ## block scores - group 1 and 2
+# block_scores<-final %>%  mutate(PR_90= case_when(barrier >=quantile(barrier, 0.90, names=F,na.rm=T) ~ 1,
+#                                    TRUE ~ as.numeric(0))) %>%
+#   group_by(stret_d) %>%
+#   summarise(worst_10_percentile=sum(PR_90), segments=n()) %>%
+#   mutate(percent=worst_10_percentile/segments) %>%
+#   ungroup() %>%
+#   left_join(street_length, by="stret_d") %>%
+#   mutate(miles=as.numeric(`...1` * 0.0001893939), target=0.5) %>%
+#   arrange(desc(percent)) %>%
+#   mutate(PR_lower_50= case_when(percent <=quantile(percent, 0.50, names=F,na.rm=T) ~ "Yes",
+#                           TRUE ~ as.character('No'))) %>%
+#   filter(PR_lower_50 =="No")
+# 
+# avg_street_activity <- final %>% data.frame() %>% group_by(stret_d) %>% summarise(activty=mean(activty,na.rm=T), barrier=mean(barrier,na.rm=T))
+# 
+# # group 1 priorities
+# group1<-block_scores %>% slice(1:10) %>%
+#   mutate(priority=dense_rank(desc(percent)), group="group 1")
+# 
+# # group 2 priorities
+# group2<-block_scores %>% slice(11:nrow(block_scores)) %>%
+#   left_join(avg_street_activity, by="stret_d") %>%
+#   arrange(desc(percent)) %>% 
+#   slice(1:23) %>%
+#   mutate(score=activty + barrier, priority=dense_rank(desc(score)),
+#          priority=priority +max(group1$priority), group="group 2")
+# 
+# block_priorities <- bind_rows(group1, group2)
+# 
+# ## segment scores - group 3 and 4
+# segment_scores<- bind_cols(final,st_length(final))  %>%
+#   mutate(miles=as.numeric(`...9` * 0.0001893939))
+# 
+# # group 3
+# group3 <- segment_scores %>%
+#   filter(!stret_d %in% unique(group1$stret_d)) %>%
+#   filter(!stret_d %in% unique(group2$stret_d)) %>%
+#   arrange(desc(barrier)) %>%
+#   slice(1:273) %>%
+#   mutate(priority=dense_rank(desc(barrier)))
+# 
+# # group 4
+# group4 <- segment_scores %>%
+#   filter(!stret_d %in% unique(group1$stret_d)) %>%
+#   filter(!stret_d %in% unique(group2$stret_d)) %>%
+#   filter(!id %in% unique(group3$id)) %>%
+#   mutate(score=barrier + activty) %>%
+#   arrange(desc(score)) %>%
+#   slice(1:272) %>%
+#   mutate(priority=dense_rank(desc(score)),
+#          priority=priority + max(group3$priority))
+# 
+# segment_priorities<- bind_rows(group3, group4)
+
+
+block<-get_decennial(geography = "block", state="VT", county = "Chittenden", year=2010, variables = "H001001", geometry = T) %>%
+  st_transform(crs=5646) 
+
+################# pathMet dataset and barrier scores ########################
+addresses<-read.csv("addresses.csv")
+
+sw<-st_read("Burlington_Sidewalks_final.gdb/Burlington_Sidewalks_CurbRamps_Final_9_3_21.gdb","Burlington_Sidewalks") %>%
+  mutate(score_test=runif(n=n(), min=1, max=100)) %>%
+  st_transform(crs=5646)
+sw<- bind_rows(sw,add_to_existing_dataset)
+sw_app <-sw %>% 
+  mutate(max_level_change=round(abs(max_level_change),2), 
+         cross_slope_percent=round(abs(cross_slope_percent),2), 
+         running_slope_percent=round(abs(running_slope_percent),2), 
+         heaving=case_when(max_level_change <= 0.5 & max_level_change > 0 ~ "Minor Heaving", # heaving distance weight
+                           max_level_change > 0.5 ~ "Major Heaving"),
+         cross_slope=case_when(between(cross_slope_percent,2,6) ~ "Cross Slope Low", # heaving distance weight
+                               between(cross_slope_percent,6.0000001,10)~ "Cross Slope Med", # heaving distance weight
+                               cross_slope_percent > 10 ~ "Cross Slope High"),
+         running_slope=case_when(between(running_slope_percent,5,8) ~ "Running Slope Low",# running slope weights
+                                           between(running_slope_percent,8.0000001,11) ~ "Running Slope Med", # running slope weights
+                                           running_slope_percent > 11 ~ "Running Slope High"),
+         roughness=case_when(max_roughness > quantile(sw$max_roughness, na.rm=T, 0.75, names=F) ~ "Roughness High (Q4)", 
+                             max_roughness > quantile(sw$max_roughness, na.rm=T, .5, names=F) & max_roughness <= quantile(sw$max_roughness, na.rm=T, .75, names=F) ~ "Roughness Med-High (Q3)", 
+                             max_roughness <= quantile(sw$max_roughness, na.rm=T, .5, names=F) & max_roughness > quantile(sw$max_roughness, na.rm=T, .25, names=F) ~ "Roughness Med-Low (Q2)",
+                             max_roughness <= quantile(sw$max_roughness, na.rm=T, .25, names=F) ~ "Roughness Low (Q1)"),
+                                cross_slope_weight=case_when(between(cross_slope_percent,2,6)~ 3,# cross slope weights
+                                                             between(cross_slope_percent,6,10)~ 5, # cross slope weights
+                                                             cross_slope_percent > 10~ 7), # cross slope weights
+                                running_slope_weight=case_when(between(running_slope_percent,5,8)~ 3,# running slope weights
+                                                               between(running_slope_percent,8,11)~ 5, # running slope weights
+                                                               running_slope_percent > 11~ 7), # running slope weights
+                                heaving_weight=case_when(max_level_change < 0.75 ~ 10, # heaving distance weight
+                                                         max_level_change > 0.751 ~ 20), # heaving distance weight
+                                heaving_value=case_when(between(number_level_changes,1,2) ~ .3, # heaving incidents value
+                                                        between(number_level_changes,3,5) ~ .6, # heaving incidents value
+                                                        number_level_changes > 6 ~ 1) ,  # heaving incidents value
+                                heaving_score=heaving_weight * heaving_value,
+                                rai_acceptable=case_when(segment_rai > 1 ~ "no",
+                                                         TRUE ~ as.character("yes")),
+         barrier_condition=case_when(heaving=="Major Heaving" & cross_slope == "Cross Slope High" & running_slope=="Running Slope High" & roughness=="Roughness High (Q4)" ~ "Very Poor",
+                                     heaving %in% c("Major Heaving") ~ "Poor",
+                                     heaving=="Minor Heaving" & (cross_slope %in% c("Cross Slope High","Cross Slope Med")  | cross_slope %in% c("Running Slope High","Running Slope Med") | cross_slope %in% c("Roughness High (Q4)","Roughness Med-High (Q3)")) ~ "Fair",
+                                     heaving=="Minor Heaving" & (cross_slope %in% c("Cross Slope Low","Cross Slope Med")  | cross_slope %in% c("Running Slope Low","Running Slope Med") | cross_slope %in% c("Roughness Low (Q1)","Roughness Med-Low (Q2)")) ~ "Good", 
+                                     (is.na(heaving) | heaving=="Minor Heaving") & (cross_slope == "Cross Slope Low" | is.na(cross_slope)) & (running_slope=="Running Slope Low" | is.na(running_slope)) ~ "Very Good",
+           TRUE ~ NA_character_)) #
+sw_street_id<-st_read("gis","sidewalk_w_street_id") %>% select(id, SEGMENT)
+sw_app <- rowid_to_column(sw_app,"id") %>%
+  left_join(addresses, by="id") %>%
+  left_join(sw_street_id %>% data.frame(), by="id") %>%
+  rename(street_id=SEGMENT)
+remove<-st_intersection(sw_app, st_transform(delete_from_dataset, crs=5646))
+sw_app <- sw_app %>% filter(!id %in% unique(remove$id))
+sw_point <- st_cast(st_centroid(sw_app %>% st_transform(crs=4326)), "POINT") 
+sw_point <- bind_cols(sw_point, data.frame(st_coordinates(sw_point)))#%>% as.("Spatial")
+
+############## activity layers ###########################
+
+######### minority pop ###########
+#var <- load_variables(year=2019, "acs5", cache = TRUE)
+# set_path_to_census("gis")
+# 
+# tract <- read_acs5year(
+#     year = 2019,
+#     state= "VT",
+#     areas= "Burlington city, VT",
+#     table_contents = "no vehicle = B08201_002",
+#     summary_level = "tract"
+#   ) %>%
+#     mutate(GEOID=str_sub(GEOID, 8))
+# 
+# write.csv(tract, "tract.csv")
+tract<-read_csv("tract.csv")
+
+rent<-read_csv("rent.csv")
+
+var<-load_variables(year=2018, "acs5",cache=T)
+
+elderly<-get_acs(geography="block group", state="VT", geometry=T, year=2019, summary_var = "B01001_001",
+              variables=c("B01001_020","B01001_021","B01001_022","B01001_023","B01001_024","	
+B01001_025")) %>% st_transform(crs=5646) %>%
+    filter(GEOID %in% unique(rent$GEOID)) %>%
+  group_by(summary_est, GEOID) %>% summarise(estimate=sum(estimate,na.rm=T)) %>%
+  mutate(percent_elderly=estimate/summary_est)
+elderly<-elderly %>%
+  mutate(PR_75= case_when(percent_elderly >=quantile(elderly$percent_elderly, 0.75, names=F) ~ "Yes",
+                          TRUE ~ as.character("No"))) %>% filter(PR_75=="Yes")
+
+# race<-get_acs(geography="block group", state="VT", geometry=T, year=2019, summary_var = "B02001_001",
+#                  variables=c("B02001_002")) %>% st_transform(crs=5646) %>%
+#   filter(GEOID %in% unique(rent$GEOID)) %>%
+#   group_by(summary_est, GEOID) %>% summarise(estimate=sum(estimate,na.rm=T)) %>%
+#   mutate(non_white=summary_est - estimate,
+#     percent_non_white=non_white/summary_est)
+# race<-race %>%
+#   mutate(PR_75= case_when(percent_non_white >=quantile(race$percent_non_white, 0.75, names=F) ~ "Yes",
+#                           TRUE ~ as.character("No")))
+# 
+# st_write(dsn="gis", obj=race %>% filter(PR_75 =="Yes"), layer="race", driver="ESRI Shapefile")
+
+race <- st_read(dsn="gis", "race")
+
+poverty<-get_acs(geography="tract", state="VT", geometry=T, year=2019, summary_var="B17020_001",
+              variables=c("B17020_002")) %>% st_transform(crs=5646) %>%
+  filter(GEOID %in% unique(tract$GEOID)) %>%
+  mutate(percent_pov_status=estimate/summary_est)
+poverty<-poverty %>%
+  mutate(PR_75= case_when(percent_pov_status >=quantile(poverty$percent_pov_status, 0.75, names=F) ~ "Yes",
+                          TRUE ~ as.character("No")))  %>% filter(PR_75=="Yes")
+
+no_veh<- get_acs(geography="tract", state="VT", geometry=T, year=2019, summary_var = "B08201_001",
+                 variables=c("B08201_002")) %>% st_transform(crs=5646) %>% 
+  filter(GEOID %in% unique(tract$GEOID)) %>%
+  mutate(percent_zero_veh=estimate/summary_est) 
+no_veh<-no_veh %>%
+  mutate(PR_75= case_when(percent_zero_veh >=quantile(no_veh$percent_zero_veh, 0.75, names=F) ~ "Yes",
+                          TRUE ~ as.character("No")))  %>% filter(PR_75=="Yes")
+# glimpse(no_veh)
+
+  
+############# trails #########################
+# url <- parse_url("https://maps.burlingtonvt.gov/arcgis/rest/services")
+# url$path <- paste(url$path, "BPRW_Conservation/MapServer/2/query", sep = "/")
+# url$query <- list(where = "1=1",
+#                   outFields = "*",returnGeometry = "true",f = "geojson")
+# request_trails <- build_url(url)
+# trails <- st_read(request_trails) %>%
+#   st_transform(crs=5646)
+# 
+# trails_b <-st_buffer(trails, 1320) %>%
+#   summarise()
+
+# st_write(dsn="gis", obj=trail_b, layer="trails_b", driver="ESRI Shapefile")
+
+# st_write(dsn="gis", obj=parks, "trails", driver="ESRI Shapefile")
+
+############# parcels #########################
+# url <- parse_url("https://maps.burlingtonvt.gov/arcgis/rest/services")
+# url$path <- paste(url$path, "Assessor/Parcels/MapServer/2/query", sep = "/")
+# url$query <- list(where = "1=1",
+#                   outFields = "*",returnGeometry = "true",f = "geojson")
+# request_parcels <- build_url(url)
+# parcels <- st_read(request_parcels) %>%
+#   st_transform(crs=5646)
+
+
+
+# st_write(dsn="gis", obj=trail_b, layer="trails_b", driver="ESRI Shapefile")
+
+# st_write(dsn="gis", obj=parks, "trails", driver="ESRI Shapefile")
+
+#################### parks #####################
+# url <- parse_url("https://maps.burlingtonvt.gov/arcgis/rest/services")
+# url$path <- paste(url$path, "BPRW_Grounds/MapServer/27/query", sep = "/")
+# url$query <- list(where = "1=1",
+#                   outFields = "*",returnGeometry = "true",f = "geojson")
+# request_parks <- build_url(url)
+# parks <- st_read(request_parks) %>%
+#   st_transform(crs=5646)
+# # #st_write(dsn="gis", obj=parks, "parks", driver="ESRI Shapefile")
+# #
+# parks_b <-st_buffer(parks, 1320) %>%
+#   summarise()
+# 
+# st_write(dsn="gis", obj=parks_b, layer="parks_buffer", driver="ESRI Shapefile")
+
+
+
+parks_b<-st_read(dsn="gis","Polygon_layer_1") %>% st_transform(crs=5646) %>% summarise()
+
+######### streets ############
+
+streets1<- st_read("gis/City_of_Burlington_Streets.gdb","DPW_Streets") %>%
+  st_transform(crs=5646) 
+
+#streets1 %>% mapview(zol="SEGMENTID", lwd=6)
+
+#streets<-st_read('gis','streets_updated') %>%
+  #st_transform(crs=4326) 
+
+###### Missing sidewalks ##########
+#tmap_mode("view")
+
+sw_buffer<-st_read("gis","sw_buffer_50ft") %>%
+  st_transform(crs=4326)
+
+###### employers ##############
+
+emp <- st_read("gis",'All_Businesses')%>% st_transform(crs=5646)  %>%
+ # st_transform(crs=4326) %>%
+  filter(EMPNUM >=100)
+
+#emp_b <-st_buffer(emp, 1320) %>% summarise()
+
+emp_b <- mb_isochrone(emp,
+                          profile = "walking",
+                          time = 5) %>% summarise()  %>% st_transform(crs=5646)
+
+#################
+
+# neighborhood activity
+senior_center <- st_read("gis",'Senior_Centers') %>%
+  st_transform(crs=5646)
+
+#senior_center_b <-st_buffer(senior_center, 1320) %>% summarise()
+
+senior_center_b <- mb_isochrone(senior_center,
+                          profile = "walking",
+                          time = 5) %>% summarise()  %>% st_transform(crs=5646)
+
+# city_prop <- st_read("gis","city_property") %>%
+#   st_transform(crs=5646)
+
+
+
+# neighborhood activity
+zoning <- st_read("gis",'VT_Data__Burlington_Zoning_') %>%
+  st_transform(crs=5646)
+
+neighb_act <- zoning %>% filter(DISTRICT %in% c("Neighborhood Activity Center","Neighborhood Activity Center - Riverside","Neigborhood Activity Center - Cambrian Rise"))
+
+neighb_act_b <-st_buffer(neighb_act, 1320) %>% summarise()
+
+# city_prop <- st_read("gis","city_property") %>%
+#   st_transform(crs=5646)
+
+## downtown activity
+downtown <- st_read("gis","Polygon_layer") %>%
+  st_transform(crs=5646)
+
+downtown_b<-st_buffer(downtown, 1320)
+
+walk_5min <- mb_isochrone(downtown,
+                          profile = "walking",
+                          time = 5) %>% summarise()
+
+
+## transit stops
+# bus_stops <- st_read("gis","VT_Data__PublicTransit_Stops_from_GTFS_DataFeeds") %>%
+#   st_transform(crs=5646)
+boundary <- zoning %>% summarise()
+# bus_stops  <- st_intersection(bus_stops, st_buffer(boundary,0))
+
+bus<-read_excel("Ridership Data for Burlington DPW_fixed.xlsx", sheet="Total Ridership By Stop Weekday") %>%
+  filter(!is.na(Latitude)) %>%
+  filter(Latitude != 0) %>%
+  st_as_sf(crs=4326, coords=c("Longitude","Latitude")) %>%
+  mutate(Boardings_PR=case_when(Boardings >= quantile(Boardings, na.rm=T, 0.9, names=F) ~ "high",TRUE~ as.character("low")),
+         Alightings_PR=case_when(Alightings >= quantile(Alightings, na.rm=T, 0.9, names=F) ~ "high", TRUE ~ as.character("low")),
+         priority=case_when(Boardings_PR=="high" | Alightings_PR=="high" ~ "yes", TRUE ~ as.character("No")))
+bus_new <- bus %>%
+  filter(priority=="yes")
+bus_new  <- st_intersection(bus_new, st_buffer(boundary %>% st_transform(crs=4326),0)) %>% st_transform(crs=5646)
+#bus_stops_b<-st_buffer(bus_new, 1320) %>% summarise()
+  
+
+bus_stops_b <- mb_isochrone(bus_new,
+                          profile = "walking",
+                          time = 5) %>% summarise()  %>% st_transform(crs=5646)
+
+
+# mapview(bus_stops_b) + mapview(bus_new)
+
+## schools
+schools <- bind_rows(
+  st_read("gis",'VT_School_Locations__K12') %>%
+    st_transform(crs=5646) %>% rename(name=ORGANIZATI) %>% select(name)%>% mutate(type="k-12"),
+  st_read("gis",'VT_School_Locations__PostSecondary') %>%
+    st_transform(crs=5646) %>% rename(name=SCHLNAME) %>% select(name) %>% mutate(type="college")
+)
+
+schools <- st_intersection(schools, st_buffer(boundary,0)) %>%
+  filter(name != "UNIVERSITY OF VERMONT")
+
+schools_b<-mb_isochrone(schools,
+                           profile = "walking",
+                           time = 5) %>% summarise() %>% st_transform(crs=5646)
+
+uv<-st_read(dsn="gis","Polygon_layer_2")  %>% select(geometry) %>% st_transform(crs=5646)
+schools_b <- bind_rows(schools_b, uv) %>% summarise()
+
+######### activity scores ##################
+
+schools_score <- st_intersection(sw_app, st_buffer(schools_b,0)) %>% mutate(category="schools") %>% data.frame() %>% select(id,category)
+write.csv(schools_score, "act_scores/schools_score.csv", row.names=F)
+
+schools_score<-read_csv("act_scores/schools_score.csv")
+
+senior_center_score <- st_intersection(sw_app, st_buffer(senior_center_b,0)) %>% mutate(category="senior center") %>% data.frame() %>% select(id,category)
+write.csv(senior_center_score, "act_scores/senior_center_score.csv", row.names=F)
+
+senior_center_score<-read_csv("act_scores/senior_center_score.csv")
+
+emp_score <- st_intersection(sw_app, st_buffer(emp_b,0)) %>% mutate(category="major employer")  %>% data.frame() %>% select(id,category)
+write.csv(emp_score, "act_scores/emp_score.csv", row.names=F)
+emp_score<-read_csv("act_scores/emp_score.csv")
+
+downtown_score <- st_intersection(sw_app, st_buffer(downtown_b,0)) %>% mutate(category="downtown")  %>% data.frame() %>% select(id,category)
+write.csv(downtown_score, "act_scores/downtown_score.csv", row.names=F)
+downtown_score<-read_csv("act_scores/downtown_score.csv")
+
+sf::sf_use_s2(FALSE)
+bus_stop_score <- st_intersection(sw_app, st_buffer(bus_stops_b,0)) %>% mutate(category="bus stops")  %>% data.frame() %>% select(id,category)
+
+write.csv(bus_stop_score, "act_scores/bus_stop_score.csv", row.names=F)
+
+bus_stop_score<-read_csv("act_scores/bus_stop_score.csv")
+
+nhood_score <- st_intersection(sw_app, st_buffer(neighb_act_b,0)) %>% mutate(category="neighborhood activity") %>% data.frame() %>% select(id,category)
+write.csv(nhood_score, "act_scores/nhood_score.csv", row.names=F)
+nhood_score<-read_csv("act_scores/nhood_score.csv")
+
+park_score <- st_intersection(sw_app, st_buffer(parks_b,0)) %>% mutate(category="parks")  %>% data.frame() %>% select(id,category)
+write.csv(park_score, "act_scores/park_score.csv", row.names=F)
+park_score<-read_csv("act_scores/park_score.csv")
+
+elderly_score <- st_intersection(sw_app, st_buffer(elderly,0)) %>% mutate(category="elderly")  %>% data.frame()%>% select(id,category)
+write.csv(elderly_score, "act_scores/elderly_score.csv", row.names=F)
+elderly_score<-read_csv("act_scores/elderly_score.csv")
+
+minority_score <- st_intersection(sw_app, st_buffer(race,0)) %>% mutate(category="minority")  %>% data.frame() %>% select(id,category)
+write.csv(minority_score, "act_scores/minority_score.csv", row.names=F)
+minority_score<-read_csv("act_scores/minority_score.csv")
+
+poverty_score <- st_intersection(sw_app, st_buffer(poverty %>% filter(PR_75=="Yes"  & GEOID != "50007003900"),0)) %>% mutate(category="poverty")  %>% data.frame()%>% select(id,category)
+write.csv(poverty_score, "act_scores/poverty_score.csv", row.names=F)
+poverty_score<-read_csv("act_scores/poverty_score.csv")
+
+no_veh_score <- st_intersection(sw_app, st_buffer(no_veh,0)) %>% mutate(category="no_vehicle")  %>% data.frame() %>% select(id,category)
+write.csv(no_veh_score, "act_scores/no_veh_score.csv", row.names=F)
+no_veh_score<-read_csv("act_scores/no_veh_score.csv")
+
+no_veh_miss_score <- st_intersection(missing, st_buffer(no_veh,0)) %>% mutate(category="no_vehicle")  %>% data.frame() %>% select(unique_id,category)
+write.csv(no_veh_miss_score, "act_scores/no_veh_miss_score.csv", row.names=F)
+no_veh_score_miss<-read_csv("act_scores/no_veh_miss_score.csv")
+
+downtown_score_miss <- st_intersection(missing, st_buffer(downtown_b,0)) %>% mutate(category="downtown")  %>% data.frame() %>% select(unique_id,category)
+write.csv(downtown_score_miss, "act_scores/downtown_score_miss.csv", row.names=F)
+downtown_score_miss<-read_csv("act_scores/downtown_score_miss.csv")
+
+school_score_miss <- st_intersection(missing, st_buffer(schools_b,0)) %>% mutate(category="school")  %>% data.frame() %>% select(unique_id,category)
+write.csv(school_score_miss, "act_scores/school_score_miss.csv", row.names=F)
+school_score_miss<-read_csv("act_scores/school_score_miss.csv")
+
+pov_score_miss <- st_intersection(missing, st_buffer(poverty,0)) %>% mutate(category="poverty")  %>% data.frame() %>% select(unique_id,category)
+write.csv(pov_score_miss, "act_scores/pov_score_miss.csv", row.names=F)
+pov_score_miss<-read_csv("act_scores/pov_score_miss.csv")
+
+senior_center_score_miss <- st_intersection(missing, st_buffer(senior_center_b,0)) %>% mutate(category="senior center")  %>% data.frame() %>% select(unique_id,category)
+write.csv(senior_center_score_miss, "act_scores/senior_center_score_miss.csv", row.names=F)
+senior_center_score_miss<-read_csv("act_scores/senior_center_score_miss.csv")
+
+min_score_miss <- st_intersection(missing, st_buffer(race,0)) %>% mutate(category="minority")  %>% data.frame() %>% select(unique_id,category)
+write.csv(min_score_miss, "act_scores/min_score_miss.csv", row.names=F)
+min_score_miss<-read_csv("act_scores/min_score_miss.csv")
+
+eld_score_miss <- st_intersection(missing, st_buffer(elderly,0)) %>% mutate(category="elderly")  %>% data.frame() %>% select(unique_id,category)
+write.csv(eld_score_miss, "act_scores/eld_score_miss.csv", row.names=F)
+eld_score_miss<-read_csv("act_scores/eld_score_miss.csv")
+
+park_score_miss <- st_intersection(missing, st_buffer(parks_b,0)) %>% mutate(category="park")  %>% data.frame() %>% select(unique_id,category)
+write.csv(park_score_miss, "act_scores/park_score_miss.csv", row.names=F)
+park_score_miss<-read_csv("act_scores/park_score_miss.csv")
+
+emp_score_miss <- st_intersection(missing, st_buffer(emp_b,0)) %>% mutate(category="emp")  %>% data.frame() %>% select(unique_id,category)
+write.csv(emp_score_miss, "act_scores/emp_score_miss.csv", row.names=F)
+emp_score_miss<-read_csv("act_scores/emp_score_miss.csv")
+
+nhood_score_miss <- st_intersection(missing, st_buffer(neighb_act_b,0)) %>% mutate(category="nhood")  %>% data.frame() %>% select(unique_id,category)
+write.csv(nhood_score_miss, "act_scores/nhood_score_miss.csv", row.names=F)
+nhood_score_miss<-read_csv("act_scores/nhood_score_miss.csv")
+
+bus_score_miss <- st_intersection(missing, st_buffer(bus_stops_b,0)) %>% mutate(category="bus")  %>% data.frame() %>% select(unique_id,category)
+write.csv(bus_score_miss, "act_scores/bus_score_miss.csv", row.names=F)
+bus_score_miss<-read_csv("act_scores/bus_score_miss.csv")
+
+####
+linebreaks <- function(n){HTML(strrep(br(), n))}
+
+
+csscode = HTML("
+.leaflet-popup-content {
+  width: 500px !important;
+}")
+
+
+####### app ########
+
+ui <- dashboardPage(skin="black", 
+  dashboardHeader(title="Burlington Sidewalk Prioritization",titleWidth = 450),
+  dashboardSidebar(disable=T),
+  dashboardBody(fluidRow(
+    tabBox(width=12,
+           tabPanel("Introduction",
+                    fluidRow(column(width=6,
+                      box(width=12,
+                                 h2(tags$b("Purpose")),
+                                 h4("This tool was developed by RSG for the city of Burlington, Vermont. The purpose of the tool is to explore the updated 2020 pathVU sidwalk data and implement the prioritization framework. Please be aware that this is an interactive tool with a large underlying spatial dataset. Therefore, at times the tool may take 15-20 seconds to load."),
+                                 h2(tags$b("User Instructions")),
+                                 h4('This tool has 3 components which can be accessed through the 3 tabs located at the top of the window. Each tab contains subsections that can be accessed through additional tabs near the top of the window. The `Sidewalk Prioritization` tab displays the prioritization framework for sidewalk repairs and new sidewalks. The `Analysis Tool` tab presents summary data and contains query features that allows the user to explore the data. Lastly, the `Documentation` contains the full written documentation and additional info on the framework GIS layers and data.'),
+                                 h3(tags$b("Sidewalk Prioritization")),
+                                 h4('This tab outlines the draft framework categories and prioritization weights. The user has the ability to enter different values into the category weights. To view the draft set of sidewalk scores, hit the "Submit Weights" button. Download the data as a shapefile or as csv by hitting the "Download" buttons. Scroll downward to see the full dataset with photos. Within this section, navigate to the `New Sidewalk Prioritization` to view the framework for prioritizing new sidewalk development'),
+                                 h3(tags$b("Analysis Tool")),
+                                 h4("This tab displays maps and plots that summarize the prioritization scores. Click the Render button to visualize the data as an interactive map. This section also contains two additional tabs that allow the user to query the dataset. The `Score Query` tab allows the user to filter the final score dataset based upon the highest scores. For example, the user can specify the top 10 sidewalks based upon the barrier score. The `Characteristic Query` tab allows the user to filter the raw pathVu dataset based upon sidewalk barrier characteristics. For example, the user can specify to only see sidwalks with Max Level Changes between 2 and 3 inches."),
+                                h3(tags$b("Documentation")),
+                                 h4("The Documentation tab provides additional information about the prioritization framework and methodology. The `Written Documentation` tab contains a PDF of the full framework documentation. This documentation can be downloaded and shared. The `Activity Layer` tab includes information on the GIS layers that comprise the activity layer scores."),
+                                 linebreaks(2),
+                                 img(src='RSG Logo.jpg',  height = 80, width = 250)
+                    )), column(width=6,  img(src='sidewalk_example3.png',  height = 600, width = 650)
+                    )
+                    )),
+           tabPanel("Sidewalk Prioritization",
+                    tabBox(width=12,
+                           tabPanel("Overview",
+                box(width=12, title="",
+                    fluidRow(
+                      column(width=2,
+                      box(width=12, title="Enter Weights & View Scores", status="primary", solidHeader = T,
+                                 actionButton("submit_weights","View Scores"))
+                      ), column(width=6,
+                        h4("To begin exploring the tool, click the 'View Scores' button to the left. This allows the user to begin visualizing and exploring the dataset. You must click this button before exploring the other sections of the tool. If desired, the user has the ability to enter different values into the category weights and then click the 'View Scores' button again to view the updated data. You can download the data as a shapefile or as csv by hitting the Download Data buttons. Scroll downward to see the full dataset with photos.")
+                      )
+                      ),
+    fluidRow(
+                    column(width=8,
+    column(width=6,
+           box(width=12, title="Barrier Score Weights",
+               column(width=6,
+    numericInput("min_heav","Minor Heaving", value=15, min=0, max=100),
+    numericInput("maj_heav","Major Heaving", value=30, min=0, max=100),
+    numericInput("cross_low","Cross Slope Low", value=8, min=0, max=100),
+    numericInput("cross_med","Cross Slope Medium", value=16, min=0, max=100),
+    numericInput("cross_high","Cross Slope High", value=24, min=0, max=100),
+    numericInput("run_low","Running Slope Low", value=8, min=0, max=100)
+               ), column(width=6,
+    numericInput("run_med","Running Slope Medium", value=13, min=0, max=100),
+    numericInput("run_high","Running Slope High", value=18, min=0, max=100),
+    numericInput("rough_low","Roughness Low", value=10, min=0, max=100),
+    numericInput("rough_med_low","Roughness Med-Low", value=18, min=0, max=100),
+    numericInput("rough_med_high","Roughness Med-High", value=20, min=0, max=100),
+    numericInput("rough_high","Roughness High", value=28, min=0, max=100),
+    valueBoxOutput("tot_barrier", width=12))
+           )
+    ),
+    column(width=6,
+           box(width=12, title="Activity Score Weights",
+          # numericInput("street_type","Street Types", value=10, min=0, max=100),
+          column(width=6,
+           numericInput("transit_stop","Transit Stops", value=6, min=0, max=100),
+           numericInput("school","Schools", value=12, min=0, max=100),
+           numericInput("nhood","Neighborhood Activity Center", value=10, min=0, max=100),
+           numericInput("park","Parks", value=6, min=0, max=100),
+           numericInput("emp","Employment Attractors", value=10, min=0, max=100),
+           numericInput("dt","Downtown", value=10, min=0, max=100)
+          ), column(width=6,
+          numericInput("senior","Senior Center", value=6, min=0, max=100),
+         #  numericInput("ped_att","Pedestrian Attractors", value=10, min=0, max=100),
+           numericInput("eld","Elderly Population (High)", value=10, min=0, max=100),
+          # numericInput("low_inc","Low Income Population", value=10, min=0, max=100),
+           numericInput("min","Minority Population (High)", value=10, min=0, max=100),
+         numericInput("pov","Low-Income Population (High)", value=10, min=0, max=100),
+         numericInput("veh","No Vehicle Households (High)", value=10, min=0, max=100),
+           valueBoxOutput("tot_activity", width=12))
+           )
+    )), 
+    column(width=4,
+           fluidRow(
+             column(width=4,
+                  box(width=12,title="Download Score Data",solidHeader = F, status="success",
+           column(width=12,downloadButton("download_full", "Shapefile of Scores")),
+           column(width=12,downloadButton("downloadData_final", "Spreadsheet of Scores")))
+           ),
+           column(width=4,
+                  box(width=12,title="Upload Updated Data",solidHeader = F, status="success",
+                      fileInput("upload_file", "Choose CSV File",
+                                multiple = TRUE,
+                                accept = c("text/csv",
+                                           "text/comma-separated-values,text/plain",
+                                           ".csv")))
+           ))
+    )),
+    fluidRow(box(width = 12,title="All Sidewalk Segments",dataTableOutput('sidewalk_dataset') %>% withSpinner()))
+    )),tabPanel("Street Prioritization",
+                fluidRow(
+                  column(width=6,box(width = 12,title="Street Priorities",dataTableOutput('block_priorities_table') %>% withSpinner(), status="success", solidHeader = T)),
+                  column(width=6,box(width = 12,title="Street Priorities Map",leafletOutput('block_pri_map') %>% withSpinner(), status="success", solidHeader = T))
+                )),
+      tabPanel("Segment Prioritization",
+               fluidRow(
+                 column(width=6,box(width = 12,title="Segment Priorities",dataTableOutput('segment_priorities_table') %>% withSpinner(), status="success", solidHeader = T)),
+                 column(width=6,box(width = 12,title="Segment Priorities Map",leafletOutput('segment_pri_map') %>% withSpinner(), status="success", solidHeader = T))
+               )),
+      tabPanel("New Sidewalk Prioritization",
+                fluidRow(
+                  column(width = 7,
+                         downloadButton("download_missing", "Download Shapefile"),
+                         leafletOutput("missing_map", height=700),
+                         dataTableOutput("new_sw_table_raw")
+                  ),column(width = 4,
+                           box(width=8, title="Final Scores - New Sidewalks",
+                               dataTableOutput("new_sw_table")
+                           )
+                  )
+                )
+    )
+    )),
+   tabPanel("Analysis Tool",
+            tabBox(width=12,
+              tabPanel("Summary Data",
+                       # fluidRow(box(width=2, title="View Scores", status="primary", solidHeader = T,
+                       #              actionButton("submit_weights","View Scores"))),
+            fluidRow(box(width=4,
+                         h4("This page displays summaries of the sidewalk data in a different formats, such as maps, plots, and tables.")
+                         )),
+                       fluidRow(
+            column(width=6,box(width=12,title="Barrier Score Summary",
+                                   dataTableOutput("barrier_stats"),
+                               leafletOutput("barrier_block_map", height=700) %>% withSpinner(),
+                             )),
+            column(width=6,
+            box(width=12,title="Activity Score Summary",
+                    dataTableOutput("activity_stats"),
+                leafletOutput("activity_block_map", height=700) %>% withSpinner()),
+                #actionButton("create_activity_map","Render Activity Map"),
+                #leafletOutput("density_map_activity", height=700)
+                )),
+            fluidRow(box(title="Scores by Block Group", width=12,
+                         leafletOutput("final_block_map", height=700) %>% withSpinner(),
+            )),
+            fluidRow(
+                  column(width=5,
+                         box(width=12, title="Density Map (Clusters of Higher Barrier Segments)",
+                  actionButton("create_barrier_map","Render Barrier Map"),
+                  downloadButton("download_barrier", "Download Shapefile"),
+                  leafletOutput("density_map", height=700)
+                  )), 
+                  column(width=3,
+                             box(width=12, title="Final Scores",
+                                 dataTableOutput("table_final_scores") %>% withSpinner(),
+                                 downloadButton("downloadData1", "Download Table as .csv")
+                             )),
+                  column(width=4,
+                         box(width=12, title="Full Category Scores",
+                             dataTableOutput("table_full_scores"),
+                             downloadButton("downloadData2", "Download Table as .csv"))
+                  )
+                ),
+            fluidRow(
+              column(width=6,
+                     box(width=12,title="Final Score Distribution",
+                         plotOutput("distribution", height="600px"))
+              ),
+              column(width=6,
+                     box(width=12,title="Barrier Score Distribution",
+                         plotOutput("bar_dist", height="600px"))
+              )
+            ),
+            fluidRow(
+              column(width=6,
+                     box(width=12,title="Max Level Change Distribution",
+                         plotOutput("level_dist", height="500px"))), 
+              column(width=6,
+                     box(width=12,title="Running Slope Distribution",
+                                    plotOutput("running_dist", height="500px"))
+                     )
+            ),
+            fluidRow(column(width=6,
+                            box(width=12,title="Cross Slope Distribution",
+                                plotOutput("cross_dist", height="500px"))
+            ),
+              column(width=6,
+                     box(width=12, title="Roughness Distribution",
+                         plotOutput("rough_dist", height="500px")
+                     ))
+)
+            ),tabPanel("Score Query",
+                       fluidRow(box(width=4,
+                                    h4("This page contains a query tool that allows the user to select the top number of sidewalks in different scoring categories. For example, the user can enter '20' and 'barrier' in the two query boxes to view the sidewalks that had the top 20 highest barrier scores.")
+                       )),
+                       fluidRow(
+                         column(width=2,numericInput("number_selected", "Select Top # Segments", 10)),
+                         column(width=2,selectInput("score_type", "Select Score Category", choices=c("final_score","barrier","activity","density")))
+                       ), fluidRow(
+                         leafletOutput("full_map_score", height=800) %>% withSpinner()),
+                       fluidRow(dataTableOutput("query_table"))
+            ),tabPanel("Characteristic Query",
+                       fluidRow(box(width=4,
+                                    h4("This page contains a query tool that allows the user to filter the pathMet sidewalk dataset based upon sidewalk barrier characteristics. For example, the user can use the slider widgets to filter for all sidwalks that have a max level change of 2-3 inches AND which have a cross slope of over 10%.")
+                       )),
+                       fluidRow(
+                         column(width=2,sliderInput("level_change", "Max Level Change (in)", max=max(sw_app$max_level_change, na.rm=T), min=0, value=c(2,9))
+                         ),column(width=2,sliderInput("running_slope", "Running Slope (%)", max=max(sw_app$running_slope_percent,na.rm=T), min=0, 
+                                                      value=c(min(sw_app$running_slope_percent,na.rm=T), max(sw_app$running_slope_percent,na.rm=T)))
+                         ),column(width=2,sliderInput("cross_slope", "Cross Slope (%)", max=max(sw_app$cross_slope_percent,na.rm=T), min=0, 
+                                                      value=c(min(sw_app$cross_slope_percent,na.rm=T),max(sw_app$cross_slope_percent,na.rm=T)))
+                         ),column(width=2,sliderInput("max_roughness", "Max Roughness", max=max(sw_app$max_roughness,na.rm=T), min=0, 
+                                                      value=c(min(sw_app$max_roughness,na.rm=T),max(sw_app$max_roughness,na.rm=T)))
+                         ),column(width=2,sliderInput("max_depression", "Max Depressions", max=max(sw_app$max_depression,na.rm=T), min=0, 
+                                                      value=c(min(sw_app$max_depression,na.rm=T),max(sw_app$max_depression,na.rm=T)))
+                         )), fluidRow(
+                           tags$style(type = "text/css", "#full_map_characteristic {height: calc(85vh) !important;}"),
+                           leafletOutput("full_map_characteristic", height=800) %>% withSpinner()),
+                       fluidRow(dataTableOutput("characteristic_table"))
+            ),tabPanel("Block Level Query",
+                       fluidRow(box(width=4,
+                                    h4("This page contains a query tool that allows the user to filter the sidewalk barrier score data at the street/block level. For example, the user can use the slider widget to filter for streets/blocks where over 50% of the segments within that street/block have a high barrier score. High barrier scores segments are classified as segments with barriers in the top 25% of all sidewalks.")
+                       )),
+                       fluidRow(box(width=4, title="",sliderInput("street_percent", "Percent of High Barrier Segments Per Block", max=100, min=0, 
+                                            value=c(75,100)))),
+                         fluidRow(box( width=12, title="",leafletOutput("street_scores_map", height=800) %>% withSpinner())),
+                         fluidRow(
+                         box(width=12, title="",
+                         dataTableOutput("street_scores")
+            )
+            )
+            ),tabPanel("Transit Stop Query",
+                       fluidRow(box(width=4,
+                                    h4("This page contains a query tool that allows the user to filter the sidewalks based upon their distance from transit stops. This query may take up to 1 min to run due to the large underlyig spatial dataset.")
+                       )),
+                       fluidRow(box(width=4, title="",
+                                   sliderInput("feet","Distance From Transit Stops (ft)", value=40, min=0, max=1320))),
+                       fluidRow(box( width=12, title="",leafletOutput("transit_map", height=800) %>% withSpinner())),
+                       fluidRow(
+                         box(width=12, title="",
+                             dataTableOutput("transit_table")
+                         )
+                       )
+            )
+            )), tabPanel("Documentation",
+                tabBox(width=12,
+                       tabPanel("Written Documentation",
+               box(width = 7, status = 'primary', solidHeader = TRUE, title = "Sidewalk Prioritization Handbook",
+                   tags$iframe(style="height:800px; width:100%", src="Task 8 - Sidewalk Prioritization Handbook.pdf")
+               )),tabPanel("Activity Layers GIS",
+                          fluidRow(box(width=12, title="",
+                              leafletOutput("main_map", height=800))),
+                          fluidRow(box(width=12, title ="Download Activity Shapefiles",
+                                       downloadButton("download_neighb_buff", "Neighborhood Activity Buffer"),
+                                       downloadButton("download_neighb", "Neighborhood Activity"),
+                                       downloadButton("download_school_buffer", "School Buffer"),
+                                       downloadButton("download_school", "Schools"),
+                                       downloadButton("download_downtown", "Downtown"),
+                                       downloadButton("download_downtown_buff", "Downtown Buffer"),
+                                       downloadButton("download_employer_buff", "Employers"),
+                                       downloadButton("download_employer", "Employer Buffer"),
+                                       downloadButton("download_bus", "Bus Stops"),
+                                       downloadButton("download_bus_buff", "Bus Stop Buffer"),
+                                       downloadButton("download_parks_buff", "Parks Buffer"),
+                                       downloadButton("download_elderly", "Elderly"),
+                                       downloadButton("download_race", "Race"),
+                                       downloadButton("download_poverty", "Poverty"),
+                                       downloadButton("download_no_veh", "No Vehicle Households"),
+                                       downloadButton("download_senior", "Senior Center")))
+               ),tabPanel("Raw pathMet Dataset",
+                              fluidRow(box(width=12, title="",downloadButton("download_pathmet", "Download pathMet Dataset"))),
+                              fluidRow(box(width=12, title="",dataTableOutput("pathmet")))
+               ),tabPanel("Dataset Definitions",
+                          box(width=12, title="",
+                              dataTableOutput("dictionary"))
+               )
+                   ))
+  )))
+)
+server <- function(input, output) {
+mapviewOptions(basemaps = c("CartoDB.DarkMatter", "OpenStreetMap.DE"))
+new_data <- reactive({
+    req(input$upload_file)
+    df <- read.csv(input$upload_file$datapath)
+  })
+output$new_data_table<-renderDataTable({
+  datatable(new_data())
+})
+transit_map_data <-reactive({
+    st_intersection(final_shapefile(), st_buffer(st_buffer(bus %>% st_transform(crs=5646), input$feet) %>% summarise(),0))
+  })
+transit_map<-reactive({
+  transit_map_data()  %>% mapview(lwd=10, zcol="barrier", label="id")
+})
+output$transit_map<-renderLeaflet({
+  transit_map()@map
+})
+output$transit_table<-renderDataTable({
+  datatable(sw_app %>% data.frame() %>% 
+              left_join(transit_map_data() %>% mutate(test="test") %>% data.frame(), by="id") %>%
+              filter(test=="test") %>% 
+              select(picture_file,priority,id,SITEADDRESS, activity, barrier, density, final_score,max_level_change,running_slope_percent,cross_slope_percent,max_roughness, flags ), 
+            escape = FALSE, rownames = F)
+})
+output$dictionary <- renderDataTable({
+  datatable(dictionary, rownames = F,options = list(pageLength = 20,dom = 'ftp'))
+})
+output$pathmet <- renderDataTable({
+  datatable(sw %>% select(-score_test), rownames = F,options = list(pageLength = 20,dom = 'ftp'))
+})
+  output$activity_stats <- renderDataTable({
+    datatable(rownames=F,
+      tidy(
+      summary(final_shapefile() %>% pull(activity))
+      ) %>% mutate(mean=round(mean,1)),options = list( dom = 't')
+      )
+  })
+  output$barrier_stats <- renderDataTable({
+    datatable(rownames=F,
+              tidy(
+                summary(final_shapefile() %>% pull(barrier))
+              )%>% mutate(mean=round(mean,1)),options = list( dom = 't')
+    )
+  })
+  missing_map_data <- reactive({
+    missing_data() %>%
+      mapview(zcol="score",lwd=5, label="unique_id")
+  })
+  missing_data <- reactive({
+    missing %>% left_join(
+      new_sw_score() %>% group_by(unique_id) %>% summarise(score=sum(score,na.rm=T)), 
+      by="unique_id") 
+  })
+  output$missing_map <- renderLeaflet({
+    missing_map_data()@map
+  })
+  output$main_map <- renderLeaflet({
+    leaflet() %>%
+      addTiles()%>%
+      addFullscreenControl() %>% 
+      addPolygons(data=neighb_act_b %>% st_transform(crs=4326), group="Neighborhood Activity Zone Buffer") %>% 
+      addPolygons(data=neighb_act%>% st_transform(crs=4326), group="Neighborhood Activity Zones") %>% 
+      addPolygons(data=schools_b%>% st_transform(crs=4326), group="Schools Buffer") %>%
+      addCircleMarkers(data=schools%>% st_transform(crs=4326), group="Schools") %>%
+      addPolygons(data=downtown_b%>% st_transform(crs=4326), group="Downtown Buffer") %>%
+      addPolygons(data=downtown%>% st_transform(crs=4326), group="Downtown") %>%
+      addPolygons(data=emp_b%>% st_transform(crs=4326), group="Major Employers Buffer") %>%
+      addCircleMarkers(data=emp%>% st_transform(crs=4326), group="Major Employers") %>%
+      addPolygons(data=bus_stops_b%>% st_transform(crs=4326), group="Bus Stops Buffer") %>%
+      addCircleMarkers(data=bus_new%>% st_transform(crs=4326), group="Bus Stops") %>%
+      addPolygons(data=senior_center_b%>% st_transform(crs=4326), group="Senior Center Buffer") %>%
+      addCircleMarkers(data=senior_center%>% st_transform(crs=4326), group="Senior Center") %>%
+      addPolygons(data=parks_b %>% st_transform(crs=4326), group="Parks Buffer") %>%
+      addPolygons(data=elderly %>% filter(PR_75=="Yes") %>% st_transform(crs=4326), group="High Elderly Population") %>%
+      addPolygons(data=race %>% filter(PR_75=="Yes") %>% st_transform(crs=4326), group="High Minority Population") %>%
+      addPolygons(data=poverty %>% filter(PR_75=="Yes" & GEOID != "50007003900") %>% st_transform(crs=4326), group="High Poverty Population") %>%
+      addPolygons(data=no_veh %>% filter(PR_75=="Yes") %>% st_transform(crs=4326), group="High No Vehicle Population") %>%
+      addLayersControl(
+        overlayGroups = c("Neighborhood Activity Zone Buffer","Neighborhood Activity Zones","Schools Buffer","Schools","Downtown Buffer","Downtown","Major Employers Buffer","Major Employers","Bus Stops Buffer","Bus Stops","Parks Buffer","High Elderly Population","High Minority Population","High Poverty Population","High No Vehicle Population","Senior Center Buffer","Senior Center"),
+        options = layersControlOptions(collapsed = FALSE)
+      ) %>% hideGroup(c("Neighborhood Activity Zones","Schools Buffer","Schools","Downtown Buffer","Downtown","Major Employers Buffer","Major Employers","Bus Stops Buffer","Bus Stops","Parks Buffer","High Elderly Population","High Minority Population","High Poverty Population","High No Vehicle Population","Senior Center Buffer","Senior Center"))
+  })
+  density_map <- reactive({
+    density() %>% mapview(zcol="count", lwd=0)
+  })
+query_data <- reactive({
+    final_shapefile() 
+  })
+full_map_data <- reactive({
+  final_shapefile() %>%
+    left_join(sw_app %>% data.frame() %>% select(id, picture_file,SITEADDRESS), by="id") %>% 
+    arrange(desc(input$score_type)) %>% slice(1:input$number_selected) %>% mapview(lwd=10, zcol="barrier", label="id")
+  })
+full_map_data1 <- reactive({
+  final_shapefile() %>%
+    left_join(sw_app %>% data.frame(), by="id") %>%
+    filter(
+    (max_level_change >= input$level_change[1]  & max_level_change <= input$level_change[2]) &
+      (running_slope_percent >= input$running_slope[1]  & running_slope_percent <= input$running_slope[2]) &
+      (cross_slope_percent >= input$cross_slope[1]  & cross_slope_percent <= input$cross_slope[2]) &
+      (max_roughness >= input$max_roughness[1]  & max_roughness <= input$max_roughness[2])
+  ) %>% select(id,SITEADDRESS,  max_level_change,running_slope_percent,cross_slope_percent,max_roughness,barrier,picture_file,picture_id ) %>% mapview(lwd=10, zcol="barrier", label="id")
+})
+output$full_map_characteristic <- renderLeaflet({
+  full_map_data1()@map 
+})
+output$full_map_score <- renderLeaflet({
+  full_map_data()@map 
+  })
+output$query_table<-renderDataTable({
+  datatable(sw_app %>% data.frame() %>% 
+              left_join(final_shapefile() %>% arrange(desc(input$score_type)) %>% slice(1:input$number_selected) %>% mutate(test="test") %>% data.frame(), by="id") %>%
+              filter(test=="test") %>% 
+              arrange(desc(input$score_type)) %>%
+              select(picture_file,priority,id,SITEADDRESS, activity, barrier, density, final_score,max_level_change,running_slope_percent,cross_slope_percent,max_roughness, flags ), 
+            escape = FALSE, rownames = F)
+})
+output$characteristic_table<-renderDataTable({
+  datatable(sw_app %>% data.frame() %>% 
+              filter(
+                    (max_level_change >= input$level_change[1]  & max_level_change <= input$level_change[2]) &
+                     (running_slope_percent >= input$running_slope[1]  & running_slope_percent <= input$running_slope[2]) &
+                     (cross_slope_percent >= input$cross_slope[1]  & cross_slope_percent <= input$cross_slope[2]) &
+                     (max_roughness >= input$max_roughness[1]  & max_roughness <= input$max_roughness[2]) &
+                      (max_depression >= input$max_depression [1]  & max_depression  <= input$max_depression [2])
+                      ) %>%
+              arrange(id) %>%
+              select(picture_file,id,SITEADDRESS, max_level_change,running_slope_percent,cross_slope_percent,max_roughness, flags ), 
+            escape = FALSE, rownames = F)
+})
+  final_block_map_data <-reactive({
+    block %>% select(GEOID) %>% left_join(final_block(), by="GEOID")%>%
+      filter(!is.na(final_score)) %>% mapview(zcol="final_score")
+  })
+  barrier_block_map_data <-reactive({
+    block %>% select(GEOID) %>% left_join(final_block(), by="GEOID")%>%
+      filter(!is.na(barrier_score)) %>% mapview(zcol="barrier_score")
+  })
+  activity_block_map_data <-reactive({
+    block %>% select(GEOID) %>% left_join(final_block(), by="GEOID")%>%
+      filter(!is.na(activity_score)) %>% mapview(zcol="activity_score")
+  })
+  observeEvent(input$create_barrier_map,{
+  output$density_map <- renderLeaflet({
+    density_map()@map 
+  })
+  })
+  output$final_block_map <- renderLeaflet({
+    final_block_map_data()@map 
+  })
+  output$barrier_block_map <- renderLeaflet({
+    barrier_block_map_data()@map 
+  })
+  output$activity_block_map <- renderLeaflet({
+    activity_block_map_data()@map 
+  })
+density <- reactive({
+  bind_cols(
+  pointdensity(sw_point %>%
+                        left_join(barrier_score(),by="id") %>%
+                        filter(score_adjusted_cat=="high") %>% data.frame(), 
+                      lat_col="X", lon_col="Y", grid_size = 0.1, radius=0.1) %>%
+    st_as_sf(coords=c("lat","lon"), crs=4326),
+      sw_point %>%
+        left_join(barrier_score(),by="id") %>%
+        filter(score_adjusted_cat=="high") %>% data.frame() %>% select(id)
+    )
+  })
+# density_map_activity<- reactive({
+#   density_act() %>% mapview(zcol="count", lwd=0)
+# })
+# observeEvent(input$create_activity_map,{
+# output$density_map_activity <- renderLeaflet({
+#   density_map_activity()@map 
+# })
+# })
+density_act <- reactive({
+  bind_cols(
+    pointdensity(sw_point %>%
+                   left_join(activity_score(),by="id") %>%
+                   filter(score_adjusted_cat=="high") %>% data.frame(), 
+                 lat_col="X", lon_col="Y", grid_size = 0.3, radius=0.3) %>%
+      st_as_sf(coords=c("lat","lon"), crs=4326),
+    sw_point %>%
+      left_join(activity_score(),by="id") %>%
+      filter(score_adjusted_cat=="high") %>% data.frame() %>% select(id)
+  )
+})
+data_final<-reactive({
+   sw_point %>% left_join(final_score(), by="id")
+})
+output$distribution<-renderPlot({
+  final_score() %>%  ggplot(aes(score_adjusted)) + geom_histogram() + theme_minimal() + ggtitle("Final Score Distribution")
+})
+output$bar_dist<-renderPlot({
+  final_shapefile() %>%  ggplot(aes(barrier)) + geom_histogram() + theme_minimal() + ggtitle("Barrier Score Distribution")
+})
+output$level_dist<-renderPlot({
+  sw_app %>% data.frame() %>% 
+       ggplot(aes(max_level_change)) + geom_histogram(binwidth = .1) + 
+         scale_y_sqrt() + theme_minimal()
+})
+output$running_dist<-renderPlot({
+  sw_app %>% data.frame() %>% 
+    ggplot(aes(running_slope_percent)) + geom_histogram(binwidth = 1)  + theme_minimal()
+})
+output$cross_dist<-renderPlot({
+  sw_app %>% data.frame() %>% 
+    ggplot(aes(cross_slope_percent)) + geom_histogram(binwidth = 1)  + theme_minimal()
+})
+output$rough_dist<-renderPlot({
+  sw_app %>% data.frame() %>% 
+    ggplot(aes(max_roughness)) + geom_histogram(binwidth = 10)+ 
+    scale_y_sqrt()  + theme_minimal()
+})
+map1 <-reactive({
+    data_final() %>%
+    mapview(zcol="score_adjusted", label="id", lwd=0, cex=3, col.regions=brewer.pal(5, "Spectral"))
+})
+score_data <- eventReactive(input$submit_weights,{
+bind_rows(
+  downtown_score %>% mutate(score=input$dt) %>% distinct(id,category, score) %>% mutate(category_group="activity"),
+  senior_center_score %>% mutate(score=input$senior) %>% distinct(id,category, score) %>% mutate(category_group="activity"),
+  elderly_score %>% mutate(score=input$eld) %>% distinct(id, category, score) %>% mutate(category_group="activity"),
+  minority_score %>% mutate(score=input$min) %>% distinct(id, category, score) %>% mutate(category_group="activity"),
+  poverty_score %>% mutate(score=input$pov) %>% distinct(id, category, score) %>% mutate(category_group="activity"),
+  no_veh_score %>% mutate(score=input$veh) %>% distinct(id, category, score) %>% mutate(category_group="activity"),
+  emp_score %>% mutate(score=input$emp) %>% distinct(id, category, score) %>% mutate(category_group="activity"),
+  schools_score %>% mutate(score=input$school) %>% distinct(id, category,score) %>% mutate(category_group="activity"),
+  nhood_score %>% mutate(score=input$nhood) %>% distinct(id, category,score) %>% mutate(category_group="activity"),
+  bus_stop_score %>% mutate(score=input$transit_stop) %>% distinct(id, category,score) %>% mutate(category_group="activity"),
+  park_score %>% mutate(score=input$park) %>% distinct(id, category,score) %>% mutate(category_group="activity"),
+  sw_app %>% data.frame() %>% select(id, heaving)  %>% mutate(score=case_when(heaving=="Minor Heaving" ~ input$min_heav,
+                                                                              heaving=="Major Heaving" ~ input$maj_heav)) %>% rename(category=heaving) %>% mutate(category_group="barrier"),
+  sw_app %>% data.frame() %>% select(id, cross_slope)  %>% mutate(score=case_when(cross_slope=="Cross Slope High" ~ input$cross_high,
+                                                                                  cross_slope=="Cross Slope Med" ~ input$cross_med,
+                                                                                  cross_slope=="Cross Slope Low" ~ input$cross_low)) %>% rename(category=cross_slope) %>% mutate(category_group="barrier"),
+  sw_app %>% data.frame() %>% select(id, running_slope)  %>% mutate(score=case_when(running_slope=="Running Slope High" ~ input$run_high,
+                                                                                  running_slope=="Running Slope Med" ~ input$run_med,
+                                                                                  running_slope=="Running Slope Low" ~ input$run_low)) %>% rename(category=running_slope) %>% mutate(category_group="barrier"),
+  sw_app %>% data.frame() %>% select(id, roughness)%>% filter(!is.na(roughness)) %>% 
+                                                                                mutate(score=case_when(roughness=="Roughness Low (Q1)" ~ input$rough_low,
+                                                                                                      roughness=="Roughness Med-Low (Q2)" ~ input$rough_med_low,
+                                                                                                      roughness=="Roughness Med-High (Q3)" ~ input$rough_med_high,
+                                                                                                      roughness=="Roughness High (Q4)" ~ input$rough_high)) %>% rename(category=roughness) %>% mutate(category_group="barrier")
+) %>% filter(!is.na(category)) %>% mutate(score_adjusted=case_when(category_group=="activity" ~ score,
+           category_group=="barrier" ~ score ))
+  })
+new_sw_score <- reactive({
+  bind_rows(
+    no_veh_score_miss %>% mutate(score=input$veh) %>% distinct(unique_id, score, category),
+    senior_center_score_miss %>% mutate(score=input$senior) %>% distinct(unique_id, score, category),
+    downtown_score_miss %>% mutate(score=input$dt) %>% distinct(unique_id, score, category),
+    school_score_miss %>% mutate(score=input$school) %>% distinct(unique_id, score, category) ,
+    pov_score_miss %>% mutate(score=input$pov) %>% distinct(unique_id, score, category)  ,
+    min_score_miss %>% mutate(score=input$min) %>% distinct(unique_id, score, category)  ,
+    eld_score_miss %>% mutate(score=input$eld) %>% distinct(unique_id, score, category) ,
+    park_score_miss %>% mutate(score=input$park) %>% distinct(unique_id, score, category) ,
+    emp_score_miss %>% mutate(score=input$emp) %>% distinct(unique_id, score, category) ,
+    nhood_score_miss %>% mutate(score=input$nhood) %>% distinct(unique_id, score, category) ,
+    bus_score_miss %>% mutate(score=input$transit_stop) %>% distinct(unique_id, score, category) ,
+    missing %>% data.frame() %>%
+      mutate(score=case_when(Notes == "No Sidewalk" ~ 10, 
+                                              TRUE ~ as.numeric(0)),
+             category="No Sidewalk on Street Score") %>%
+      select(unique_id, score, category)
+   ) 
+})
+output$new_sw_table_raw <- renderDataTable({
+  datatable(new_sw_score(), rownames = F,options = list(pageLength = 20,dom = 'ftp'))
+})
+output$new_sw_table<- renderDataTable({
+  datatable(new_sw_score() %>% group_by(unique_id) %>% summarise(score=sum(score,na.rm=T)) %>% mutate(priority=dense_rank(desc(score))) %>% arrange(priority), rownames = F,options = list(pageLength = 20,dom = 'ftp'),
+            colnames = c('Sidewalk ID', 'Prioritization Score', 'Priority Rank'))
+})
+#score_data <- eventReactive(input$submit_weights,{
+  #  bind_rows(score_data1(),
+#density_scores() %>% 
+#mutate(
+#category_group='density',category='density',
+                            #score_adjusted=score * input$route/100 ))
+#  })
+activity_score <- reactive({
+  score_data() %>%
+    filter(category_group=="activity") %>%
+    group_by(id) %>%
+    summarise(score_adjusted=sum(score_adjusted,na.rm=T),
+              score_raw=sum(score,na.rm=T)) %>%
+    mutate(score_adjusted_cat=case_when(score_adjusted > quantile(score_adjusted, na.rm=T, 0.75, names=F) ~ "high", 
+                                        score_adjusted > quantile(score_adjusted, na.rm=T, .5, names=F) & score_adjusted <= quantile(score_adjusted, na.rm=T, .75, names=F) ~ "med_high", 
+                                        score_adjusted <= quantile(score_adjusted, na.rm=T, .5, names=F) & score_adjusted > quantile(score_adjusted, na.rm=T, .25, names=F) ~ "med_low",
+                                        score_adjusted <= quantile(score_adjusted, na.rm=T, .25, names=F) ~ "low"))  
+})
+final_score <- reactive({
+  score_data() %>%
+    group_by(id) %>%
+    summarise(score_adjusted=sum(score_adjusted,na.rm=T),
+              score_raw=sum(score,na.rm=T))
+})
+barrier_score <- reactive({
+  score_data() %>%
+    filter(category_group=="barrier") %>%
+    group_by(id) %>%
+    summarise(score_adjusted=sum(score_adjusted,na.rm=T),
+              score_raw=sum(score,na.rm=T)) %>%
+    mutate(score_adjusted_cat=case_when(score_adjusted > quantile(score_adjusted, na.rm=T, 0.75, names=F) ~ "high", 
+                                        score_adjusted > quantile(score_adjusted, na.rm=T, .5, names=F) & score_adjusted <= quantile(score_adjusted, na.rm=T, .75, names=F) ~ "med_high", 
+                                        score_adjusted <= quantile(score_adjusted, na.rm=T, .5, names=F) & score_adjusted > quantile(score_adjusted, na.rm=T, .25, names=F) ~ "med_low",
+                                        score_adjusted <= quantile(score_adjusted, na.rm=T, .25, names=F) ~ "low")) 
+})
+output$table_full_scores <- renderDataTable({
+datatable(score_data() %>%
+            select(id, category, category_group, score, score_adjusted), rownames=F,options = list(dom = 'ftp'), 
+          colnames = c('Sidewalk ID', 'Category', 'Category Group', 'Unweighted Category Score', 'Final Category Score'))
+})
+# output$density_table <- renderDataTable({
+#   datatable(density() %>% data.frame() %>% select(id,count), rownames=F,options = list(dom = 'ftp'))
+# })
+# density_scores <- reactive({
+#   density() %>% data.frame() %>% select(id,count) %>%  
+#     mutate(score=case_when(count > quantile(count, na.rm=T, 0.75, names=F) ~ input$high_con, 
+#           count > quantile(count, na.rm=T, .5, names=F) & count <= quantile(count, na.rm=T, .75, names=F) ~ input$med_high_con, 
+#            count <= quantile(count, na.rm=T, .5, names=F) & count > quantile(count, na.rm=T, .25, names=F) ~ input$med_low_con,
+#             count <= quantile(count, na.rm=T, .25, names=F) ~ input$low_con)) %>%
+#     select(id, score)
+# })
+output$table_final_scores<- renderDataTable({
+  datatable(final_score(), rownames=F,options = list(dom = 'ftp'), 
+            colnames = c('Sidewalk ID', 'Final Score', 'Unweighted Score'))
+})
+tot_bar <-reactive({
+  round(sum(max(input$min_heav , input$maj_heav) , max(input$cross_low , input$cross_med , input$cross_high) , max(input$run_low , input$run_med , input$run_high) , max(input$rough_low , input$rough_med_low , input$rough_med_high , input$rough_high)),0)
+})
+output$tot_barrier<-renderValueBox({
+  valueBox(paste(tot_bar(), "%", sep=""), "Total Barrier Weight (Max) (%)", color="navy")
+})
+tot_act <-reactive({
+  sum(input$transit_stop , input$school , input$nhood , input$park, input$dt, input$emp, input$eld, input$min , input$pov , input$veh, input$senior)
+})
+output$tot_category<-renderValueBox({
+  valueBox(paste(tot_cat(), "%", sep=""),"Total Category Weight (%)", color="navy")
+})
+output$tot_activity<-renderValueBox({
+  valueBox(paste(tot_act(), "%", sep=""),"Total Activity Weight (%)", color="navy")
+})
+output$downloadData1 <- downloadHandler(
+  filename = function() {
+    paste("data", ".csv", sep = "")
+  },
+  content = function(file) {
+    write.csv(final_score(), file, row.names = FALSE)
+  }
+)
+output$downloadData2 <- downloadHandler(
+  filename = function() {
+    paste("data", ".csv", sep = "")
+  },
+  content = function(file) {
+    write.csv(score_data(), file, row.names = FALSE)
+  }
+)
+output$downloadData3<- downloadHandler(
+  filename = function() {
+    paste("data", ".csv", sep = "")
+  },
+  content = function(file) {
+    write.csv(barrier_score(), file, row.names = FALSE)
+  }
+)
+output$downloadData_final<- downloadHandler(
+  filename = function() {
+    paste("data", ".csv", sep = "")
+  },
+  content = function(file) {
+    write.csv(final_shapefile() %>% data.frame() %>% select(-Shape), file, row.names = FALSE)
+  }
+)
+output$sidewalk_dataset<-renderDataTable({
+  datatable(sw_app %>% data.frame() %>%
+              left_join(final_shapefile() %>% data.frame(), by="id") %>%
+              select(picture_file,id,SITEADDRESS, activity, barrier, final_score,max_level_change,running_slope_percent,cross_slope_percent,max_roughness, flags ) %>%
+              arrange(desc(final_score)), 
+            escape = FALSE, rownames = F)
+})
+output$download_missing <- downloadHandler(
+  filename <- function() {
+    "Missing.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "Missing")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(missing_data(), dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }  
+)
+output$download_full <- downloadHandler(
+  filename <- function() {
+    "Final.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "Final")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(final_shapefile(), dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_pathmet <- downloadHandler(
+  filename <- function() {
+    "pathMet.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "pathMet")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(sw %>% select(-score_test), dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+final_shapefile<-reactive({
+  if(!is.null(input$upload_file)){
+  sw_app %>% select(id, street_id) %>% left_join(new_data(), by="id") %>%
+    mutate(priority=rank(desc(final_score),ties.method = "min")) %>%
+      arrange(priority)
+  } else{  
+  sw_app %>% select(id, street_id) %>%
+    left_join(
+      score_data() %>%
+        group_by(id, category_group) %>%
+        summarise(final_score=sum(score_adjusted, na.rm=T),
+                  raw_score=sum(score, na.rm=T)) %>%
+        pivot_wider(names_from = category_group, id_cols = id, values_from = final_score) %>%
+        rowwise() %>%
+        mutate(final_score=sum(activity, barrier,na.rm=T)),by="id") %>%
+      mutate(priority=rank(desc(final_score),ties.method = "min")) %>%
+    arrange(priority)
+  }
+})
+street_scores_map_data <-reactive({
+  streets1 %>% left_join(final_scores_street(), by=c("SEGMENTID"="street_id")) %>% filter(!is.na(percent)) %>%
+    select(ASSETID,SEGMENTID,count, total_segments, percent) %>% mapview(lwd=5, zcol='percent', label="SEGMENTID")
+})
+output$street_scores_map <- renderLeaflet({
+  street_scores_map_data()@map
+})
+final_scores_street<-reactive({
+  sw_app %>% select(street_id, id) %>%
+    left_join(
+      score_data() %>%
+        group_by(id, category_group) %>%
+        summarise(final_score=sum(score_adjusted, na.rm=T),
+                  raw_score=sum(score, na.rm=T)) %>%
+        pivot_wider(names_from = category_group, id_cols = id, values_from = final_score) %>%
+        rowwise() %>%
+        mutate(final_score=sum(activity, barrier,na.rm=T)),by="id") %>%
+        mutate(barrier_PR=case_when(barrier > quantile(barrier, na.rm=T, 0.75, names=F) ~ "75-100", 
+                                        barrier > quantile(barrier, na.rm=T, .5, names=F) & barrier <= quantile(barrier, na.rm=T, .75, names=F) ~ "50-75", 
+                                        barrier <= quantile(barrier, na.rm=T, .5, names=F) & barrier > quantile(barrier, na.rm=T, .25, names=F) ~ "25-50",
+                                        barrier <= quantile(barrier, na.rm=T, .25, names=F) ~ "0-25"))%>%
+    data.frame() %>%
+    group_by(street_id, barrier_PR) %>%
+    summarise(count=n()) %>%
+    group_by(street_id) %>%
+    mutate(total_segments=sum(count,na.rm=T)) %>%
+    filter(barrier_PR=="75-100") %>%
+    mutate(percent=round(100*(count/total_segments),2)) %>%
+    filter(between(percent, input$street_percent[1],input$street_percent[2]))
+})
+output$street_scores <- renderDataTable({
+    datatable(sw_app %>% data.frame() %>% select(id, street_id, picture_file) %>%
+                left_join(final_scores_street(), by="street_id") %>%
+                filter(!is.na(percent))%>% 
+                select(-c(barrier_PR))
+              , colnames = c('Sidewalk ID', 'Street ID', 'Photo', "# of High Barrier Segments","Total # of Segments", "Percent of High Barrier Segments"),
+              escape = FALSE, rownames = F)
+})
+final_block <- reactive({
+  st_join(final_shapefile(), st_buffer(block %>% select(GEOID),0)) %>% data.frame() %>%
+    group_by(GEOID) %>%
+    summarise(activity_score=round(mean(activity,na.rm=T),2),
+              barrier_score=round(mean(barrier,na.rm=T),2),
+              #density_score=round(mean(density,na.rm=T),2),
+              final_score=round(mean(final_score,na.rm=T),2))
+})
+output$download_neighb_buff <- downloadHandler(
+  filename <- function() {
+    "neighb_buff.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "neighb_buff")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(neighb_act_b, dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_neighb <- downloadHandler(
+  filename <- function() {
+    "neighb.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "neighb")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(neighb_act, dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_school_buffer <- downloadHandler(
+  filename <- function() {
+    "school_buffer.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "school_buffer")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(schools_b, dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_school<- downloadHandler(
+  filename <- function() {
+    "school.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "school")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(schools, dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_downtown<- downloadHandler(
+  filename <- function() {
+    "downtown.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "downtown")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(downtown, dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_downtown_buff<- downloadHandler(
+  filename <- function() {
+    "downtown_buff.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "downtown_buff")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(downtown_b, dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_employer_buff<- downloadHandler(
+  filename <- function() {
+    "employer_buff.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "employer_buff")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(emp_b, dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_employer<- downloadHandler(
+  filename <- function() {
+    "employer.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "employer")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(emp, dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_bus<- downloadHandler(
+  filename <- function() {
+    "bus.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "bus")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(bus_new, dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_bus_buff<- downloadHandler(
+  filename <- function() {
+    "bus_buff.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "bus_buff")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(bus_stops_b, dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_parks_buff<- downloadHandler(
+  filename <- function() {
+    "parks_buff.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "parks_buff")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(parks_b, dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_elderly<- downloadHandler(
+  filename <- function() {
+    "elderly.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "elderly")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(elderly %>% filter(PR_75=="Yes"), dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_race<- downloadHandler(
+  filename <- function() {
+    "race.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "race")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(race %>% filter(PR_75=="Yes"), dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_poverty<- downloadHandler(
+  filename <- function() {
+    "poverty.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "poverty")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(poverty %>% filter(PR_75=="Yes" & GEOID !="50007003900") , dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_no_veh<- downloadHandler(
+  filename <- function() {
+    "no_veh.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "no_veh")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(no_veh %>% filter(PR_75=="Yes") , dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+output$download_senior<- downloadHandler(
+  filename <- function() {
+    "senior.zip"
+  },
+  content = function(file) {
+    withProgress(message = "Exporting Data", {
+      incProgress(0.5)
+      tmp.path <- dirname(file)
+      name.base <- file.path(tmp.path, "senior")
+      name.glob <- paste0(name.base, ".*")
+      name.shp  <- paste0(name.base, ".shp")
+      name.zip  <- paste0(name.base, ".zip")
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      sf::st_write(senior_center_b , dsn = name.shp, ## layer = "shpExport",
+                   driver = "ESRI Shapefile", quiet = TRUE)
+      zip::zipr(zipfile = name.zip, files = Sys.glob(name.glob))
+      req(file.copy(name.zip, file))
+      if (length(Sys.glob(name.glob)) > 0) file.remove(Sys.glob(name.glob))
+      incProgress(0.5)
+    })
+  }
+)
+street_length<- reactive({ 
+  final_shapefile() %>% group_by(street_id) %>% summarise()
+})
+street_length1<-reactive({
+  bind_cols(data.frame(miles=st_length(street_length())), street_length()) %>% data.frame()
+})
+block_scores<-reactive({
+  final_shapefile() %>%  mutate(PR_90= case_when(barrier >=quantile(barrier, 0.90, names=F,na.rm=T) ~ 1,
+                                                   TRUE ~ as.numeric(0))) %>%
+    group_by(street_id) %>%
+    summarise(worst_10_percentile=sum(PR_90), segments=n()) %>%
+    mutate(percent=worst_10_percentile/segments) %>%
+    ungroup() %>%
+    left_join(street_length1(), by="street_id") %>%
+    mutate(miles=as.numeric(miles * 0.0001893939), target=0.5) %>%
+    arrange(desc(percent)) %>%
+    mutate(PR_lower_50= case_when(percent <=quantile(percent, 0.50, names=F,na.rm=T) ~ "Yes",
+                                  TRUE ~ as.character('No'))) %>%
+    filter(PR_lower_50 =="No")
+  })
+avg_street_activity <- reactive({ 
+    final_shapefile() %>% data.frame() %>% group_by(street_id) %>% summarise(activity=mean(activity,na.rm=T), barrier=mean(barrier,na.rm=T))
+  })
+  # group 1 priorities
+group1<-reactive({
+    block_scores() %>% slice(1:10) %>%
+    mutate(priority=dense_rank(desc(percent)), group="Group 1")
+  })
+  # group 2 priorities
+group2<-reactive({
+    block_scores() %>% slice(11:nrow(block_scores())) %>%
+    left_join(avg_street_activity(), by="street_id") %>%
+    arrange(desc(percent)) %>% 
+    slice(1:23) %>%
+    mutate(activity=round(activity,0),
+      score=activity + percent, 
+           priority=dense_rank(desc(score)),
+           priority=priority + max(group1()$priority), group="Group 2")
+  })
+block_priorities <- reactive({
+bind_rows(group1(), group2()) %>%
+    mutate(miles=round(miles,4),
+           percent=percent(percent))
+})
+block_pri_map_data <- reactive({
+  bur_streets %>% left_join(block_priorities() %>% data.frame(), by="street_id") %>%
+    filter(!is.na(group)) %>% mapview(zcol="priority")
+})
+output$block_pri_map<-renderLeaflet({
+  block_pri_map_data()@map
+})
+output$block_priorities_table <- renderDataTable({
+  datatable(block_priorities() %>% data.frame() %>%
+              select(street_id, priority, percent, worst_10_percentile, segments, activity ,miles, group),
+            colnames = c('Street ID', 'Priority', 'Percent of Bad Segments', 'Number of Bad Segments', 'Total Segments','Activity Score' ,  'Distance (Miles)','Group'),
+            rownames = F)
+})
+## segment scores - group 3 and 4
+segment_scores<- reactive({
+  bind_cols(final_shapefile() %>% select(-priority),data.frame(miles=st_length(final_shapefile())))  %>%
+    mutate(miles=as.numeric(miles * 0.0001893939))
+})
+# group 3
+group3 <- reactive({ 
+  segment_scores() %>%
+    filter(!street_id %in% unique(group1()$street_id)) %>%
+    filter(!street_id %in% unique(group2()$street_id)) %>%
+    arrange(desc(barrier)) %>%
+    slice(1:273) %>%
+    mutate(Priority=dense_rank(desc(barrier)),
+           group="Group 3")
+})
+# group 4
+group4 <- reactive({
+  segment_scores() %>%
+    filter(!street_id %in% unique(group1()$street_id)) %>%
+    filter(!street_id %in% unique(group2()$street_id)) %>%
+    filter(!id %in% unique(group3()$id)) %>%
+    mutate(score=barrier + activity) %>%
+    arrange(desc(score)) %>%
+    slice(1:272) %>%
+    mutate(Priority=dense_rank(desc(score)),
+           Priority=Priority + max(group3()$Priority),
+           group="Group 4")
+})
+segment_priorities<- reactive({
+  bind_rows(group3(), group4()) %>%
+    mutate(miles=round(miles,4))
+})
+segment_pri_map_data <- reactive({
+  segment_priorities() %>% mapview(zcol="Priority")
+})
+output$segment_pri_map<-renderLeaflet({
+  segment_pri_map_data()@map
+})
+output$segment_priorities_table <- renderDataTable({
+  datatable(segment_priorities() %>% data.frame() %>%
+              select(id, Priority, final_score, activity, barrier, miles,group),
+            colnames = c('Segment ID', 'Priority', 'Final Score', 'Activity Score', 'Barrier', 'Distance (Miles)', 'Group'), rownames = F)
+})
+  }
+shinyApp(ui, server)
+
+
+
+
+
