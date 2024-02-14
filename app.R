@@ -13,7 +13,7 @@ ui <- dashboardPage(skin="black",
                     dashboardHeader(title="Climate Tech Ideas",titleWidth = 280,
                                     tags$li(class = "dropdown",
                                             tags$a(href="", target="_blank", 
-                                                   tags$img(height = "18px", alt="RSG Logo", src="RSG Logo.jpg")))
+                                                   tags$img(height = "48px", alt="", src="logo.jpg")))
                     ),
                     dashboardSidebar(disable=F,
                                      uiOutput("ui_dashboard")
@@ -33,13 +33,17 @@ ui <- dashboardPage(skin="black",
                                                       tags$li(h4("Home DIY solutions"))
                                                     ),
                                                     br(), br(),
-                                                    img(src='RSG Logo.jpg',  height = 80, width = 250),
+                                                    h4("This tool was created in Shiny and the full tool code can be found on ",
+                                                       a("Github", href = "https://github.com/rhaefer/climate_tech", target = "_blank"), 
+                                                       "."),br(),
+                                                    h4(textOutput("app_version"), style="font-weight: normal"),
                                                     br(), br(),
-                                                    h4(textOutput("app_version"), style="font-weight: normal")
+                                                    img(src='logo.jpg',  height = 180, width = 250),
+                                                    br(), 
                                                     #)
                                              ), 
                                              column(width=6,
-                                                    img(src='Data Hub Banner Image.png',  height = 600, width = 700) # include page main photograph
+                                                    #img(src='banner.png',  height = 400, width = 500) # include page main photograph
                                              )
                                            )
                                            ),
@@ -95,7 +99,7 @@ ui <- dashboardPage(skin="black",
                     
 ) 
 server <- function(input, output, session){
-  
+output$app_version  <-  renderText(paste0("Last Updated: ",Sys.Date()))
 output$alert  <- renderUI({
   req(input$input_iot_measure)
   if( input$input_iot_measure == "CO2 (ppm) - median" & max(iot_long %>% filter(name== input$input_iot_measure) %>% pull(value)) > 1500 ){
