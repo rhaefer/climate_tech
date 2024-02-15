@@ -32,13 +32,13 @@ ui <- dashboardPage(skin="black",
                                                       tags$li(h4("Electric Vehicles")),
                                                       tags$li(h4("Home DIY solutions"))
                                                     ),
-                                                    br(), br(),
+                                                    br(), 
+                                                    img(src='logo.jpg',  height = 280, width = 400),
                                                     h4("This tool was created in Shiny and the full tool code can be found on ",
                                                        a("Github", href = "https://github.com/rhaefer/climate_tech", target = "_blank"), 
-                                                       "."),br(),
+                                                       "."),
                                                     h4(textOutput("app_version"), style="font-weight: normal"),
                                                     br(), br(),
-                                                    img(src='logo.jpg',  height = 180, width = 250),
                                                     br(), 
                                                     #)
                                              ), 
@@ -78,17 +78,16 @@ ui <- dashboardPage(skin="black",
                                                     leafletOutput('home_loc_map') %>% withSpinner()
                                                     ),
                                              column(width=6,
-                                                    selectInput('input_iot_measure',"Select IOT Measure",
-                                                                choices=unique(iot_long$name)),
                                                     uiOutput('alert'),
                                                     plotlyOutput('iot_plot'))
                                            )
                                            ),
-                                           fluidRow(dataTableOutput("iot_table")),
+                                           #fluidRow(dataTableOutput("iot_table")),
+                                           fluidRow(plotlyOutput('hist_temp_plot')),
                                            fluidRow(
                                              box(width=12, title="Home Energy Model",
                                            plotlyOutput("energy_balance"),
-                                           plotlyOutput("energy_model_plot1"),
+                                          # plotlyOutput("energy_model_plot1"),
                                            plotlyOutput("energy_model_plot2")
                                            )
                                   )
@@ -99,6 +98,14 @@ ui <- dashboardPage(skin="black",
                     
 ) 
 server <- function(input, output, session){
+output$hist_temp_plot  <-renderPlotly({
+  req(input$input_weather_var)
+  ggplotly(
+    weather %>%
+      filter(name==input$input_weather_var) %>%  filter(date >= input$input_weather_date[1] & date <= input$input_weather_date[2]) %>%
+      ggplot(aes(datetime, value)) + geom_line() + theme_minimal() + geom_smooth() + ggtitle(as.character(input$input_weather_var))
+  )
+  })
 output$app_version  <-  renderText(paste0("Last Updated: ",Sys.Date()))
 output$alert  <- renderUI({
   req(input$input_iot_measure)
@@ -121,9 +128,9 @@ output$energy_model_plot1<- renderPlotly({
 })
 output$energy_model_plot1<- renderPlotly({
   ggplotly(
-    baby_energy_model %>% ggplot(aes(timestamp)) + 
-      geom_line(aes(y=`Outdoor Temperature (C)`, color="blue"))+ 
-      geom_line(aes(y=`Indoor Temperature (C)`, color="red"))#+ 
+    baby_energy_model %>% ggplot(aes(timestamp)) +
+      geom_line(aes(y=`Outdoor Temperature (C)`, color="blue"))+
+      geom_line(aes(y=`Indoor Temperature (C)`, color="red"))#+
       #geom_line(aes(y=hvac_mode))
   )
 })
@@ -192,7 +199,15 @@ output$iot_table  <-renderDataTable({
     } else if(input$tabs=="diy"){
       ### Default to 2019 data if nothing is selected
       fluidPage(
-        fluidRow(),
+        fluidRow(
+          selectInput('input_iot_measure',"Select Home Sensor Variable",
+                      choices=unique(iot_long$name)),
+          selectInput('input_weather_var',"Select Historic Weather Variable",
+                      choices=unique(weather$name)),
+          dateRangeInput('input_weather_date',"Select Historic Date Range",
+                      start=min(weather$date, na.rm=T),
+                      end=max(weather$date, na.rm=T))
+          ),
         box(width=12,background = 'black',p(tags$br(),HTML("")))
       )
     }

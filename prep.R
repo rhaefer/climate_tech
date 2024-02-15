@@ -30,6 +30,16 @@ library(ggalluvial)
 library(classInt)
 library(lwgeom)
 library(nasapower)
+library(openmeteo)
+library(lubridate)
+
+weather<-weather_history(location="South Lake Tahoe", start="2014-02-15", end=Sys.Date(),
+                      hourly = c("temperature_2m","precipitation","windspeed_10m","cloudcover","pressure_msl")) %>%
+  mutate(temp_f=((hourly_temperature_2m * (9/5))) + 32) %>% pivot_longer(cols=2:7) %>%
+  mutate(date_time_tidy=ymd_hms(datetime),
+         date=ymd(as.Date(date_time_tidy)))
+
+
 
 energy_consumed_locally_by_source_ba<-fread("data/energy_consumed_locally_by_source_ba.csv")
 

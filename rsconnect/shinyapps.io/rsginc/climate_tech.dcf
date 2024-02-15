@@ -5,7 +5,7 @@ account: rsginc
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 11135046
-bundleId: 8253075
+bundleId: 8257240
 url: https://rsginc.shinyapps.io/climate_tech/
 version: 1
 asMultiple: FALSE
