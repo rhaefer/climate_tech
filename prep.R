@@ -1,13 +1,3 @@
-# NYMTC OD Flow Dashboard 
-# Developed by Reid Haefer, Nicholas Fisher, Kyeongsu Kim at RSG
-# Latest Update on 11/22/2023 
-
-### preppppppppppppp ###
-
-# TO do list 
-# update scripts that replaces legacy packages maptools, rgdal, and rgeos, underpinning the sp package
-
-
 library(shiny)
 library(shinydashboard)
 library(shinyjs)

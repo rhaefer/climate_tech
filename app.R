@@ -19,6 +19,11 @@ ui <- dashboardPage(skin="black",
                                      uiOutput("ui_dashboard")
                     ),
                     dashboardBody(
+                      useShinyjs(), # Initialize shinyjs
+                      tags$head(
+                        tags$style(HTML(
+                                 ".nav-tabs {font-size: 20px} 
+                                 "))), 
                       tabsetPanel(id="tabs",
                                   tabPanel("Tool Info", value="info",
                                            fluidRow(
@@ -28,9 +33,8 @@ ui <- dashboardPage(skin="black",
                                                     br(),
                                                     h4("This tool presents potential climate tech solutions and that are the outcome of the Terra.Do Software Stacks for Climate Tech Course. This information is comprised of 3 components which are accessed through the webpage tabs:"),
                                                     tags$ul(
-                                                      tags$li(h4("Energy Generation")),
-                                                      tags$li(h4("Electric Vehicles")),
-                                                      tags$li(h4("Home DIY solutions"))
+                                                      tags$li(h4("Home DIY solutions")),
+                                                      tags$li(h4("Larger Scale Solutions")),
                                                     ),
                                                     br(), 
                                                     img(src='logo.jpg',  height = 280, width = 400),
@@ -47,51 +51,37 @@ ui <- dashboardPage(skin="black",
                                              )
                                            )
                                            ),
-                                  tabPanel("Energy Generation", value="gen",
-                                            fluidRow(dataTableOutput("generation_table") %>% withSpinner(),
-                                                     plotlyOutput("generation_plot"),
-                                                     dataTableOutput("energy_consumed_locally_by_source_ba"), 
-                                                     plotlyOutput("energy_consumed_plot"), 
-                                                     dataTableOutput("usage_by_ba_and_generation_type")#,
-                                                     #plotlyOutput("usage_by_ba_plot"), 
-                                           #   column(width=8,
-                                           #              leafletOutput('map',height=800) %>% withSpinner()
-                                           #          ),
-                                           #   column(width=4,
-                                           #              valueBoxOutput("selected_zone", width=12),
-                                           #              dataTableOutput(outputId ="OD_flow_table"),
-                                           #              #style = 'overflow-x: scroll',
-                                           #            uiOutput('download_ui')
-                                           #          )
-                                            )
-                                           ), 
-                                  tabPanel("Electric Vehicles", value="ev"#,
-                                           # fluidRow(
-                                           #   column(width=8,
-                                           #              leafletOutput('map_network',height=800) %>% withSpinner()
-                                           #          )
-                                           # )
-                                  ), 
-                                  tabPanel("DIY Solutions",  value="diy",
+                                  tabPanel("Home/DIY Solutions",  value="diy",
                                            fluidRow(box(width=12, title="",
-                                             column(width = 6,
-                                                    leafletOutput('home_loc_map') %>% withSpinner()
-                                                    ),
-                                             column(width=6,
-                                                    uiOutput('alert'),
-                                                    plotlyOutput('iot_plot'))
+                                                        column(width = 6,
+                                                               leafletOutput('home_loc_map') %>% withSpinner()
+                                                        ),
+                                                        column(width=6,
+                                                               fluidRow(textOutput("test")
+                                                               ),
+                                                               fluidRow(
+                                                                 plotlyOutput('iot_plot') %>% withSpinner()))
                                            )
                                            ),
                                            #fluidRow(dataTableOutput("iot_table")),
                                            fluidRow(plotlyOutput('hist_temp_plot')),
                                            fluidRow(
                                              box(width=12, title="Home Energy Model",
-                                           plotlyOutput("energy_balance"),
-                                          # plotlyOutput("energy_model_plot1"),
-                                           plotlyOutput("energy_model_plot2")
+                                                 plotlyOutput("energy_balance"),
+                                                 # plotlyOutput("energy_model_plot1"),
+                                                 plotlyOutput("energy_model_plot2")
+                                             )
                                            )
-                                  )
-                                  )),
+                                  ),
+                                  tabPanel("Large Scale Solutions", value="gen",
+                                            fluidRow(dataTableOutput("generation_table") %>% withSpinner(),
+                                                     plotlyOutput("generation_plot"),
+                                                     dataTableOutput("energy_consumed_locally_by_source_ba"), 
+                                                     plotlyOutput("energy_consumed_plot"), 
+                                                     dataTableOutput("usage_by_ba_and_generation_type")
+                                            )
+                                           )
+                                  ),
                       tags$style(HTML(".skin-black .main-sidebar { background-color: #000000;} .content-wrapper, .right-side {
                                 background-color: #FFFFFF ;
                                 }") ))
@@ -106,17 +96,39 @@ output$hist_temp_plot  <-renderPlotly({
       ggplot(aes(datetime, value)) + geom_line() + theme_minimal() + geom_smooth() + ggtitle(as.character(input$input_weather_var))
   )
   })
+
+#unhealthy_co2_date<-
 output$app_version  <-  renderText(paste0("Last Updated: ",Sys.Date()))
-output$alert  <- renderUI({
+most_recent_date_unhealthy_co2 <-reactive({
+  iot_long %>% filter(name== input$input_iot_measure) %>% filter(value > 1500) %>% arrange(desc(value)) %>% slice(1) %>% pull(hour)
+}) 
+most_recent_amount_unhealthy_co2 <-reactive({
+  iot_long %>% filter(name== input$input_iot_measure) %>% filter(value > 1500) %>% arrange(desc(value)) %>% slice(1) %>% pull(value)
+}) 
+output$test<-renderText({
   req(input$input_iot_measure)
-  if( input$input_iot_measure == "CO2 (ppm) - median" & max(iot_long %>% filter(name== input$input_iot_measure) %>% pull(value)) > 1500 ){
-valueBoxOutput('co2_alert')
-  } else{
-    fluidRow()
-  }
+  most_recent_date_unhealthy_co2()
 })
-output$co2_alert<-renderValueBox({
-  valueBox(value="Unhealthy CO2 detected", subtitle = "..." , color="red")
+observe({
+  req(input$input_iot_measure)
+  if (input$input_iot_measure == "CO2 (ppm) - median" & max(iot_long %>% filter(name== input$input_iot_measure) %>% pull(value),na.rm = T) > 1500) {
+    showModal(modalDialog(
+      title = span(paste0("Unhealthy CO2 levels detected - Most recent date & level: ",most_recent_date_unhealthy_co2(),", " ,most_recent_amount_unhealthy_co2()), 
+                   style = "color: white;"), # Inline style for the title
+      tags$div("This is a warning that unhealthy CO2 levels have been detected (above 1500 ppm). Please ensure ventilation is adequate.",
+               style = "color: white; background-color: #710505; padding: 1px;"), # Inline style for the body
+      footer = modalButton("Close"),
+      size = "l",
+      easyClose = TRUE,
+      fade = TRUE,
+      # Applying inline styles to the modal dialog itself
+      tags$style(HTML("
+        .modal-header {background-color: #710505 !important; color: white !important;}
+        .modal-footer {background-color: #710505 !important; color: white !important;}
+        .modal-footer .btn {color: #710505 !important; background-color: white !important;}
+      "))
+    ))
+  }
 })
 output$home_loc_map <-  renderLeaflet({
     leaflet() %>% addMarkers(home_longitude +.002, home_latitude +.001) %>% addTiles()
@@ -159,12 +171,6 @@ output$generation_table  <-renderDataTable({
 output$usage_by_ba_and_generation_type  <-renderDataTable({
   usage_by_ba_and_generation_type
 })
-# output$usage_by_ba_plot <- renderPlotly({
-#   ggplotly( 
-#     usage_by_ba_and_generation_type %>% View()
-#       ggplot(aes(timestamp, `Usage (MWh)`, fill=generation_type)) + geom_area()
-#   )
-# })
 output$energy_consumed_plot <- renderPlotly({
   ggplotly( 
     energy_consumed_locally_by_source_ba %>% ggplot(aes(timestamp, `Power consumed locally (MWh)`, fill=fromba)) + geom_bar(stat='identity')
@@ -191,11 +197,6 @@ output$iot_table  <-renderDataTable({
         # fluidRow(radioButtons('input_od',"Origin or Destination", choices=c("Origin","Destination"), inline=T)),
         # box(width=12,background = 'black',p(tags$br(),HTML("This map shows trips from origin and destination TAZs throughout the region. Select a TAZ on the map and select Origin or Destination from the sidebar toggle to visualize trips from associated TAZs.")))
       )
-    } else if(input$tabs=="ev"){
-      ### Default to 2019 data if nothing is selected
-      fluidPage(
-        # box(width=12,background = 'black',p(tags$br(),HTML("")))
-      )
     } else if(input$tabs=="diy"){
       ### Default to 2019 data if nothing is selected
       fluidPage(
@@ -204,6 +205,7 @@ output$iot_table  <-renderDataTable({
                       choices=unique(iot_long$name)),
           selectInput('input_weather_var',"Select Historic Weather Variable",
                       choices=unique(weather$name)),
+          br(), br(), br(), 
           dateRangeInput('input_weather_date',"Select Historic Date Range",
                       start=min(weather$date, na.rm=T),
                       end=max(weather$date, na.rm=T))
