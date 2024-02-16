@@ -73,14 +73,19 @@ ui <- dashboardPage(skin="black",
                                              )
                                            )
                                   ),
-                                  tabPanel("Large Scale Solutions", value="gen",
+                                  tabPanel("Electric Vehicle Solutions", value="gen",
+                                           fluidRow(leafletOutput('big_map', height = 600)),
                                             fluidRow(dataTableOutput("generation_table") %>% withSpinner(),
                                                      plotlyOutput("generation_plot"),
                                                      dataTableOutput("energy_consumed_locally_by_source_ba"), 
                                                      plotlyOutput("energy_consumed_plot"), 
                                                      dataTableOutput("usage_by_ba_and_generation_type")
                                             )
-                                           )
+                                           ),
+                                  tabPanel("More Info", value="doc",
+                                           box(width = 12, status = 'primary', solidHeader = TRUE, title = "More Info",
+                                               tags$iframe(style="height:800px; width:100%", src="climate_tech.pdf")
+                                           ))
                                   ),
                       tags$style(HTML(".skin-black .main-sidebar { background-color: #000000;} .content-wrapper, .right-side {
                                 background-color: #FFFFFF ;
@@ -88,6 +93,17 @@ ui <- dashboardPage(skin="black",
                     
 ) 
 server <- function(input, output, session){
+big_map <-reactive({
+  mapview(heavy_infra) + 
+    mapview(e_fuel_cor, col.regions="green") + 
+    mapview(charger_nevi, col.regions="red") + 
+    mapview(charger_no_nevi, col.regions="orange") + 
+    mapview(ba_geo, col.regions="grey") + 
+    mapview(aadt, col.regions="black")
+  })
+  output$big_map<-renderLeaflet({
+    big_map()@map
+  })
 output$hist_temp_plot  <-renderPlotly({
   req(input$input_weather_var)
   ggplotly(

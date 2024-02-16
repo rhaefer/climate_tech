@@ -22,14 +22,45 @@ library(lwgeom)
 library(nasapower)
 library(openmeteo)
 library(lubridate)
+library(geojsonio)
+library(lehdr)
+library(tigris)
+library(mapview)
 
+
+# lodes<-grab_lodes(state = c("ca"), 
+#            year = c(2021), 
+#            lodes_type = "od", 
+#            job_type = "JT01", 
+#            segment = "S000", 
+#            state_part = "main", 
+#            agg_geo = "tract")
+
+lodes<-read_parquet('data/lodes.parquet')
+
+tracts<-tracts(state="CA")
+
+aadt<-geojson_read('data/Traffic_Volumes_AADT.geojson', what='sp') %>% st_as_sf(crs=4326)
+
+ba_geo<-geojson_read('data/California_Electric_Balancing_Authority.geojson', what='sp') %>% st_as_sf(crs=4326)
+
+# DC_fast_charging_stations_that_do_not_meet_NEVI_requirements_but_within_1-mile_of_a_corridor_(updated_October_2023)
+charger_no_nevi<-geojson_read('data/DC_fast_charging_stations_that_do_not_meet_NEVI_requirements_but_within_1-mile_of_a_corridor_(updated_October_2023).geojson', what='sp') %>% st_as_sf(crs=4326)
+
+charger_nevi<-geojson_read('data/Stations_that_meet_NEVI_requirements_(October_2023).geojson', what='sp') %>% st_as_sf(crs=4326)
+
+e_fuel_cor<-geojson_read('data/Electric_Fuel_Corridor_Groups_(Updated_December_2023).geojson', what='sp') %>% st_as_sf(crs=4326)
+
+heavy_infra<-geojson_read('data/Medium_and_Heavy_Duty_Infrastructure.geojson', what='sp') %>% st_as_sf(crs=4326)
+
+### open meteo api call
 weather<-weather_history(location="South Lake Tahoe", start="2014-02-15", end=Sys.Date(),
                       hourly = c("temperature_2m","precipitation","windspeed_10m","cloudcover","pressure_msl")) %>%
   mutate(temp_f=((hourly_temperature_2m * (9/5))) + 32) %>% pivot_longer(cols=2:7) %>%
   mutate(date_time_tidy=ymd_hms(datetime),
          date=ymd(as.Date(date_time_tidy)))
 
-
+###
 
 energy_consumed_locally_by_source_ba<-fread("data/energy_consumed_locally_by_source_ba.csv")
 
