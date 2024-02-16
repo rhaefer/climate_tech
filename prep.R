@@ -36,6 +36,8 @@ library(mapview)
 #            state_part = "main", 
 #            agg_geo = "tract")
 
+#write_parquet(lodes %>% slice(1:1000), 'data/lodes.parquet')
+
 lodes<-read_parquet('data/lodes.parquet')
 
 tracts<-tracts(state="CA")

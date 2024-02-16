@@ -34,7 +34,7 @@ ui <- dashboardPage(skin="black",
                                                     h4("This tool presents potential climate tech solutions and that are the outcome of the Terra.Do Software Stacks for Climate Tech Course. This information is comprised of 3 components which are accessed through the webpage tabs:"),
                                                     tags$ul(
                                                       tags$li(h4("Home DIY solutions")),
-                                                      tags$li(h4("Larger Scale Solutions")),
+                                                      tags$li(h4("Electric Vehicle Solutions")),
                                                     ),
                                                     br(), 
                                                     img(src='logo.jpg',  height = 280, width = 400),
@@ -75,16 +75,21 @@ ui <- dashboardPage(skin="black",
                                   ),
                                   tabPanel("Electric Vehicle Solutions", value="gen",
                                            fluidRow(leafletOutput('big_map', height = 600)),
-                                            fluidRow(dataTableOutput("generation_table") %>% withSpinner(),
-                                                     plotlyOutput("generation_plot"),
+                                            fluidRow(box(title="Energy Generation", width=12,
+                                                         dataTableOutput("generation_table") %>% withSpinner(),
+                                                     plotlyOutput("generation_plot")),
+                                                     box(title="Energy Consumed Locally (BA & Source)",width=12,
                                                      dataTableOutput("energy_consumed_locally_by_source_ba"), 
-                                                     plotlyOutput("energy_consumed_plot"), 
-                                                     dataTableOutput("usage_by_ba_and_generation_type")
+                                                     plotlyOutput("energy_consumed_plot")), 
+                                                     box(title="Energy Usage (BA & Generation Type)",width=12,
+                                                     dataTableOutput("usage_by_ba_and_generation_type")),
+                                                     box(title="Census LODES Commute Origin Destinations",width=12,dataTableOutput('lodes')
+                                                     )
                                             )
                                            ),
                                   tabPanel("More Info", value="doc",
                                            box(width = 12, status = 'primary', solidHeader = TRUE, title = "More Info",
-                                               tags$iframe(style="height:800px; width:100%", src="climate_tech.pdf")
+                                               tags$iframe(style="height:800px; width:100%", src="climate_tech1.pdf")
                                            ))
                                   ),
                       tags$style(HTML(".skin-black .main-sidebar { background-color: #000000;} .content-wrapper, .right-side {
@@ -94,15 +99,20 @@ ui <- dashboardPage(skin="black",
 ) 
 server <- function(input, output, session){
 big_map <-reactive({
-  mapview(heavy_infra) + 
-    mapview(e_fuel_cor, col.regions="green") + 
-    mapview(charger_nevi, col.regions="red") + 
-    mapview(charger_no_nevi, col.regions="orange") + 
-    mapview(ba_geo, col.regions="grey") + 
-    mapview(aadt, col.regions="black")
+  mapview(heavy_infra, col.regions="green", layer.name="Hydrogen Charging Stations") + 
+    mapview(e_fuel_cor, layer.name="EV Fuel Corridors (NEVI)") + 
+    mapview(charger_nevi, col.regions="red", layer.name="DC Chargers (NEVI Compliant)") + 
+    mapview(charger_no_nevi, col.regions="orange" , layer.name="DC Chargers (Non NEVI)") + 
+    mapview(ba_geo, col.regions="grey", layer.name="Balancing Authorities", hide = TRUE) + 
+    mapview(aadt, col.regions="black", layer.name="Traffic Volumes", hide = TRUE) + 
+    mapview(tracts, col.regions="yellow", layer.name="Census Tracts", hide = TRUE)
   })
   output$big_map<-renderLeaflet({
     big_map()@map
+  })
+  
+output$lodes  <-renderDataTable({
+    datatable(lodes)
   })
 output$hist_temp_plot  <-renderPlotly({
   req(input$input_weather_var)
@@ -199,7 +209,7 @@ output$energy_consumed_locally_by_source_ba  <-renderDataTable({
 output$iot_plot  <-renderPlotly({
   req(input$input_iot_measure)
   ggplotly(
-  iot_long %>% filter(name== input$input_iot_measure) %>% ggplot(aes(hour, value)) + geom_line()
+  iot_long %>% filter(name== input$input_iot_measure) %>% ggplot(aes(hour, value)) + geom_line() +ggtitle(input$input_iot_measure)
   )
 })
 
